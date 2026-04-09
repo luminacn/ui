@@ -2,7 +2,7 @@
   "name": "luminacn",
   "type": "module",
   "bin": {
-    "luminacn": "./dist/index.js"
+    "luminacn": "./dist/cli/index.js"
   },
   "version": "1.0.2",
   "description": "Copy-paste UI for Angular",
@@ -43,5 +43,9 @@
   "files": [
     "dist/**/*",
     "README.md"
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luminacn/ui"
+  }
 }
