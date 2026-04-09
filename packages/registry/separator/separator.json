@@ -1,0 +1,6 @@
+{
+  "name": "separator",
+  "destination": "ui/separator",
+  "primaryExport": "LuminaSeparatorComponent",
+  "files": ["separator.component.ts.template", "separator.types.ts.template"]
+}
