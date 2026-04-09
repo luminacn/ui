@@ -1,28 +1,35 @@
-import { Component, Input } from "@angular/core";
-import { cn } from "../../../lib/cn";
-import { LuminaSeparatorOrientation } from "./separator.types";
+import { Component, Input } from '@angular/core';
+import { cn } from '../../../lib/cn';
+import { LuminaSeparatorOrientation } from './separator.types';
 
 @Component({
-  selector: "lumina-separator",
+  selector: 'lumina-separator',
   standalone: true,
   template: ``,
+  styles: [
+    `
+      :host {
+        display: block;
+      }
+    `,
+  ],
   host: {
-    "[class]": "computedClass",
-    "[attr.role]": "'separator'",
-    "[attr.aria-orientation]": "orientation",
+    '[class]': 'computedClass',
+    '[attr.role]': "'separator'",
+    '[attr.aria-orientation]': 'orientation',
   },
 })
 export class LuminaSeparatorComponent {
-  @Input() orientation: LuminaSeparatorOrientation = "horizontal";
-  
+  @Input() orientation: LuminaSeparatorOrientation = 'horizontal';
+
   /** Static classes like <lumina-separator class="my-4"> */
-  @Input("class") userClass: string = "";
+  @Input('class') userClass: string = '';
 
   get computedClass() {
     return cn(
-      "shrink-0 bg-border",
-      this.orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
-      this.userClass
+      'shrink-0 bg-border',
+      this.orientation === 'horizontal' ? 'h-[1px] w-full' : 'h-full w-[1px]',
+      this.userClass,
     );
   }
 }

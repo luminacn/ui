@@ -1,14 +1,14 @@
-import { Component, Input, forwardRef, ChangeDetectorRef } from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { cn } from "../../../lib/cn";
+import { Component, Input, ChangeDetectorRef, HostListener } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { cn } from '../../../lib/cn';
 
 @Component({
-  selector: "lumina-switch",
+  selector: 'lumina-switch',
   standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => LuminaSwitchComponent),
+      useExisting: LuminaSwitchComponent,
       multi: true,
     },
   ],
@@ -17,10 +17,10 @@ import { cn } from "../../../lib/cn";
       type="button"
       role="switch"
       [attr.aria-checked]="checked"
-      [attr.disabled]="disabled || null"
+      [disabled]="disabled"
       [attr.aria-label]="ariaLabel"
       [class]="computedTrackClass"
-      (click)="toggle()"
+      (click)="toggle($event)"
       (blur)="onTouched()"
     >
       <span [class]="computedThumbClass"></span>
@@ -31,36 +31,47 @@ export class LuminaSwitchComponent implements ControlValueAccessor {
   @Input() checked = false;
   @Input() disabled = false;
   @Input() ariaLabel?: string;
-  @Input("class") userClass = "";
+  @Input('class') userClass = '';
 
-  private onChange = (_: any) => {};
-  onTouched = () => {};
+  private onChange: (value: boolean) => void = () => {};
+  onTouched: () => void = () => {};
 
   constructor(private cdr: ChangeDetectorRef) {}
 
+  @HostListener('keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === ' ' || event.key === 'Enter') {
+      event.preventDefault();
+      this.toggle();
+    }
+  }
+
   get computedTrackClass() {
     return cn(
-      "peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50",
-      this.checked ? "bg-primary" : "bg-input",
-      this.userClass
+      'peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
+      this.checked ? 'bg-primary' : 'bg-input',
+      this.userClass,
     );
   }
 
   get computedThumbClass() {
     return cn(
-      "pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform",
-      this.checked ? "translate-x-4" : "translate-x-0"
+      'pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform',
+      this.checked ? 'translate-x-4' : 'translate-x-0',
     );
   }
 
-  toggle() {
+  toggle(event?: Event) {
     if (this.disabled) return;
+
+    event?.stopPropagation(); // Prevent accidental form submissions if inside a form
+
     this.checked = !this.checked;
     this.onChange(this.checked);
+    this.onTouched(); // Mark as 'touched' so validation triggers
     this.cdr.markForCheck();
   }
 
-  // ControlValueAccessor Implementation
   writeValue(value: any): void {
     this.checked = !!value;
     this.cdr.markForCheck();
