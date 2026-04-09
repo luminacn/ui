@@ -13,7 +13,7 @@ import { LuminaButtonVariant, LuminaButtonSize } from "./button.types";
     "[attr.aria-disabled]": "disabled",
   },
 })
-class LuminaButtonDirective {
+export class LuminaButtonDirective {
   @Input() variant: LuminaButtonVariant = "default";
   @Input() size: LuminaButtonSize = "default";
   @Input() disabled: boolean = false;

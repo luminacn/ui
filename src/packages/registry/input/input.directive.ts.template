@@ -1,4 +1,4 @@
-import { Directive, Input } from "@angular/core";
+import { Directive, Input, ElementRef, inject } from "@angular/core";
 import { cn } from "../../../lib/cn";
 
 @Directive({
@@ -10,6 +10,8 @@ import { cn } from "../../../lib/cn";
   },
 })
 export class LuminaInputDirective {
+  private readonly el = inject(ElementRef);
+
   @Input() error: boolean = false;
   @Input() hasStartIcon: boolean = false;
   @Input() hasEndIcon: boolean = false;
