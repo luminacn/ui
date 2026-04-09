@@ -1,0 +1,75 @@
+import { Component, Input, forwardRef, ChangeDetectorRef } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { cn } from "../../../lib/cn";
+
+@Component({
+  selector: "lumina-checkbox",
+  standalone: true,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => LuminaCheckboxComponent),
+      multi: true,
+    },
+  ],
+  template: `
+    <button
+      type="button"
+      role="checkbox"
+      [attr.aria-checked]="checked"
+      [attr.disabled]="disabled || null"
+      [class]="computedClass"
+      (click)="toggle()"
+    >
+      @if (checked) {
+        <svg
+          xmlns="http://w3.org"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      }
+    </button>
+  `,
+})
+export class LuminaCheckboxComponent implements ControlValueAccessor {
+  @Input() checked = false;
+  @Input() disabled = false;
+  @Input("class") userClass = "";
+
+  private onChange = (_: any) => {};
+  private onTouched = () => {};
+
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  get computedClass() {
+    return cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+      this.checked ? "bg-primary text-primary-foreground" : "bg-transparent",
+      this.userClass
+    );
+  }
+
+  toggle() {
+    if (this.disabled) return;
+    this.checked = !this.checked;
+    this.onChange(this.checked);
+    this.onTouched();
+  }
+
+  // ControlValueAccessor methods
+  writeValue(value: any): void {
+    this.checked = !!value;
+    this.cdr.markForCheck();
+  }
+  registerOnChange(fn: any): void { this.onChange = fn; }
+  registerOnTouched(fn: any): void { this.onTouched = fn; }
+  setDisabledState(isDisabled: boolean): void { this.disabled = isDisabled; }
+}
