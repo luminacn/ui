@@ -5,15 +5,11 @@
     "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "outDir": "dist",
-    "rootDir": "tools/cli",
+    "rootDir": "src",
     "rewriteRelativeImportExtensions": true,
     "allowImportingTsExtensions": true,
     "noEmit": false
   },
-  "include": ["tools/cli/**/*"],
-  "exclude": [
-    "packages/**/*",
-    "node_modules",
-    "packages/registry/**/*.ts.template"
-  ]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules"]
 }
