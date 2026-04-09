@@ -12,7 +12,7 @@ if (command === "init") {
   const componentName = args[1]; // e.g., "button" or "toggle"
   if (!componentName) {
     console.error(
-      "❌ Please specify a component to add, e.g. `npx lumina add button`",
+      "❌ Please specify a component to add, e.g. `npx luminacn add button`",
     );
     process.exit(1);
   }

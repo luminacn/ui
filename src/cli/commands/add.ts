@@ -4,59 +4,81 @@ import { fileURLToPath } from "url";
 import { confirm } from "@inquirer/prompts";
 import { execSync } from "child_process";
 
-// Recreating __dirname for ES Modules
+// --- Path Resolution Logic ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Finds the directory containing 'packages'.
+ * - In 'dist', it is 2 levels up from 'dist/cli/commands'
+ * - In 'src' development, it is likely the same or 3+ levels depending on monorepo setup
+ */
+function getPackageRoot() {
+  // 1. Check for standard 'dist' structure (2 levels up)
+  const distPath = path.resolve(__dirname, "..", "..");
+  if (fs.existsSync(path.join(distPath, "packages"))) {
+    return distPath;
+  }
+
+  // 2. Check for local 'src' development structure (usually 2 or 3 levels up)
+  const devPath = path.resolve(__dirname, "..", "..", "..");
+  if (fs.existsSync(path.join(devPath, "packages"))) {
+    return devPath;
+  }
+
+  // 3. Last resort fallback (The original 4-level deep structure)
+  return path.resolve(__dirname, "..", "..", "..", "..");
+}
+
+const packageRoot = getPackageRoot();
+const getRegistryPath = () => path.join(packageRoot, "packages", "registry");
+
+// --- Helper Functions ---
 
 function checkPeerDeps(root: string) {
   const pkgPath = path.join(root, "package.json");
   if (!fs.existsSync(pkgPath)) return;
 
-  const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
-  const deps = { ...pkg.dependencies, ...pkg.devDependencies };
+  try {
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
+    const deps = { ...pkg.dependencies, ...pkg.devDependencies };
 
-  const required = ["clsx", "tailwind-merge"];
-  const missing = required.filter((d) => !deps[d]);
+    const required = ["clsx", "tailwind-merge"];
+    const missing = required.filter((d) => !deps[d]);
 
-  if (missing.length > 0) {
-    console.log(`📦 Installing missing dependencies: ${missing.join(", ")}...`);
-    // Use --save to ensure they go into dependencies
-    execSync(`npm install ${missing.join(" ")}`, {
-      cwd: root,
-      stdio: "inherit",
-    });
+    if (missing.length > 0) {
+      console.log(
+        `📦 Installing missing dependencies: ${missing.join(", ")}...`,
+      );
+      execSync(`npm install ${missing.join(" ")}`, {
+        cwd: root,
+        stdio: "inherit",
+      });
+    }
+  } catch (e) {
+    console.warn("⚠️  Could not parse package.json to check dependencies.");
   }
 }
 
-export async function addComponent(componentName: string, targetPath: string) {
-  checkPeerDeps(targetPath);
-  // Resolve registry path from the dist/ folder
-  const registryPath = path.join(
-    __dirname,
-    "..", // up to cli
-    "..", // up to tools
-    "..", // up to dist (project root inside build)
-    "..", // up to ACTUAL project root (where packages/ is)
-    "packages",
-    "registry",
-  );
+// --- Main Command Function ---
 
-  const jsonPath = path.join(
-    registryPath,
-    componentName,
-    `${componentName}.json`,
-  );
+export async function addComponent(componentName: string, targetPath: string) {
+  // Ensure user has necessary base utilities
+  checkPeerDeps(targetPath);
+
+  const registryPath = getRegistryPath();
+  const componentDir = path.join(registryPath, componentName);
+  const jsonPath = path.join(componentDir, `${componentName}.json`);
 
   if (!fs.existsSync(jsonPath)) {
-    console.error(
-      `❌ Component ${componentName} does not exist in the registry.`,
-    );
+    console.error(`❌ Component "${componentName}" not found in registry.`);
+    console.error(`   Searched in: ${jsonPath}`);
     return;
   }
 
   const componentMeta = JSON.parse(fs.readFileSync(jsonPath, "utf-8"));
 
-  // 1. Create component destination folder
+  // 1. Prepare Destination (e.g., src/app/components/ui/button)
   const destPath = path.join(
     targetPath,
     "src",
@@ -73,46 +95,39 @@ export async function addComponent(componentName: string, targetPath: string) {
     });
 
     if (!shouldOverwrite) {
-      console.log("❌ Aborted.");
+      console.log("👋 Aborted.");
       return;
     }
   } else {
-    // Make sure to create the folder if it's the first time
     fs.mkdirSync(destPath, { recursive: true });
   }
 
-  // 2. Copy component files
+  // 2. Copy Registry Files to Project
   componentMeta.files.forEach((file: string) => {
-    const src = path.join(registryPath, componentName, file);
+    const src = path.join(componentDir, file);
     const dest = path.join(destPath, file.replace(".template", ""));
 
     if (fs.existsSync(src)) {
       fs.copyFileSync(src, dest);
     } else {
-      console.error(`❌ Source file not found: ${src}`);
+      console.error(`❌ Source file missing: ${src}`);
     }
   });
 
-  const mainFile = componentMeta.files
-    .find(
-      (f: string) =>
-        f.includes(".directive") ||
-        f.includes(".component") ||
-        f.includes(".ts"),
-    )
-    .replace(".template", "");
+  // 3. Format Import Path for Success Message
+  const mainFile =
+    componentMeta.files
+      .find((f: string) => f.match(/\.(component|directive|ts)\.template$/))
+      ?.replace(".template", "") || "";
 
-  const displayPath = `./src/app/components/${componentMeta.destination}/${mainFile.replace(".ts", "")}`;
+  const displayPath = `./src/app/components/ui/${componentName}/${mainFile.replace(".ts", "")}`;
 
   console.log(`\n✅ ${componentName} added successfully!`);
   console.log(`👉 Import this in your component or module:`);
-  if (Array.isArray(componentMeta.primaryExport)) {
-    console.log(
-      `   import { ${componentMeta.primaryExport.join(", ")} } from '${displayPath}';`,
-    );
-  } else {
-    console.log(
-      `   import { ${componentMeta.primaryExport} } from '${displayPath}';`,
-    );
-  }
+
+  const exports = Array.isArray(componentMeta.primaryExport)
+    ? componentMeta.primaryExport.join(", ")
+    : componentMeta.primaryExport;
+
+  console.log(`   import { ${exports} } from '${displayPath}';\n`);
 }

@@ -144,7 +144,7 @@ export async function init() {
     // setupTsConfigPaths(root);
 
     console.log("\n✅ Lumina initialized successfully!");
-    console.log("👉 Next: Run 'npx lumina add button'");
+    console.log("👉 Next: Run 'npx luminacn add button'");
     console.log(
       '🎨 Tip: Wrap your app in <body class="dark"> to test dark mode.',
     );
