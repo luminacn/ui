@@ -1,12 +1,35 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { confirm } from "@inquirer/prompts";
+import { execSync } from "child_process";
 
 // Recreating __dirname for ES Modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-export function addComponent(componentName: string, targetPath: string) {
+function checkPeerDeps(root: string) {
+  const pkgPath = path.join(root, "package.json");
+  if (!fs.existsSync(pkgPath)) return;
+
+  const pkg = JSON.parse(fs.readFileSync(pkgPath, "utf-8"));
+  const deps = { ...pkg.dependencies, ...pkg.devDependencies };
+
+  const required = ["clsx", "tailwind-merge"];
+  const missing = required.filter((d) => !deps[d]);
+
+  if (missing.length > 0) {
+    console.log(`📦 Installing missing dependencies: ${missing.join(", ")}...`);
+    // Use --save to ensure they go into dependencies
+    execSync(`npm install ${missing.join(" ")}`, {
+      cwd: root,
+      stdio: "inherit",
+    });
+  }
+}
+
+export async function addComponent(componentName: string, targetPath: string) {
+  checkPeerDeps(targetPath);
   // Resolve registry path from the dist/ folder
   const registryPath = path.join(
     __dirname,
@@ -43,7 +66,18 @@ export function addComponent(componentName: string, targetPath: string) {
     componentName,
   );
 
-  if (!fs.existsSync(destPath)) {
+  if (fs.existsSync(destPath)) {
+    const shouldOverwrite = await confirm({
+      message: `Component "${componentName}" already exists. Overwrite?`,
+      default: false,
+    });
+
+    if (!shouldOverwrite) {
+      console.log("❌ Aborted.");
+      return;
+    }
+  } else {
+    // Make sure to create the folder if it's the first time
     fs.mkdirSync(destPath, { recursive: true });
   }
 

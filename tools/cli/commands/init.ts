@@ -3,6 +3,7 @@ import path from "path";
 import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 import { select } from "@inquirer/prompts";
+import { setupTsConfigPaths } from "../utils/tsconfig.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,6 +20,19 @@ function ensureAngular(root: string) {
     process.exit(1);
   }
   console.log("✔ Angular project detected");
+}
+
+// Helper to check if git is clean
+function isGitClean(): boolean {
+  try {
+    const status = execSync("git status --porcelain", {
+      stdio: "pipe",
+    }).toString();
+    return status.trim() === "";
+  } catch (e) {
+    // If not a git repo, assume it's "clean" for our purposes
+    return true;
+  }
 }
 
 function createCore(root: string) {
@@ -101,17 +115,37 @@ async function setupTailwind(root: string) {
 
 export async function init() {
   const root = process.cwd();
+  const args = process.argv.slice(2);
+  const isForce = args.includes("--force") || args.includes("-f");
   console.log("🚀 Initializing Lumina UI...\n");
+
+  // 1. Git Safety Check
+  if (!isGitClean() && !isForce) {
+    console.warn("⚠️  You have uncommitted changes in your repository.");
+    console.warn(
+      "   It is recommended to commit or stash them before proceeding to avoid losing work.",
+    );
+    console.log("   (Use --force to skip this check)\n");
+
+    // We exit here to let the user handle their git state
+    process.exit(1);
+  }
 
   ensureAngular(root);
   try {
     await setupTailwind(root);
     createCore(root);
+
+    setupTsConfigPaths(root);
+
     console.log("\n✅ Lumina initialized successfully!");
-    console.log("👉 Run: npx lumina add <component>");
+    console.log("👉 Next: Run 'npx lumina add button'");
+    console.log(
+      '🎨 Tip: Wrap your app in <body class="dark"> to test dark mode.',
+    );
   } catch (error: any) {
     // Check if it's an Inquirer cancellation
-    if (error.name === "ExitPromptError") {
+    if (error.name === "ExitPromptError" || error.message.includes("SIGINT")) {
       console.log("\n\n👋 Setup cancelled by user.");
       process.exit(0);
     }

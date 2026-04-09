@@ -1,4 +1,4 @@
-import { cva } from "../../../lib/cva";
+import { cva } from "@/lib/cva";
 import type { ButtonVariant, ButtonSize } from "./button.types";
 
 type ButtonOptions = {
