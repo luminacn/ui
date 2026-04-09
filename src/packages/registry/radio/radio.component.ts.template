@@ -1,95 +1,77 @@
-import { 
-  Component, 
-  Input, 
-  Output, 
-  EventEmitter, 
-  forwardRef, 
-  ChangeDetectorRef, 
-  ContentChildren, 
-  QueryList, 
-  AfterContentInit 
-} from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { cn } from "../../../lib/cn";
+import { Component, Input, forwardRef, ChangeDetectorRef, inject } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { cn } from '../../../lib/cn';
 
+/**
+ * Parent Component: Radio Group
+ */
 @Component({
-  selector: "lumina-radio-group",
+  selector: 'lumina-radio-group',
   standalone: true,
-  providers: [{
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => LuminaRadioGroupComponent),
-    multi: true
-  }],
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => LuminaRadioGroupComponent),
+      multi: true,
+    },
+  ],
   template: `
     <div [class]="cn('grid gap-2', userClass)" role="radiogroup">
       <ng-content></ng-content>
     </div>
-  `
+  `,
 })
-export class LuminaRadioGroupComponent implements ControlValueAccessor, AfterContentInit {
-  @Input("class") userClass = "";
-  
-  @ContentChildren(forwardRef(() => LuminaRadioItemComponent), { descendants: true }) 
-  items!: QueryList<LuminaRadioItemComponent>;
+export class LuminaRadioGroupComponent implements ControlValueAccessor {
+  @Input('class') userClass = '';
 
-  private value: any;
-  private disabled = false;
+  value: any;
+  disabled = false;
+
   protected cn = cn;
-
   private onChange = (_: any) => {};
   private onTouched = () => {};
 
   constructor(private cdr: ChangeDetectorRef) {}
-
-  ngAfterContentInit() {
-    this.updateChildren();
-    this.items.changes.subscribe(() => this.updateChildren());
-  }
-
-  private updateChildren() {
-    if (!this.items) return;
-    this.items.forEach(item => {
-      item.selected = item.value === this.value;
-      item.disabled = this.disabled;
-      
-      // Remove old listeners and add new one
-      item.select.removeAllListeners?.(); 
-      item.select.subscribe((val: any) => this.selectValue(val));
-    });
-    this.cdr.markForCheck();
-  }
 
   selectValue(val: any) {
     if (this.disabled) return;
     this.value = val;
     this.onChange(val);
     this.onTouched();
-    this.updateChildren();
+    this.cdr.markForCheck();
   }
 
-  writeValue(val: any) { 
-    this.value = val; 
-    this.updateChildren(); 
+  // --- ControlValueAccessor Implementation ---
+  writeValue(val: any) {
+    this.value = val;
+    this.cdr.markForCheck();
   }
-  registerOnChange(fn: any) { this.onChange = fn; }
-  registerOnTouched(fn: any) { this.onTouched = fn; }
-  setDisabledState(isDisabled: boolean) { 
-    this.disabled = isDisabled; 
-    this.updateChildren(); 
+  registerOnChange(fn: any) {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn: any) {
+    this.onTouched = fn;
+  }
+  setDisabledState(isDisabled: boolean) {
+    this.disabled = isDisabled;
+    this.cdr.markForCheck();
   }
 }
 
+/**
+ * Child Component: Radio Item
+ */
 @Component({
-  selector: "lumina-radio-item",
+  selector: 'lumina-radio-item',
   standalone: true,
   template: `
     <button
       type="button"
       role="radio"
       [attr.aria-checked]="selected"
-      [attr.disabled]="disabled || null"
+      [disabled]="disabled || radioGroup.disabled"
       [class]="computedClass"
-      (click)="select.emit(value)"
+      (click)="onClick()"
     >
       @if (selected) {
         <span class="flex items-center justify-center">
@@ -97,21 +79,29 @@ export class LuminaRadioGroupComponent implements ControlValueAccessor, AfterCon
         </span>
       }
     </button>
-  `
+  `,
 })
 export class LuminaRadioItemComponent {
+  // Inject parent to establish communication link
+  protected radioGroup = inject(LuminaRadioGroupComponent);
+
   @Input() value: any;
   @Input() disabled = false;
-  @Input("class") userClass = "";
-  
-  @Output() select = new EventEmitter<any>();
-  selected = false;
+  @Input('class') userClass = '';
+
+  get selected(): boolean {
+    return this.radioGroup.value === this.value;
+  }
+
+  onClick() {
+    this.radioGroup.selectValue(this.value);
+  }
 
   get computedClass() {
     return cn(
-      "aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-      this.selected ? "bg-primary text-primary-foreground" : "bg-transparent",
-      this.userClass
+      'aspect-square h-4 w-4 rounded-full border border-primary text-primary shadow focus:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50',
+      this.selected ? 'bg-primary text-primary-foreground' : 'bg-transparent',
+      this.userClass,
     );
   }
 }

@@ -1,22 +1,26 @@
-import { Component, Input } from "@angular/core";
-import { cn } from "../../../lib/cn";
+import { Component, Input } from '@angular/core';
+import { cn } from '../../../lib/cn';
 
 @Component({
-  selector: "lumina-skeleton",
+  selector: 'lumina-skeleton',
   standalone: true,
   template: ``,
+  styles: [
+    `
+      :host {
+        display: block; /* Essential to show empty elements with fixed dimensions */
+      }
+    `,
+  ],
   host: {
-    "[class]": "computedClass",
+    '[class]': 'computedClass',
   },
 })
 export class LuminaSkeletonComponent {
   /** Static classes like <lumina-skeleton class="h-12 w-12 rounded-full"> */
-  @Input("class") userClass: string = "";
+  @Input('class') userClass: string = '';
 
   get computedClass() {
-    return cn(
-      "animate-pulse rounded-md bg-primary/10",
-      this.userClass
-    );
+    return cn('animate-pulse rounded-md bg-primary/10', this.userClass);
   }
 }
