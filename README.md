@@ -70,9 +70,9 @@ Button · Input · Label · Card · Badge · Checkbox · Switch · Radio · Sepa
 
 ## 🔮 Roadmap
 
-**v1** – Core components, CLI, Tailwind v4
-**v2** – Dialog / Popover / Tooltip, Dropdown / Select, Toast
-**v3** – Data table, Date picker, Theming system
+- **v1** – Core components, CLI, Tailwind v4
+- **v2** – Dialog / Popover / Tooltip, Dropdown / Select, Toast
+- **v3** – Data table, Date picker, Theming system
 
 ---
 
