@@ -129,13 +129,3 @@ src/
 
 > Copy-paste UI for Angular. Inspired by **shadcn/ui**.
 > Generate, customize, and own your UI—no compromises.
-
----
-
-This version is **perfect for npm**:
-
-- Minimal, scannable for new users
-- Includes badges, quick install, usage snippet
-- Highlights features, philosophy, and comparison
-- Shows components and project structure
-- Roadmap included for clarity on future development
