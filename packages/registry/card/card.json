@@ -1,0 +1,13 @@
+{
+  "name": "card",
+  "destination": "ui/card",
+  "primaryExport": [
+    "CardComponent",
+    "CardHeaderComponent",
+    "CardTitleComponent",
+    "CardDescriptionComponent",
+    "CardContentComponent",
+    "CardFooterComponent"
+  ],
+  "files": ["card.component.ts.template"]
+}

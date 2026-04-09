@@ -106,7 +106,13 @@ export async function addComponent(componentName: string, targetPath: string) {
 
   console.log(`\n✅ ${componentName} added successfully!`);
   console.log(`👉 Import this in your component or module:`);
-  console.log(
-    `   import { ${componentMeta.primaryExport} } from '${displayPath}';`,
-  );
+  if (Array.isArray(componentMeta.primaryExport)) {
+    console.log(
+      `   import { ${componentMeta.primaryExport.join(", ")} } from '${displayPath}';`,
+    );
+  } else {
+    console.log(
+      `   import { ${componentMeta.primaryExport} } from '${displayPath}';`,
+    );
+  }
 }

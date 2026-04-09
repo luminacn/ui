@@ -1,0 +1,86 @@
+import { Component, Input } from "@angular/core";
+import { cn } from "../../../lib/cn";
+
+@Component({
+  selector: "lumina-card",
+  standalone: true,
+  template: `
+    <div [class]="cn('rounded-xl border bg-card text-card-foreground shadow', userClass)">
+      <ng-content></ng-content>
+    </div>
+  `,
+})
+export class LuminaCardComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
+
+@Component({
+  selector: "lumina-card-header",
+  standalone: true,
+  template: `
+    <div [class]="cn('flex flex-col space-y-1.5 p-6', userClass)">
+      <ng-content></ng-content>
+    </div>
+  `,
+})
+export class LuminaCardHeaderComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
+
+@Component({
+  selector: "lumina-card-title",
+  standalone: true,
+  template: `
+    <h3 [class]="cn('font-semibold leading-none tracking-tight', userClass)">
+      <ng-content></ng-content>
+    </h3>
+  `,
+})
+export class LuminaCardTitleComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
+
+@Component({
+  selector: "lumina-card-description",
+  standalone: true,
+  template: `
+    <p [class]="cn('text-sm text-muted-foreground', userClass)">
+      <ng-content></ng-content>
+    </p>
+  `,
+})
+export class LuminaCardDescriptionComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
+
+@Component({
+  selector: "lumina-card-content",
+  standalone: true,
+  template: `
+    <div [class]="cn('p-6 pt-0', userClass)">
+      <ng-content></ng-content>
+    </div>
+  `,
+})
+export class LuminaCardContentComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
+
+@Component({
+  selector: "lumina-card-footer",
+  standalone: true,
+  template: `
+    <div [class]="cn('flex items-center p-6 pt-0', userClass)">
+      <ng-content></ng-content>
+    </div>
+  `,
+})
+export class LuminaCardFooterComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}
