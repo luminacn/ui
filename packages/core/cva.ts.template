@@ -1,0 +1,44 @@
+type VariantConfig = Record<string, Record<string, string>>;
+
+type CVAOptions = {
+  variants?: VariantConfig;
+  defaultVariants?: Record<string, string>;
+  compoundVariants?: Array<{
+    class: string;
+    [key: string]: string;
+  }>;
+};
+
+export function cva(base: string, options?: CVAOptions) {
+  return (props: Record<string, string> = {}) => {
+    const {
+      variants = {},
+      defaultVariants = {},
+      compoundVariants = [],
+    } = options || {};
+
+    const classes = [base];
+
+    const resolved = { ...defaultVariants, ...props };
+
+    // variants
+    for (const key in variants) {
+      const value = resolved[key];
+      if (value && variants[key][value]) {
+        classes.push(variants[key][value]);
+      }
+    }
+
+    // compound variants
+    compoundVariants.forEach((cv) => {
+      const match = Object.entries(cv).every(([key, val]) => {
+        if (key === "class") return true;
+        return resolved[key] === val;
+      });
+
+      if (match) classes.push(cv.class);
+    });
+
+    return classes.join(" ");
+  };
+}

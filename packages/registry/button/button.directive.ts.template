@@ -1,0 +1,48 @@
+import {
+  Directive,
+  Input,
+  ElementRef,
+  Renderer2,
+  OnChanges,
+} from "@angular/core";
+import { buttonVariants } from "./button.variants";
+import { cn } from "../../../lib/cn";
+import { ButtonVariant, ButtonSize } from "./button.types";
+
+@Directive({
+  selector: "[ngButton]",
+  standalone: true,
+})
+export class NgButtonDirective implements OnChanges {
+  @Input() variant: ButtonVariant = "default";
+  @Input() size: ButtonSize = "md";
+  @Input() disabled: boolean = false;
+
+  constructor(
+    private el: ElementRef,
+    private renderer: Renderer2,
+  ) {}
+
+  ngOnChanges() {
+    this.apply();
+  }
+
+  private apply() {
+    const base = buttonVariants({
+      variant: this.variant,
+      size: this.size,
+    });
+
+    const state = this.disabled ? "opacity-50 pointer-events-none" : "";
+
+    const user = this.el.nativeElement.className;
+
+    const finalClass = cn(base, state, user);
+
+    this.renderer.setAttribute(this.el.nativeElement, "class", finalClass);
+
+    if (this.disabled) {
+      this.renderer.setAttribute(this.el.nativeElement, "disabled", "true");
+    }
+  }
+}

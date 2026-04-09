@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",
+    "rootDir": ".",
+    "rewriteRelativeImportExtensions": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": false
+  },
+  "include": ["tools/cli/**/*"],
+  "exclude": [
+    "packages/**/*",
+    "node_modules",
+    "packages/registry/**/*.ts.template"
+  ]
+}
