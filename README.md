@@ -39,10 +39,13 @@ Display: Badge · Label
 
 ## Usage Example
 
+```html
 <lumina-card class="w-[350px]">
   <lumina-card-header>
     <lumina-card-title>Account Settings</lumina-card-title>
-    <lumina-card-description>Update your profile and preferences.</lumina-card-description>
+    <lumina-card-description
+      >Update your profile and preferences.</lumina-card-description
+    >
   </lumina-card-header>
 
   <lumina-card-content class="grid gap-4">
@@ -55,7 +58,9 @@ Display: Badge · Label
     <!-- Checkbox Component -->
     <div class="flex items-center gap-2">
       <lumina-checkbox id="notifications" [(ngModel)]="emailNotify" />
-      <label for="notifications" class="text-sm">Enable email notifications</label>
+      <label for="notifications" class="text-sm"
+        >Enable email notifications</label
+      >
     </div>
 
     <!-- Separator Component -->
@@ -63,18 +68,18 @@ Display: Badge · Label
 
     <!-- Skeleton (Loading State) -->
     @if (isSyncing) {
-      <div class="flex items-center gap-2">
-        <lumina-skeleton class="h-4 w-4 rounded-full" />
-        <lumina-skeleton class="h-4 w-[100px]" />
-      </div>
+    <div class="flex items-center gap-2">
+      <lumina-skeleton class="h-4 w-4 rounded-full" />
+      <lumina-skeleton class="h-4 w-[100px]" />
+    </div>
     }
-
   </lumina-card-content>
 
   <lumina-card-footer>
     <button luminaButton class="w-full">Save Changes</button>
   </lumina-card-footer>
 </lumina-card>
+```
 
 ---
 
@@ -102,9 +107,9 @@ Display: Badge · Label
 
 ## 🔮 Roadmap
 
-- **v1** – Core components, CLI, Tailwind v4
-- **v2** – Dialog / Popover / Tooltip, Dropdown / Select, Toast
-- **v3** – Data table, Date picker, Theming system
+- v1.0 (Core) – Standardize Directives & Components, Signals-based state, and Full CVA (Control Value Accessor) support for all form elements.
+- v2.0 (Overlays) – Implement Angular CDK for accessible Dialogs, Popovers, Tooltips, and Select menus with smart positioning.
+- v3.0 (Advanced) – High-performance Data Table with sorting/filtering, Signal-based Theming System, and Accessible Date Pickers.
 
 ---
 
