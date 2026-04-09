@@ -1,0 +1,16 @@
+import { Component, Input } from "@angular/core";
+import { cn } from "../../../lib/cn";
+
+@Component({
+  selector: "lumina-input-group",
+  standalone: true,
+  template: `
+    <div [class]="cn('relative flex items-center w-full', userClass)">
+      <ng-content></ng-content>
+    </div>
+  `,
+})
+export class LuminaInputGroupComponent {
+  @Input("class") userClass: string = "";
+  protected cn = cn;
+}

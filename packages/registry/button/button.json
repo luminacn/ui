@@ -1,7 +1,7 @@
 {
   "name": "button",
   "destination": "ui/button",
-  "primaryExport": "ButtonDirective",
+  "primaryExport": "LuminaButtonDirective",
   "files": [
     "button.directive.ts.template",
     "button.variants.ts.template",

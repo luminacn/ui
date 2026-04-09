@@ -1,0 +1,33 @@
+import { Directive, Input } from "@angular/core";
+import { cn } from "../../../lib/cn";
+
+@Directive({
+  selector: "input[luminaInput], textarea[luminaInput]",
+  standalone: true,
+  host: {
+    "[class]": "computedClass",
+    "[attr.aria-invalid]": "error",
+  },
+})
+export class LuminaInputDirective {
+  @Input() error: boolean = false;
+  @Input() hasStartIcon: boolean = false;
+  @Input() hasEndIcon: boolean = false;
+  @Input("class") userClass: string = "";
+
+  get computedClass() {
+    return cn(
+      // Base shadcn styles (added 'peer' for label interaction)
+      "peer flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+      
+      // Error State
+      this.error && "border-destructive focus-visible:ring-destructive",
+      
+      // Icon Spacing
+      this.hasStartIcon && "pl-10",
+      this.hasEndIcon && "pr-10",
+      
+      this.userClass
+    );
+  }
+}

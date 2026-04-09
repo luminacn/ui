@@ -1,2 +1,2 @@
-export type ButtonVariant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
-export type ButtonSize = 'default' | 'sm' | 'lg' | 'icon';
+export type LuminaButtonVariant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+export type LuminaButtonSize = 'default' | 'sm' | 'lg' | 'icon';

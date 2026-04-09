@@ -1,10 +1,10 @@
 import { Directive, Input } from "@angular/core";
-import { buttonVariants } from "./button.variants";
+import { luminaButtonVariants } from "./button.variants";
 import { cn } from "../../../lib/cn";
-import { ButtonVariant, ButtonSize } from "./button.types";
+import { LuminaButtonVariant, LuminaButtonSize } from "./button.types";
 
 @Directive({
-  selector: "button[ngButton], a[ngButton]",
+  selector: "button[luminaButton], a[luminaButton]",
   standalone: true,
   host: {
     // [class] binding automatically re-evaluates when inputs change
@@ -13,20 +13,20 @@ import { ButtonVariant, ButtonSize } from "./button.types";
     "[attr.aria-disabled]": "disabled",
   },
 })
-export class NgButtonDirective {
-  @Input() variant: ButtonVariant = "default";
-  @Input() size: ButtonSize = "default";
+class LuminaButtonDirective {
+  @Input() variant: LuminaButtonVariant = "default";
+  @Input() size: LuminaButtonSize = "default";
   @Input() disabled: boolean = false;
 
   /** 
    * Captures any static classes added directly to the element 
-   * (e.g. <button ngButton class="mt-4">)
+   * (e.g. <button luminaButton class="mt-4">)
    */
   @Input("class") userClass: string = "";
 
   get computedClass() {
     return cn(
-      buttonVariants({
+      luminaButtonVariants({
         variant: this.variant,
         size: this.size,
       }),
