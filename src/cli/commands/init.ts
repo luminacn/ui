@@ -8,11 +8,16 @@ import { select } from "@inquirer/prompts";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isDist = __dirname.includes(path.join("dist", "cli", "commands"));
+
+const distRoot = isDist
+  ? path.join(__dirname, "..", "..") // Go up to dist/
+  : path.join(__dirname, "..", "..", ".."); // Go up to project root in dev
+
 // Helpers to find package templates from dist
-const getCoreSourcePath = () =>
-  path.join(__dirname, "..", "..", "..", "..", "packages", "core");
-const getThemeSourcePath = () =>
-  path.join(__dirname, "..", "..", "..", "..", "packages", "themes");
+const getCoreSourcePath = () => path.join(distRoot, "packages", "core");
+
+const getThemeSourcePath = () => path.join(distRoot, "packages", "themes");
 
 function ensureAngular(root: string) {
   if (!fs.existsSync(path.join(root, "angular.json"))) {
