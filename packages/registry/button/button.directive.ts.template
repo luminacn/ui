@@ -1,48 +1,36 @@
-import {
-  Directive,
-  Input,
-  ElementRef,
-  Renderer2,
-  OnChanges,
-} from "@angular/core";
+import { Directive, Input } from "@angular/core";
 import { buttonVariants } from "./button.variants";
 import { cn } from "../../../lib/cn";
 import { ButtonVariant, ButtonSize } from "./button.types";
 
 @Directive({
-  selector: "[ngButton]",
+  selector: "button[ngButton], a[ngButton]",
   standalone: true,
+  host: {
+    // [class] binding automatically re-evaluates when inputs change
+    "[class]": "computedClass",
+    "[attr.disabled]": "disabled || null",
+    "[attr.aria-disabled]": "disabled",
+  },
 })
-export class NgButtonDirective implements OnChanges {
+export class NgButtonDirective {
   @Input() variant: ButtonVariant = "default";
-  @Input() size: ButtonSize = "md";
+  @Input() size: ButtonSize = "default";
   @Input() disabled: boolean = false;
 
-  constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
-  ) {}
+  /** 
+   * Captures any static classes added directly to the element 
+   * (e.g. <button ngButton class="mt-4">)
+   */
+  @Input("class") userClass: string = "";
 
-  ngOnChanges() {
-    this.apply();
-  }
-
-  private apply() {
-    const base = buttonVariants({
-      variant: this.variant,
-      size: this.size,
-    });
-
-    const state = this.disabled ? "opacity-50 pointer-events-none" : "";
-
-    const user = this.el.nativeElement.className;
-
-    const finalClass = cn(base, state, user);
-
-    this.renderer.setAttribute(this.el.nativeElement, "class", finalClass);
-
-    if (this.disabled) {
-      this.renderer.setAttribute(this.el.nativeElement, "disabled", "true");
-    }
+  get computedClass() {
+    return cn(
+      buttonVariants({
+        variant: this.variant,
+        size: this.size,
+      }),
+      this.userClass
+    );
   }
 }

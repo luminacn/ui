@@ -1,10 +1,11 @@
 {
   "name": "button",
+  "destination": "ui/button",
+  "primaryExport": "ButtonDirective",
   "files": [
     "button.directive.ts.template",
     "button.variants.ts.template",
     "button.types.ts.template"
   ],
-  "coreDependencies": ["cva.ts.template", "cn.ts.template"],
-  "destination": "src/app/components/ui/button"
+  "coreDependencies": ["cva.ts.template", "cn.ts.template"]
 }
