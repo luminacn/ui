@@ -1,0 +1,6 @@
+{
+  "name": "radio",
+  "destination": "ui/radio",
+  "primaryExport": ["LuminaRadioGroupComponent", "LuminaRadioItemComponent"],
+  "files": ["radio.component.ts.template"]
+}
