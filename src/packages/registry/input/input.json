@@ -1,10 +1,15 @@
 {
   "name": "input",
   "destination": "ui/input",
-  "primaryExport": "LuminaInputDirective",
+  "primaryExport": [
+    "LuminaInputDirective",
+    "LuminaInputGroupComponent",
+    "LuminaInputIconDirective"
+  ],
   "files": [
     "input.directive.ts.template",
     "input-group.component.ts.template",
-    "label.directive.ts.template"
+    "label.directive.ts.template",
+    "input-icon.directive.ts.template"
   ]
 }
