@@ -114,20 +114,5 @@ export async function addComponent(componentName: string, targetPath: string) {
     }
   });
 
-  // 3. Format Import Path for Success Message
-  const mainFile =
-    componentMeta.files
-      .find((f: string) => f.match(/\.(component|directive|ts)\.template$/))
-      ?.replace(".template", "") || "";
-
-  const displayPath = `./src/app/components/ui/${componentName}/${mainFile.replace(".ts", "")}`;
-
   console.log(`\n✅ ${componentName} added successfully!`);
-  console.log(`👉 Import this in your component or module:`);
-
-  const exports = Array.isArray(componentMeta.primaryExport)
-    ? componentMeta.primaryExport.join(", ")
-    : componentMeta.primaryExport;
-
-  console.log(`   import { ${exports} } from '${displayPath}';\n`);
 }
