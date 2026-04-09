@@ -4,7 +4,7 @@
   "bin": {
     "luminacn": "./dist/cli/index.js"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Copy-paste UI for Angular",
   "main": "index.js",
   "scripts": {
