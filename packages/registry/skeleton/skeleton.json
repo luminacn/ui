@@ -1,0 +1,6 @@
+{
+  "name": "skeleton",
+  "destination": "ui/skeleton",
+  "primaryExport": "LuminaSkeletonComponent",
+  "files": ["skeleton.component.ts.template"]
+}
