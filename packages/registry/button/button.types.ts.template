@@ -1,8 +1,2 @@
-export type ButtonVariant =
-  | "default"
-  | "destructive"
-  | "outline"
-  | "secondary"
-  | "ghost"
-  | "link";
-export type ButtonSize = "sm" | "md" | "lg";
+export type ButtonVariant = 'default' | 'destructive' | 'outline' | 'secondary' | 'ghost' | 'link';
+export type ButtonSize = 'default' | 'sm' | 'lg' | 'icon';
