@@ -1,0 +1,27 @@
+import { Component, Input } from "@angular/core";
+import { badgeVariants } from "./badge.variants";
+import { cn } from "../../../lib/cn";
+import { LuminaBadgeVariant } from "./badge.types";
+
+@Component({
+  selector: "lumina-badge",
+  standalone: true,
+  // We keep the template empty because the styles are applied to the host element
+  template: `<ng-content></ng-content>`,
+  host: {
+    "[class]": "computedClass",
+  },
+})
+export class LuminaBadgeComponent {
+  @Input() variant: LuminaBadgeVariant = "default";
+  
+  /** Captures any static classes like <lumina-badge class="mt-2"> */
+  @Input("class") userClass: string = "";
+
+  get computedClass() {
+    return cn(
+      badgeVariants({ variant: this.variant }), 
+      this.userClass
+    );
+  }
+}

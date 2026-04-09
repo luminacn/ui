@@ -1,0 +1,10 @@
+{
+  "name": "badge",
+  "destination": "ui/badge",
+  "primaryExport": "LuminaBadgeComponent",
+  "files": [
+    "badge.component.ts.template",
+    "badge.variants.ts.template",
+    "badge.types.ts.template"
+  ]
+}

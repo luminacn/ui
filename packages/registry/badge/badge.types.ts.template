@@ -1,0 +1,1 @@
+export type LuminaBadgeVariant = "default" | "secondary" | "destructive" | "outline";
