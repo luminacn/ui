@@ -30,4 +30,7 @@ export class LuminaInputDirective {
       this.userClass
     );
   }
+  focus() {
+    this.el.nativeElement.focus();
+  }
 }
