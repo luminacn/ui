@@ -33,16 +33,48 @@ npx luminacn add button
 
 ## 🎨 Components
 
-Button · Input · Label · Card · Badge · Checkbox · Switch · Radio · Separator · Skeleton
+Layout: Card · Separator · Skeleton
+Forms: Button · Input · Checkbox · Switch · Radio Group
+Display: Badge · Label
 
-```html
-<lumina-card>
-  <lumina-card-content>
-    <input luminaInput />
-    <button luminaButton>Submit</button>
+## Usage Example
+
+<lumina-card class="w-[350px]">
+  <lumina-card-header>
+    <lumina-card-title>Account Settings</lumina-card-title>
+    <lumina-card-description>Update your profile and preferences.</lumina-card-description>
+  </lumina-card-header>
+
+  <lumina-card-content class="grid gap-4">
+    <!-- Input Directive -->
+    <div class="grid gap-2">
+      <label luminaLabel>Username</label>
+      <input luminaInput placeholder="johndoe" />
+    </div>
+
+    <!-- Checkbox Component -->
+    <div class="flex items-center gap-2">
+      <lumina-checkbox id="notifications" [(ngModel)]="emailNotify" />
+      <label for="notifications" class="text-sm">Enable email notifications</label>
+    </div>
+
+    <!-- Separator Component -->
+    <lumina-separator />
+
+    <!-- Skeleton (Loading State) -->
+    @if (isSyncing) {
+      <div class="flex items-center gap-2">
+        <lumina-skeleton class="h-4 w-4 rounded-full" />
+        <lumina-skeleton class="h-4 w-[100px]" />
+      </div>
+    }
+
   </lumina-card-content>
+
+  <lumina-card-footer>
+    <button luminaButton class="w-full">Save Changes</button>
+  </lumina-card-footer>
 </lumina-card>
-```
 
 ---
 
