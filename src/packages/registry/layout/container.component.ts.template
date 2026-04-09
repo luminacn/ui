@@ -1,0 +1,18 @@
+import { Component, Input } from '@angular/core';
+import { cn } from '../../../lib/cn';
+
+@Component({
+  selector: 'lumina-container',
+  standalone: true,
+  template: `<ng-content></ng-content>`,
+  host: {
+    '[class]': 'computedClass',
+  },
+})
+export class LuminaContainerComponent {
+  @Input('class') userClass = '';
+
+  get computedClass() {
+    return cn('container mx-auto px-4 md:px-6 lg:px-8', this.userClass);
+  }
+}

@@ -1,0 +1,26 @@
+import { Component, Input } from '@angular/core';
+
+@Component({
+  selector: 'lumina-aspect-ratio',
+  standalone: true,
+  template: `
+    <div [style.padding-bottom]="(1 / ratio) * 100 + '%'" class="relative w-full">
+      <div
+        class="absolute inset-0 [&>img]:object-cover [&>video]:object-cover [&>img]:w-full [&>img]:h-full"
+      >
+        <ng-content></ng-content>
+      </div>
+    </div>
+  `,
+  styles: [
+    `
+      :host {
+        display: block;
+        width: 100%;
+      }
+    `,
+  ],
+})
+export class LuminaAspectRatioComponent {
+  @Input() ratio: number = 1;
+}
