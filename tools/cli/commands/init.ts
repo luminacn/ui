@@ -104,9 +104,21 @@ export async function init() {
   console.log("🚀 Initializing Lumina UI...\n");
 
   ensureAngular(root);
-  await setupTailwind(root); // Now async
-  createCore(root);
+  try {
+    await setupTailwind(root);
+    createCore(root);
+    console.log("\n✅ Lumina initialized successfully!");
+    console.log("👉 Run: npx lumina add <component>");
+  } catch (error: any) {
+    // Check if it's an Inquirer cancellation
+    if (error.name === "ExitPromptError") {
+      console.log("\n\n👋 Setup cancelled by user.");
+      process.exit(0);
+    }
 
-  console.log("\n✅ Lumina initialized successfully!");
-  console.log("👉 Run: npx lumina add <component>");
+    // Otherwise, log the actual error
+    console.error("\n❌ An error occurred during initialization:");
+    console.error(error.message);
+    process.exit(1);
+  }
 }
