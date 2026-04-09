@@ -1,7 +1,9 @@
 # 🚀 luminacn/ui
 
-**Copy-paste UI for Angular**
-Beautiful, accessible components you actually own. Built for **Angular 19+** and **Tailwind CSS v4**.
+### Clean & shadcn-style
+
+**Copy-paste UI for Angular.**
+Beautiful, accessible, and customizable components you fully own — built for **Angular 19+** and **Tailwind CSS v4**.
 
 [![npm version](https://img.shields.io/npm/v/luminacn)](https://www.npmjs.com/package/luminacn) [![license](https://img.shields.io/npm/l/luminacn)](https://github.com/luminacn/ui/blob/main/LICENSE)
 
