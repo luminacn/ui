@@ -6,7 +6,7 @@ import {
   OnChanges,
 } from "@angular/core";
 import { buttonVariants } from "./button.variants";
-import { cn } from "@/lib/cn";
+import { cn } from "../../../lib/cn";
 import { ButtonVariant, ButtonSize } from "./button.types";
 
 @Directive({

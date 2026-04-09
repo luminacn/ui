@@ -3,7 +3,7 @@ import path from "path";
 import { execSync } from "child_process";
 import { fileURLToPath } from "url";
 import { select } from "@inquirer/prompts";
-import { setupTsConfigPaths } from "../utils/tsconfig.js";
+// import { setupTsConfigPaths } from "../utils/tsconfig.js";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -136,7 +136,7 @@ export async function init() {
     await setupTailwind(root);
     createCore(root);
 
-    setupTsConfigPaths(root);
+    // setupTsConfigPaths(root);
 
     console.log("\n✅ Lumina initialized successfully!");
     console.log("👉 Next: Run 'npx lumina add button'");
