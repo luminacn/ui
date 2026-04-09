@@ -1,19 +1,25 @@
 {
-  "name": "lumina",
+  "name": "luminacn",
   "type": "module",
   "bin": {
-    "lumina": "node --import tsx tools/cli/index.ts"
+    "luminacn": "./dist/cli/index.ts"
   },
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "start": "tsx tools/cli/index.ts"
+    "start": "tsx tools/cli/index.ts",
+    "prepare": "npm run build"
   },
-  "keywords": [],
+  "keywords": [
+    "angular",
+    "ui",
+    "cli",
+    "tailwind"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@inquirer/prompts": "^8.4.1",
     "clsx": "^2.1.1",
