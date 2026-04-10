@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/luminacn/ui/compare/v1.2.0...v1.3.0) (2026-04-10)
+
+
+### Features
+
+* add new directives for breadcrumb, collapsible, scroll area, slider, and toggle group components ([fc39f7e](https://github.com/luminacn/ui/commit/fc39f7e43d0ea02e9afe9ae040c549dd4509e3ed))
+* add progress component and variants ([ea698ff](https://github.com/luminacn/ui/commit/ea698ff08a50c7a13545a5c0c5b13c17d4e8ec7a))
+
 # [1.2.0](https://github.com/luminacn/ui/compare/v1.1.3...v1.2.0) (2026-04-10)
 
 
