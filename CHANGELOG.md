@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/luminacn/ui/compare/v1.1.2...v1.1.3) (2026-04-10)
+
+
+### Bug Fixes
+
+* npm versioning and semantic release ([ca8e697](https://github.com/luminacn/ui/commit/ca8e6972a815457acffd66fe4a3b90dcb9ec5dde))
+
 ## [1.1.2](https://github.com/luminacn/ui/compare/v1.1.1...v1.1.2) (2026-04-09)
 
 
