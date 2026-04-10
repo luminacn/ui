@@ -1,0 +1,24 @@
+{
+  "name": "typography",
+  "destination": "ui/typography",
+  "primaryExport": [
+    "LuminaH1Directive",
+    "LuminaH2Directive",
+    "LuminaH3Directive",
+    "LuminaH4Directive",
+    "LuminaH5Directive",
+    "LuminaPDirective",
+    "LuminaBlockquoteDirective",
+    "LuminaCodeDirective",
+    "LuminaLeadDirective",
+    "LuminaLargeDirective",
+    "LuminaSmallDirective",
+    "LuminaUlDirective",
+    "LuminaOlDirective",
+    "LuminaTableDirective",
+    "LuminaThDirective",
+    "LuminaTdDirective",
+    "LuminaHrDirective"
+  ],
+  "files": ["typography.directive.ts.template"]
+}
