@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/luminacn/ui/compare/v1.1.3...v1.2.0) (2026-04-10)
+
+
+### Features
+
+* **registry:** add textarea and typography registry files ([6131024](https://github.com/luminacn/ui/commit/6131024b0c2891f0a87ad5e969ce906ee9f2d329))
+
 ## [1.1.3](https://github.com/luminacn/ui/compare/v1.1.2...v1.1.3) (2026-04-10)
 
 
