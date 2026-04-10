@@ -1,0 +1,10 @@
+{
+  "name": "spinner",
+  "destination": "ui/spinner",
+  "primaryExport": "LuminaSpinnerComponent",
+  "files": [
+    "spinner.component.ts.template",
+    "spinner.types.ts.template",
+    "spinner.variants.ts.template"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "label",
+  "destination": "ui/label",
+  "primaryExport": "LuminaLabelComponent",
+  "files": ["label.directive.ts.template"]
+}

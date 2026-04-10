@@ -1,0 +1,19 @@
+import { Directive, computed, input } from '@angular/core';
+import { badgeVariants } from './badge.variants';
+import { cn } from '../../../lib/cn';
+import { LuminaBadgeVariant } from './badge.types';
+
+@Directive({
+  selector: '[lmBadge]',
+  standalone: true,
+  host: {
+    '[class]': 'computedClass()',
+  },
+})
+export class LuminaBadgeDirective {
+  variant = input<LuminaBadgeVariant>('default', { alias: 'lmBadge' });
+
+  userClass = input<string>('', { alias: 'class' });
+
+  computedClass = computed(() => cn(badgeVariants({ variant: this.variant() }), this.userClass()));
+}

@@ -18,7 +18,14 @@
     "LuminaTableDirective",
     "LuminaThDirective",
     "LuminaTdDirective",
-    "LuminaHrDirective"
+    "LuminaHrDirective",
+    "LuminaMutedDirective"
   ],
-  "files": ["typography.directive.ts.template"]
+  "files": [
+    "headings.directive.ts.template",
+    "helpers.directive.ts.template",
+    "hr.directive.ts.template",
+    "list-table.directive.ts.template",
+    "text.directive.ts.template"
+  ]
 }

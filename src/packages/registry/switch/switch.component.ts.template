@@ -1,9 +1,9 @@
-import { Component, Input, ChangeDetectorRef, HostListener } from '@angular/core';
+import { Component, input, model, signal, computed, HostListener } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { cn } from '../../../lib/cn';
 
 @Component({
-  selector: 'lumina-switch',
+  selector: 'lm-switch',
   standalone: true,
   providers: [
     {
@@ -16,27 +16,35 @@ import { cn } from '../../../lib/cn';
     <button
       type="button"
       role="switch"
-      [attr.aria-checked]="checked"
-      [disabled]="disabled"
-      [attr.aria-label]="ariaLabel"
-      [class]="computedTrackClass"
+      [attr.aria-checked]="checked()"
+      [disabled]="isDisabled()"
+      [attr.aria-label]="ariaLabel()"
+      [class]="computedTrackClass()"
       (click)="toggle($event)"
       (blur)="onTouched()"
     >
-      <span [class]="computedThumbClass"></span>
+      <span [class]="computedThumbClass()"></span>
     </button>
   `,
 })
 export class LuminaSwitchComponent implements ControlValueAccessor {
-  @Input() checked = false;
-  @Input() disabled = false;
-  @Input() ariaLabel?: string;
-  @Input('class') userClass = '';
+  // Use model() for automatic two-way binding support
+  checked = model(false);
 
-  private onChange: (value: boolean) => void = () => {};
-  onTouched: () => void = () => {};
+  // Use input() for one-way properties
+  ariaLabel = input<string | undefined>(undefined, { alias: 'aria-label' });
+  userClass = input('', { alias: 'class' });
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  // Internal signal for form-controlled disabled state
+  private _disabled = signal(false);
+  // Input for manual disabled state
+  disabledInput = input(false, {
+    alias: 'disabled',
+    transform: (v: boolean | string) => (v === '' ? true : !!v),
+  });
+
+  // Combined disabled state
+  isDisabled = computed(() => this._disabled() || this.disabledInput());
 
   @HostListener('keydown', ['$event'])
   handleKeyDown(event: KeyboardEvent) {
@@ -46,47 +54,46 @@ export class LuminaSwitchComponent implements ControlValueAccessor {
     }
   }
 
-  get computedTrackClass() {
-    return cn(
-      'peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:cursor-not-allowed disabled:opacity-50',
-      this.checked ? 'bg-primary' : 'bg-input',
-      this.userClass,
-    );
-  }
+  protected computedTrackClass = computed(() =>
+    cn(
+      'peer inline-flex h-5 w-9 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent shadow-sm transition-colors',
+      'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background',
+      'disabled:cursor-not-allowed disabled:opacity-50',
+      this.checked() ? 'bg-primary' : 'bg-input',
+      this.userClass(),
+    ),
+  );
 
-  get computedThumbClass() {
-    return cn(
+  protected computedThumbClass = computed(() =>
+    cn(
       'pointer-events-none block h-4 w-4 rounded-full bg-background shadow-lg ring-0 transition-transform',
-      this.checked ? 'translate-x-4' : 'translate-x-0',
-    );
-  }
+      this.checked() ? 'translate-x-4' : 'translate-x-0',
+    ),
+  );
+
+  private onChange = (_: boolean) => {};
+  onTouched = () => {};
 
   toggle(event?: Event) {
-    if (this.disabled) return;
+    if (this.isDisabled()) return;
+    event?.stopPropagation();
 
-    event?.stopPropagation(); // Prevent accidental form submissions if inside a form
-
-    this.checked = !this.checked;
-    this.onChange(this.checked);
-    this.onTouched(); // Mark as 'touched' so validation triggers
-    this.cdr.markForCheck();
+    this.checked.update((v) => !v);
+    this.onChange(this.checked());
+    this.onTouched();
   }
 
+  // --- CVA Logic ---
   writeValue(value: any): void {
-    this.checked = !!value;
-    this.cdr.markForCheck();
+    this.checked.set(!!value);
   }
-
   registerOnChange(fn: any): void {
     this.onChange = fn;
   }
-
   registerOnTouched(fn: any): void {
     this.onTouched = fn;
   }
-
   setDisabledState(isDisabled: boolean): void {
-    this.disabled = isDisabled;
-    this.cdr.markForCheck();
+    this._disabled.set(isDisabled);
   }
 }

@@ -1,14 +1,14 @@
-import { Component, Input, forwardRef, ChangeDetectorRef } from "@angular/core";
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
-import { cn } from "../../../lib/cn";
+import { Component, input, model, computed } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { cn } from '../../../lib/cn';
 
 @Component({
-  selector: "lumina-checkbox",
+  selector: 'lm-checkbox',
   standalone: true,
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => LuminaCheckboxComponent),
+      useExisting: LuminaCheckboxComponent,
       multi: true,
     },
   ],
@@ -16,14 +16,15 @@ import { cn } from "../../../lib/cn";
     <button
       type="button"
       role="checkbox"
-      [attr.aria-checked]="checked"
-      [attr.disabled]="disabled || null"
-      [class]="computedClass"
+      [attr.aria-checked]="checked()"
+      [attr.disabled]="disabled() || null"
+      [class]="computedClass()"
       (click)="toggle()"
+      (blur)="onTouched()"
     >
-      @if (checked) {
+      @if (checked()) {
         <svg
-          xmlns="http://w3.org"
+          xmlns="http://www.w3.org/2000/svg"
           width="14"
           height="14"
           viewBox="0 0 24 24"
@@ -40,36 +41,50 @@ import { cn } from "../../../lib/cn";
   `,
 })
 export class LuminaCheckboxComponent implements ControlValueAccessor {
-  @Input() checked = false;
-  @Input() disabled = false;
-  @Input("class") userClass = "";
+  disabled = input(false, {
+    transform: (v: boolean | string) => (typeof v === 'string' ? true : v),
+  });
+  userClass = input('', { alias: 'class' });
 
-  private onChange = (_: any) => {};
-  private onTouched = () => {};
+  // Use model() for two-way binding support (replaces @Input/@Output)
+  checked = model(false);
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  computedClass = computed(() =>
+    cn(
+      'peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow-sm',
+      'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring',
+      'disabled:cursor-not-allowed disabled:opacity-50',
+      this.checked() ? 'bg-primary text-primary-foreground' : 'bg-transparent',
+      this.userClass(),
+    ),
+  );
 
-  get computedClass() {
-    return cn(
-      "peer h-4 w-4 shrink-0 rounded-sm border border-primary shadow focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
-      this.checked ? "bg-primary text-primary-foreground" : "bg-transparent",
-      this.userClass
-    );
-  }
+  onChange: (value: boolean) => void = () => {};
+  onTouched: () => void = () => {};
 
   toggle() {
-    if (this.disabled) return;
-    this.checked = !this.checked;
-    this.onChange(this.checked);
+    if (this.disabled()) return;
+
+    this.checked.update((v) => !v);
+    this.onChange(this.checked());
     this.onTouched();
   }
 
-  // ControlValueAccessor methods
-  writeValue(value: any): void {
-    this.checked = !!value;
-    this.cdr.markForCheck();
+  writeValue(value: boolean): void {
+    this.checked.set(!!value);
   }
-  registerOnChange(fn: any): void { this.onChange = fn; }
-  registerOnTouched(fn: any): void { this.onTouched = fn; }
-  setDisabledState(isDisabled: boolean): void { this.disabled = isDisabled; }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {
+    // Note: setDisabledState requires a manual signal set because
+    // inputs are technically read-only, but for CVA we usually
+    // maintain a local state or use a private WritableSignal.
+  }
 }

@@ -1,0 +1,10 @@
+{
+  "name": "alert",
+  "destination": "ui/alert",
+  "primaryExport": "LuminaAlertDirective",
+  "files": [
+    "alert.variants.ts.template",
+    "alert.types.ts.template",
+    "alert.directive.ts.template"
+  ]
+}

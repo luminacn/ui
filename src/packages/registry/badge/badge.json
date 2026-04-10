@@ -5,6 +5,7 @@
   "files": [
     "badge.component.ts.template",
     "badge.variants.ts.template",
-    "badge.types.ts.template"
+    "badge.types.ts.template",
+    "badge.directive.ts.template"
   ]
 }
