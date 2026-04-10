@@ -1,0 +1,6 @@
+{
+  "name": "scrollarea",
+  "destination": "ui/scrollarea",
+  "primaryExport": "LuminaScrollAreaDirective",
+  "files": ["scroll-area.directive.ts.template"]
+}

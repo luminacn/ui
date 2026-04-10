@@ -1,20 +1,36 @@
-import { Directive, Input, ElementRef, inject } from "@angular/core";
-import { cn } from "../../../lib/cn";
+import { Directive, input, computed, output } from '@angular/core';
+import { cn } from '../../../lib/cn';
 
 @Directive({
-  selector: "[luminaInputIcon]",
+  selector: '[lmInputIcon]',
   standalone: true,
   host: {
-    "[class]": "classes",
+    '[class]': 'classes()',
+    '(click)': 'handleClick($event)',
+    '[attr.role]': 'isClickable() ? "button" : null',
+    '[attr.tabindex]': 'isClickable() ? 0 : null',
   },
 })
 export class LuminaInputIconDirective {
-  @Input() side: "start" | "end" = "start";
+  side = input<'start' | 'end'>('start');
 
-  get classes() {
-    return cn(
-      "absolute h-4 w-4 text-muted-foreground top-1/2 -translate-y-1/2", // Centering logic
-      this.side === 'start' ? "left-3" : "right-3"
-    );
+  onClick = output<MouseEvent>();
+
+  isClickable = computed(() => this.side() === 'end');
+
+  classes = computed(() =>
+    cn(
+      'absolute h-4 w-4 text-muted-foreground top-1/2 -translate-y-1/2 transition-colors',
+      this.side() === 'start' ? 'left-3' : 'right-3',
+      // Add interactive styles if it's the end icon
+      this.isClickable() && 'cursor-pointer hover:text-foreground pointer-events-auto',
+    ),
+  );
+
+  handleClick(event: MouseEvent) {
+    if (this.isClickable()) {
+      event.stopPropagation();
+      this.onClick.emit(event);
+    }
   }
 }

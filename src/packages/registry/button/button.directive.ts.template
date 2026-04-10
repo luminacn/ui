@@ -1,36 +1,46 @@
-import { Directive, Input } from "@angular/core";
-import { luminaButtonVariants } from "./button.variants";
-import { cn } from "../../../lib/cn";
-import { LuminaButtonVariant, LuminaButtonSize } from "./button.types";
+import { Directive, computed, input } from '@angular/core';
+import { luminaButtonVariants } from './button.variants';
+import { cn } from '../../../lib/cn';
+import { LuminaButtonVariant, LuminaButtonSize } from './button.types';
 
 @Directive({
-  selector: "button[luminaButton], a[luminaButton]",
+  selector: 'button[lmButton], a[lmButton]',
   standalone: true,
   host: {
-    // [class] binding automatically re-evaluates when inputs change
-    "[class]": "computedClass",
-    "[attr.disabled]": "disabled || null",
-    "[attr.aria-disabled]": "disabled",
+    '[class]': 'computedClass()',
+    '[attr.disabled]': 'isDisabled() || null',
+    '[attr.aria-disabled]': 'isDisabled()',
+    '[attr.aria-busy]': 'loading()',
+    '[style.pointer-events]': 'loading() ? "none" : null',
   },
 })
 export class LuminaButtonDirective {
-  @Input() variant: LuminaButtonVariant = "default";
-  @Input() size: LuminaButtonSize = "default";
-  @Input() disabled: boolean = false;
+  variant = input<LuminaButtonVariant>('default');
+  size = input<LuminaButtonSize>('default');
 
-  /** 
-   * Captures any static classes added directly to the element 
-   * (e.g. <button luminaButton class="mt-4">)
-   */
-  @Input("class") userClass: string = "";
+  disabled = input(false, { transform: (v: boolean | string) => (v === '' ? true : !!v) });
+  loading = input(false, { transform: (v: boolean | string) => (v === '' ? true : !!v) });
 
-  get computedClass() {
-    return cn(
+  userClass = input<string>('', { alias: 'class' });
+
+  // Combined state for disabled attribute
+  protected isDisabled = computed(() => this.disabled() || this.loading());
+
+  computedClass = computed(() =>
+    cn(
       luminaButtonVariants({
-        variant: this.variant,
-        size: this.size,
+        variant: this.variant(),
+        size: this.size(),
       }),
-      this.userClass
-    );
-  }
+      this.loading() && [
+        // 1. Make text transparent
+        'relative !text-transparent transition-none hover:text-transparent select-none',
+        // 2. Ensure children with 'text-current' (like our spinner) remain visible
+        '[&>lm-spinner]:text-white', // Or use '[&>lm-spinner]:text-primary-foreground'
+        '[&>lm-spinner]:opacity-100',
+        'pointer-events-none',
+      ],
+      this.userClass(),
+    ),
+  );
 }

@@ -1,16 +1,20 @@
-import { Component, Input } from "@angular/core";
-import { cn } from "../../../lib/cn";
+import { Component, input, computed, contentChildren } from '@angular/core';
+import { LuminaInputIconDirective } from './input-icon.directive'; // Import your icon directive
+import { cn } from '../../../lib/cn';
 
 @Component({
-  selector: "lumina-input-group",
+  selector: 'lm-input-group',
   standalone: true,
-  template: `
-    <div [class]="cn('relative flex items-center w-full', userClass)">
-      <ng-content></ng-content>
-    </div>
-  `,
+  host: { '[class]': 'groupClass()' },
+  template: `<ng-content />`,
 })
 export class LuminaInputGroupComponent {
-  @Input("class") userClass: string = "";
-  protected cn = cn;
+  userClass = input('', { alias: 'class' });
+
+  protected icons = contentChildren(LuminaInputIconDirective);
+
+  public hasStart = computed(() => this.icons().some((i) => i.side() === 'start'));
+  public hasEnd = computed(() => this.icons().some((i) => i.side() === 'end'));
+
+  protected groupClass = computed(() => cn('relative flex items-center w-full', this.userClass()));
 }

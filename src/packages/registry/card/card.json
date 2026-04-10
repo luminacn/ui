@@ -2,12 +2,19 @@
   "name": "card",
   "destination": "ui/card",
   "primaryExport": [
-    "CardComponent",
-    "CardHeaderComponent",
-    "CardTitleComponent",
-    "CardDescriptionComponent",
-    "CardContentComponent",
-    "CardFooterComponent"
+    "LuminaCardDirective",
+    "LuminaCardHeaderDirective",
+    "LuminaCardTitleDirective",
+    "LuminaCardDescriptionDirective",
+    "LuminaCardContentDirective",
+    "LuminaCardFooterDirective"
   ],
-  "files": ["card.component.ts.template"]
+  "files": [
+    "card.directive.ts.template",
+    "card-content.directive.ts.template",
+    "card-footer.directive.ts.template",
+    "card-header.directive.ts.template",
+    "card-title.directive.ts.template",
+    "card-description.directive.ts.template"
+  ]
 }

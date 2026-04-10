@@ -1,0 +1,14 @@
+{
+  "name": "layout",
+  "destination": "ui/layout",
+  "primaryExport": [
+    "LuminaAspectRatioDirective",
+    "LuminaContainerDirective",
+    "LuminaSectionDirective"
+  ],
+  "files": [
+    "aspect-ratio.directive.ts.template",
+    "container.directive.ts.template",
+    "section.directive.ts.template"
+  ]
+}
