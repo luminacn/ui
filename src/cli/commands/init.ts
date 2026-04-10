@@ -82,7 +82,7 @@ async function setupTailwind(root: string) {
   // 3. Installation (After confirmation)
   console.log(`📦 Configuring [${theme}] theme and installing dependencies...`);
   execSync(
-    "npm install tailwindcss @tailwindcss/postcss postcss clsx tailwind-merge tw-animate-css --force",
+    "npm install tailwindcss @tailwindcss/postcss postcss clsx tailwind-merge tw-animate-css @angular/cdk lucide-angular --force",
     { stdio: "inherit" },
   );
 
