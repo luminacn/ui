@@ -1,0 +1,10 @@
+{
+  "name": "breadcrumb",
+  "destination": "ui/breadcrumb",
+  "primaryExport": "LuminaBreadcrumbDirective",
+  "files": [
+    "breadcrumb-item.directive.ts.template",
+    "breadcrumb-shared.directive.ts.template",
+    "breadcrumb.directive.ts.template"
+  ]
+}
