@@ -1,0 +1,13 @@
+/* --- Popover Structure --- */
+.lm-popover-pane {
+  z-index: var(--lm-z-popover);
+}
+
+/* Shadcn-style slide from direction */
+.cdk-overlay-connected-position-bounding-box[style*="top"] .lm-popover-pane {
+  @apply slide-in-from-top-2;
+}
+
+.cdk-overlay-connected-position-bounding-box[style*="bottom"] .lm-popover-pane {
+  @apply slide-in-from-bottom-2;
+}

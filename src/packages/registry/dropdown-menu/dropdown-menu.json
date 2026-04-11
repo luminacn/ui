@@ -17,18 +17,18 @@
     "LuminaDropdownMenuGroupDirective"
   ],
   "files": [
-    "dropdown-menu-checkbox-item.component.ts",
-    "dropdown-menu-content.component.ts",
-    "dropdown-menu-item.directive.ts",
-    "dropdown-menu-label.directive.ts",
-    "dropdown-menu-radio-item.component.ts",
-    "dropdown-menu-separator.directive.ts",
-    "dropdown-menu-sub-trigger.directive.ts",
-    "dropdown-menu-trigger.directive.ts",
-    "dropdown-menu-shortcut.directive.ts",
-    "dropdown-menu-icon.directive.ts",
-    "dropdown-menu-sub-chevron.directive.ts",
-    "dropdown-menu-group.directive.ts",
-    "dropdown-menu.variants.ts"
+    "dropdown-menu-checkbox-item.component.ts.template",
+    "dropdown-menu-content.component.ts.template",
+    "dropdown-menu-item.directive.ts.template",
+    "dropdown-menu-label.directive.ts.template",
+    "dropdown-menu-radio-item.component.ts.template",
+    "dropdown-menu-separator.directive.ts.template",
+    "dropdown-menu-sub-trigger.directive.ts.template",
+    "dropdown-menu-trigger.directive.ts.template",
+    "dropdown-menu-shortcut.directive.ts.template",
+    "dropdown-menu-icon.directive.ts.template",
+    "dropdown-menu-sub-chevron.directive.ts.template",
+    "dropdown-menu-group.directive.ts.template",
+    "dropdown-menu.variants.ts.template"
   ]
 }
