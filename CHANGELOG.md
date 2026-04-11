@@ -1,3 +1,27 @@
+# [2.0.0](https://github.com/luminacn/ui/compare/v1.3.0...v2.0.0) (2026-04-11)
+
+
+* feat!: v2 primitives release ([32ef4ed](https://github.com/luminacn/ui/commit/32ef4ed5dc2df3516edf664bfbdbb9aecf68effc))
+
+
+### Features
+
+* add accordion component with directives, variants, and styles ([5b47847](https://github.com/luminacn/ui/commit/5b47847a97280688399fb36c8f8e44412c0de7f0))
+* add dropdown menu components, directives, and styles ([5194f92](https://github.com/luminacn/ui/commit/5194f929f9adb1c612533f0c3881a4bfd6793167))
+* add dropdown menu label and shortcut directives with styles ([aeaa870](https://github.com/luminacn/ui/commit/aeaa8701258e96fb14407798abc8625c965d8326))
+* add popover component with directive, content, close functionality, and styles ([7c0a5b7](https://github.com/luminacn/ui/commit/7c0a5b7ca1b40d22f2b18b8715fca026eabb62d1))
+* add stepper component with directive, item, trigger, and variants ([3cec971](https://github.com/luminacn/ui/commit/3cec971c08620ef8135eb481a0cd4592e1a5b0e9))
+* add toast component with service, toaster, and styles ([e929240](https://github.com/luminacn/ui/commit/e929240ca5f3bf98c936d2677d851a6c743c4953))
+* add tooltip component with directive, variants, and styles ([84791aa](https://github.com/luminacn/ui/commit/84791aacea318a8ecaf4e1117629b13713fa221d))
+* implement dialog component with directives, service, and styles ([20fec24](https://github.com/luminacn/ui/commit/20fec24626b49705d178bd357a9348179483de39))
+* implement tabs component with directives, variants, and styles ([9d41a0b](https://github.com/luminacn/ui/commit/9d41a0b437c0d64fed3b62f7d7a0cd2029684d6a))
+* update release workflow and add Angular dependencies to init command ([a16ffe1](https://github.com/luminacn/ui/commit/a16ffe1dec189049598710d38cc490859f3b7d69))
+
+
+### BREAKING CHANGES
+
+* overlays rewritten and migrated to Angular 19 Signals
+
 # [1.3.0](https://github.com/luminacn/ui/compare/v1.2.0...v1.3.0) (2026-04-10)
 
 
