@@ -1,0 +1,13 @@
+/* --- Tooltip Structure --- */
+.lm-tooltip-pane {
+  /* Allows mouse events to pass through the tooltip container to the trigger below */
+  pointer-events: none !important;
+  
+  /* Uses the z-index token from your :root variables */
+  z-index: var(--lm-z-tooltip);
+}
+
+/* Optional: Ensure the tooltip doesn't flicker on fast scrolls */
+.cdk-overlay-connected-position-bounding-box {
+  pointer-events: none !important;
+}
