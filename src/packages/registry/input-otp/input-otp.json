@@ -1,0 +1,7 @@
+{
+  "name": "input-otp",
+  "destination": "ui/input-otp",
+  "cssFile": "input-otp.css.template",
+  "primaryExport": ["LuminaInputOtpComponent"],
+  "files": ["input-otp.component.ts.template", "input-otp.variants.ts.template"]
+}

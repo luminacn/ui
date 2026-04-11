@@ -1,0 +1,6 @@
+{
+  "name": "infinite-scroll",
+  "destination": "ui/infinite-scroll",
+  "primaryExport": ["LuminaInfiniteScrollDirective"],
+  "files": ["infinite-scroll.directive.ts.template"]
+}
