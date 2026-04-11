@@ -1,0 +1,11 @@
+{
+  "name": "tooltip",
+  "destination": "ui/tooltip",
+  "primaryExport": ["LuminaTooltipDirective"],
+  "files": [
+    "tooltip.directive.ts.template",
+    "tooltip.component.ts.template",
+    "tooltip.variants.ts.template"
+  ],
+  "cssFile": "tooltip.css.template"
+}

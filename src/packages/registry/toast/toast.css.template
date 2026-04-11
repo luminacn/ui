@@ -1,0 +1,51 @@
+/* --- Toast Stack Layout --- */
+.lm-toast-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: var(--lm-z-toast);
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 1.5rem;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 420px;
+  pointer-events: none;
+}
+
+/* Animations */
+.lm-toast-animate {
+  @apply animate-in fade-in duration-300;
+}
+
+/* Slide in from right if on the right side */
+.lm-toast-container[class*="right-0"] .lm-toast-animate {
+  @apply slide-in-from-right-full;
+}
+
+/* Slide in from left if on the left side */
+.lm-toast-container[class*="left-0"] .lm-toast-animate {
+  @apply slide-in-from-left-full;
+}
+
+/* Slide in from top/bottom if centered */
+.lm-toast-container[class*="left-1/2"] .lm-toast-animate {
+  @apply slide-in-from-bottom-full;
+}
+
+/* Ensure the toast doesn't flicker during swipe */
+.lm-toast-animate {
+  will-change: transform, opacity;
+}
+
+/* On mobile, make sure the toast is easy to grab */
+@media (max-width: 640px) {
+  .lm-toast-container {
+    padding: 1rem;
+  }
+
+  lm-toast {
+    @apply cursor-grab active:cursor-grabbing;
+  }
+}
+

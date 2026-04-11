@@ -1,0 +1,18 @@
+{
+  "name": "accordion",
+  "destination": "ui/accordion",
+  "cssFile": "accordion.css.template",
+  "primaryExport": [
+    "LuminaAccordionDirective",
+    "LuminaAccordionItemDirective",
+    "LuminaAccordionTriggerComponent",
+    "LuminaAccordionContentDirective"
+  ],
+  "files": [
+    "accordion.directive.ts.template",
+    "accordion-item.directive.ts.template",
+    "accordion-trigger.component.ts.template",
+    "accordion-content.directive.ts.template",
+    "accordion.variants.ts.template"
+  ]
+}

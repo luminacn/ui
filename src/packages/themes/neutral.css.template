@@ -19,6 +19,14 @@
   --input: oklch(0.916 0 0);
   --ring: oklch(0.21 0 0);
   --radius: 0.5rem;
+  /* tooltip */
+  --lm-z-tooltip: 1000;
+  /* dropdown */
+  --lm-z-dropdown: 1100;
+  /* dialog */
+  --lm-z-dialog: 1200;
+  /* toast */
+  --lm-z-toast: 1300;
 }
 
 .dark {

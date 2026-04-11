@@ -1,0 +1,12 @@
+{
+  "name": "toast",
+  "destination": "ui/toast",
+  "primaryExport": ["LuminaToastService", "LuminaToasterComponent"],
+  "files": [
+    "toast.service.ts.template",
+    "toast.component.ts.template",
+    "toast-toaster.component.ts.template",
+    "toast.variants.ts.template"
+  ],
+  "cssFile": "toast.css.template"
+}

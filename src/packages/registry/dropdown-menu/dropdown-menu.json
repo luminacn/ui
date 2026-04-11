@@ -1,0 +1,34 @@
+{
+  "name": "dropdown-menu",
+  "destination": "ui/dropdown-menu",
+  "cssFile": "dropdown-menu.css.template",
+  "primaryExport": [
+    "LuminaDropdownMenuTriggerDirective",
+    "LuminaDropdownMenuContentComponent",
+    "LuminaDropdownMenuItemDirective",
+    "LuminaDropdownMenuCheckboxItemComponent",
+    "LuminaDropdownMenuRadioItemComponent",
+    "LuminaDropdownMenuSubTriggerDirective",
+    "LuminaDropdownMenuShortcutDirective",
+    "LuminaDropdownMenuIconDirective",
+    "LuminaDropdownMenuSubChevronDirective",
+    "LuminaDropdownMenuSeparatorDirective",
+    "LuminaDropdownMenuLabelDirective",
+    "LuminaDropdownMenuGroupDirective"
+  ],
+  "files": [
+    "dropdown-menu-checkbox-item.component.ts.template",
+    "dropdown-menu-content.component.ts.template",
+    "dropdown-menu-item.directive.ts.template",
+    "dropdown-menu-label.directive.ts.template",
+    "dropdown-menu-radio-item.component.ts.template",
+    "dropdown-menu-separator.directive.ts.template",
+    "dropdown-menu-sub-trigger.directive.ts.template",
+    "dropdown-menu-trigger.directive.ts.template",
+    "dropdown-menu-shortcut.directive.ts.template",
+    "dropdown-menu-icon.directive.ts.template",
+    "dropdown-menu-sub-chevron.directive.ts.template",
+    "dropdown-menu-group.directive.ts.template",
+    "dropdown-menu.variants.ts.template"
+  ]
+}

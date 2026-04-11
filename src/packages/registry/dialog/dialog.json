@@ -1,0 +1,27 @@
+{
+  "name": "dialog",
+  "destination": "ui/dialog",
+  "cssFile": "dialog.css.template",
+  "primaryExport": [
+    "LuminaDialogContentDirective",
+    "LuminaDialogHeaderDirective",
+    "LuminaDialogTitleDirective",
+    "LuminaDialogDescriptionDirective",
+    "LuminaDialogFooterDirective",
+    "LuminaDialogCloseDirective",
+    "LuminaDialogCloseButtonComponent"
+  ],
+  "files": [
+    "dialog-close.directive.ts",
+    "dialog-close-button.component.ts",
+    "dialog-content.directive.ts",
+    "dialog-description.directive.ts",
+    "dialog-footer.directive.ts",
+    "dialog-header.directive.ts",
+    "dialog-title.directive.ts",
+    "dialog-trigger.directive.ts.template",
+    "dialog.service.ts.template",
+    "dialog.variants.ts.template",
+    "index.ts"
+  ]
+}
