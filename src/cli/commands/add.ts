@@ -4,7 +4,6 @@ import { fileURLToPath } from "url";
 import { confirm } from "@inquirer/prompts";
 import { execSync } from "child_process";
 
-// --- Path Resolution Logic ---
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -113,6 +112,24 @@ export async function addComponent(componentName: string, targetPath: string) {
       console.error(`❌ Source file missing: ${src}`);
     }
   });
+
+  if (componentMeta.cssFile) {
+    const cssSrc = path.join(componentDir, componentMeta.cssFile);
+    const projectStyles = path.join(targetPath, "src", "styles.css");
+
+    if (fs.existsSync(cssSrc) && fs.existsSync(projectStyles)) {
+      const cssContent = fs.readFileSync(cssSrc, "utf-8");
+      const currentStyles = fs.readFileSync(projectStyles, "utf-8");
+      const identifier = `/* --- ${componentName} Styles --- */`;
+
+      if (!currentStyles.includes(identifier)) {
+        fs.appendFileSync(projectStyles, `\n\n${identifier}\n${cssContent}`);
+        console.log(
+          `🎨 Global styles for ${componentName} appended to src/styles.css`,
+        );
+      }
+    }
+  }
 
   console.log(`\n✅ ${componentName} added successfully!`);
 }
