@@ -1,21 +1,17 @@
-type VariantConfig = Record<string, Record<string, string>>;
+type VariantConfig = Record<string, Record<string, string | boolean | number>>;
 
 type CVAOptions = {
   variants?: VariantConfig;
-  defaultVariants?: Record<string, string>;
+  defaultVariants?: Record<string, string | boolean | number>;
   compoundVariants?: Array<{
     class: string;
-    [key: string]: string;
+    [key: string]: string | boolean | number;
   }>;
 };
 
 export function cva(base: string, options?: CVAOptions) {
-  return (props: Record<string, string> = {}) => {
-    const {
-      variants = {},
-      defaultVariants = {},
-      compoundVariants = [],
-    } = options || {};
+  return (props: Record<string, string | boolean | number> = {}) => {
+    const { variants = {}, defaultVariants = {}, compoundVariants = [] } = options || {};
 
     const classes = [base];
 
@@ -24,21 +20,28 @@ export function cva(base: string, options?: CVAOptions) {
     // variants
     for (const key in variants) {
       const value = resolved[key];
-      if (value && variants[key][value]) {
-        classes.push(variants[key][value]);
+
+      // Convert 'value' to a string using String() to safely index
+      // into variants[key], which is a Record of strings.
+      const stringValue = String(value);
+
+      const variantCategory = variants[key] as Record<string, string>;
+
+      if (variantCategory && variantCategory[stringValue]) {
+        classes.push(variantCategory[stringValue]);
       }
     }
 
     // compound variants
     compoundVariants.forEach((cv) => {
       const match = Object.entries(cv).every(([key, val]) => {
-        if (key === "class") return true;
+        if (key === 'class') return true;
         return resolved[key] === val;
       });
 
       if (match) classes.push(cv.class);
     });
 
-    return classes.join(" ");
+    return classes.join(' ');
   };
 }
