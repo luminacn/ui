@@ -1,6 +1,10 @@
 {
   "name": "togglegroup",
   "destination": "ui/togglegroup",
-  "primaryExport": "LuminaToggleGroupDirective",
-  "files": ["toggle-group.directive.ts.template"]
+  "primaryExport": ["LuminaToggleGroupDirective", "LuminaToggleItemDirective"],
+  "files": [
+    "toggle-group.directive.ts.template",
+    "toggle-item.directive.ts.template",
+    "toggle.variants.ts.template"
+  ]
 }
