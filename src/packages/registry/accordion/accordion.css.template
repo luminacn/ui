@@ -1,0 +1,36 @@
+/* --- Accordion Animations --- */
+.lm-accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 200ms ease-out;
+}
+
+.lm-accordion-content[aria-hidden='false'] {
+  grid-template-rows: 1fr;
+}
+
+.lm-accordion-content-inner {
+  overflow: hidden;
+}
+
+@keyframes lm-accordion-down {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: var(--lm-accordion-content-height);
+    opacity: 1;
+  }
+}
+
+@keyframes lm-accordion-up {
+  from {
+    height: var(--lm-accordion-content-height);
+    opacity: 1;
+  }
+  to {
+    height: 0;
+    opacity: 0;
+  }
+}
