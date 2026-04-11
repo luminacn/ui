@@ -14,7 +14,6 @@ const distRoot = isDist
   ? path.join(__dirname, "..", "..") // Go up to dist/
   : path.join(__dirname, "..", "..", ".."); // Go up to project root in dev
 
-// Helpers to find package templates from dist
 const getCoreSourcePath = () => path.join(distRoot, "packages", "core");
 
 const getThemeSourcePath = () => path.join(distRoot, "packages", "themes");
@@ -27,7 +26,6 @@ function ensureAngular(root: string) {
   console.log("✔ Angular project detected");
 }
 
-// Helper to check if git is clean
 function isGitClean(): boolean {
   try {
     const status = execSync("git status --porcelain", {
@@ -35,7 +33,6 @@ function isGitClean(): boolean {
     }).toString();
     return status.trim() === "";
   } catch (e) {
-    // If not a git repo, assume it's "clean" for our purposes
     return true;
   }
 }
@@ -58,14 +55,12 @@ function createCore(root: string) {
 }
 
 async function setupTailwind(root: string) {
-  // 1. Argument Parsing
   const args = process.argv.slice(2);
   const themeFlagIndex = args.indexOf("--theme");
   let theme = themeFlagIndex !== -1 ? args[themeFlagIndex + 1] : null;
 
   const validThemes = ["zinc", "slate", "stone", "gray", "neutral"];
 
-  // 2. Interactive Selection (if no flag)
   if (!theme || !validThemes.includes(theme.toLowerCase())) {
     theme = await select({
       message: "Which base color would you like to use?",
@@ -79,27 +74,23 @@ async function setupTailwind(root: string) {
 
   theme = theme!.toLowerCase();
 
-  // 3. Installation (After confirmation)
   console.log(`📦 Configuring [${theme}] theme and installing dependencies...`);
   execSync(
     "npm install tailwindcss @tailwindcss/postcss postcss clsx tailwind-merge tw-animate-css @angular/cdk @lucide/angular --force",
     { stdio: "inherit" },
   );
 
-  // 4. Create PostCSS Config
   fs.writeFileSync(
     path.join(root, ".postcssrc.json"),
     JSON.stringify({ plugins: { "@tailwindcss/postcss": {} } }, null, 2),
   );
 
-  // 5. File Resolution
   const stylesPath = fs.existsSync(path.join(root, "src/styles.scss"))
     ? path.join(root, "src/styles.scss")
     : path.join(root, "src/styles.css");
 
   if (!fs.existsSync(stylesPath)) fs.writeFileSync(stylesPath, "");
 
-  // 6. Load Templates & Assemble
   const themeSrcPath = getThemeSourcePath();
   const wiring = fs.readFileSync(
     path.join(themeSrcPath, "base-wiring.css.template"),
