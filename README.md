@@ -1,6 +1,6 @@
-# 🚀 luminacn/ui
+## 🚀 luminacn/ui
 
-### Headless & Signal-based UI for Angular
+### Headless & Signal-based UI for Angular — v2.0
 
 **Copy-paste UI for Angular.**
 Beautiful, accessible, and high-performance components built for **Angular 19+** and **Tailwind CSS v4**.
@@ -9,13 +9,13 @@ Beautiful, accessible, and high-performance components built for **Angular 19+**
 
 ---
 
-## ✨ Features
+## ✨ Features (v2)
 
-- **Signals Everywhere** – Built with `input()`, `computed()`, and `model()` for maximum performance
-- **Zoneless Ready** – Designed for Angular’s zoneless future
-- **Headless Directives** – Enhance native elements without extra DOM
-- **Smart Coordination** – Form fields, labels, and messages work together automatically
-- **Tailwind CSS v4** – Fully aligned with the latest utility-first workflow
+- **Signals Everywhere** – Deep integration with `input()`, `computed()`, and `model()`.
+- **Interactive Primitives** – Fully accessible overlays: Dialog, Popover, Tooltip, Dropdown.
+- **Service-Driven Toasts** – Global notification system built for Angular 19.
+- **Zoneless Native** – Designed for high-performance, zoneless applications.
+- **Tailwind CSS v4** – Powered by the lightning-fast Oxide engine.
 
 ---
 
@@ -23,98 +23,76 @@ Beautiful, accessible, and high-performance components built for **Angular 19+**
 
 ```bash
 # Initialize your project
-npx luminacn init
+npx luminacn@latest init
 
-# Add a component
-npx luminacn add button
+# Add v2 components
+npx luminacn add stepper dialog toast
 ```
 
 ---
 
-## 🎨 Components (v2 – Atoms)
+## 🎨 Components (v2 Registry)
 
-**Forms**:
-Input · Textarea · Checkbox · Switch · Radio · Slider · FormField
+### 🧩 Interactive
 
-**Layout**:
-Card · AspectRatio · Separator · ScrollArea · Collapsible
+Stepper · Dialog · Popover · Accordion · Tabs · Tooltip · Dropdown Menu · Toast
 
-**Typography**:
-H1–H5 · P · Lead · Muted · Inline Code · Kbd
+### 📝 Forms
 
-**Feedback**:
-Badge · Alert · Progress · Skeleton · Spinner
+Input · Textarea · Checkbox · Switch · Radio · Slider · FormField · ToggleGroup
 
-**Navigation**:
-Button · Avatar · Breadcrumb · ToggleGroup
+### 🧱 Layout
+
+Card · AspectRatio · Separator · ScrollArea · Collapsible · Skeleton
+
+### 💬 Feedback & Typography
+
+Badge · Alert · Progress · Spinner · H1–H5 · Kbd · Lead
 
 ---
 
-## 🧩 Usage Example
+## 🧩 Usage Example — Stepper
 
 ```html
-<section lmCard class="w-[350px]">
-  <header lmCardHeader>
-    <h3 lmCardTitle>Account Settings</h3>
-    <p lmMuted>Update your profile and preferences.</p>
-  </header>
+<nav lmStepper [activeStep]="0" #stepper="lmStepper">
+  <button lmStepperTrigger [index]="0">
+    <span>Profile</span>
+  </button>
 
-  <div lmCardContent class="grid gap-4">
-    <!-- Smart Form Field Coordination -->
-    <lm-form-field>
-      <label lmLabel lmRequired>Username</label>
-      <input lmInput placeholder="johndoe" [formControl]="userCtrl" />
-      <p lmFormDescription>This is your public display name.</p>
-      <lm-form-message />
-    </lm-form-field>
+  <button lmStepperTrigger [index]="1" [disabled]="profileInvalid()">
+    <span>Security</span>
+  </button>
 
-    <div lmSeparator></div>
-
-    <!-- Closable Alert -->
-    <div lmAlert="warning" #myAlert="lmAlert">
-      <lucide-icon name="alert-triangle" class="h-4 w-4" />
-      <h5 lmAlertTitle>Pro Tip</h5>
-      <div lmAlertDescription>Use Signals for better performance.</div>
-      <button
-        lmButton
-        variant="plain"
-        size="fit"
-        (click)="myAlert.close()"
-        class="absolute right-2 top-2"
-      >
-        <lucide-icon name="x" class="h-4 w-4" />
-      </button>
-    </div>
+  <div class="mt-4">
+    @if (stepper.activeStep() === 0) {
+    <profile-form />
+    } @if (stepper.activeStep() === 1) {
+    <security-settings />
+    }
   </div>
-
-  <footer lmCardFooter>
-    <button lmButton class="w-full" [loading]="isSaving">Save Changes</button>
-  </footer>
-</section>
+</nav>
 ```
 
 ---
 
 ## ⚡ Philosophy
 
-- **Zero Dependency Core** – Most components require no external packages
-- **Headless First** – Logic in directives, styling in Tailwind
-- **You Own the Code** – No hidden abstractions or runtime lock-in
+- **Zero Dependency Core** – Built on Angular primitives, not heavy third-party libraries.
+- **Headless First** – Logic in directives, styling with Tailwind CSS.
+- **Full Ownership** – Code lives in your project. Customize everything.
 
 ---
 
 ## 🔮 Roadmap
 
-- **Phase 3 (Overlays)**
-  Angular CDK-powered Dialogs, Popovers, Tooltips, Accordions
+### Phase 3 — Enterprise Data
 
-- **Phase 4 (Advanced)**
-  Command Palette (Cmd+K), Sonner-style Toasts, Signal-based theming
+- Data Tables (TanStack integration)
+- Advanced Combobox
+- Command Palette (Cmd + K)
 
----
+### Phase 4 — Visuals
 
-## 💡 Positioning
-
-Inspired by shadcn/ui — built for the **Signal era of Angular**.
-
-Generate, customize, and own your UI. No compromises.
+- Motion primitives
+- Charting wrappers
+- Dynamic theme switching
