@@ -22,6 +22,6 @@
     "dialog-trigger.directive.ts.template",
     "dialog.service.ts.template",
     "dialog.variants.ts.template",
-    "index.ts"
+    "index.ts.template"
   ]
 }

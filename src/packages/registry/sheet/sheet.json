@@ -1,0 +1,24 @@
+{
+  "name": "sheet",
+  "destination": "ui/sheet",
+  "cssFile": "sheet.css.template",
+  "primaryExport": [
+    "LuminaSheetContentComponent",
+    "LuminaSheetDescriptionDirective",
+    "LuminaSheetFooterDirective",
+    "LuminaSheetHeaderDirective",
+    "LuminaSheetTitleDirective",
+    "LuminaSheetTriggerDirective"
+  ],
+  "files": [
+    "index.ts.template",
+    "sheet-content.directive.ts",
+    "sheet-description.directive.ts",
+    "sheet-footer.directive.ts",
+    "sheet-header.directive.ts",
+    "sheet-title.directive.ts",
+    "sheet-trigger.directive.ts.template",
+    "sheet.service.ts.template",
+    "sheet.variants.ts.template"
+  ]
+}
