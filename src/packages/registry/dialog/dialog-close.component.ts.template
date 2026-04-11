@@ -8,7 +8,7 @@ import { LucideX } from '@lucide/angular';
   standalone: true,
   hostDirectives: [LuminaDialogCloseDirective],
   imports: [LucideX],
-  template: ` <svg LucideX></svg> `,
+  template: ` <svg lucideX></svg> `,
   host: {
     '[class]': 'computedClass()',
     type: 'button',
