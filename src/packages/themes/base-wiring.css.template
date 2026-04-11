@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import '@angular/cdk/overlay-prebuilt.css';
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
