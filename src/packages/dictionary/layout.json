@@ -1,0 +1,30 @@
+{
+  "name": "layout",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "aspect-ratio.directive.ts.template",
+      "path": "aspect-ratio.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "container.directive.ts.template",
+      "path": "container.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "layout.json",
+      "path": "layout.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "section.directive.ts.template",
+      "path": "section.directive.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

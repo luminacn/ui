@@ -1,6 +1,0 @@
-{
-  "name": "progress",
-  "destination": "ui/progress",
-  "primaryExport": "LuminaProgressComponent",
-  "files": ["progress.component.ts.template", "progress.variants.ts.template"]
-}

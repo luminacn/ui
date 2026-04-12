@@ -1,0 +1,40 @@
+{
+  "name": "navigation",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "navigation-menu-trigger.directive.ts.template",
+      "path": "navigation-menu-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu-viewport.component.ts.template",
+      "path": "navigation-menu-viewport.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu.css.template.template",
+      "path": "navigation-menu.css.template.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu.directive.ts.template",
+      "path": "navigation-menu.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu.variants.ts.template",
+      "path": "navigation-menu.variants.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation.json",
+      "path": "navigation.json",
+      "type": "registry:ui"
+    }
+  ]
+}

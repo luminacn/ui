@@ -1,0 +1,30 @@
+{
+  "name": "alert",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "alert.directive.ts.template",
+      "path": "alert.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert.types.ts.template",
+      "path": "alert.types.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert.variants.ts.template",
+      "path": "alert.variants.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar.json",
+      "path": "avatar.json",
+      "type": "registry:ui"
+    }
+  ]
+}

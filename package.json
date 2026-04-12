@@ -8,10 +8,11 @@
   "description": "Copy-paste UI for Angular",
   "main": "index.js",
   "scripts": {
-    "build": "tsc && npm run copy-assets",
+    "build": "tsc -p tsconfig.json && npm run copy-assets",
+    "build:registry": "ts-node src/tools/generate-registry.ts",
+    "clean:templates": "tsx src/tools/remove-template-extension.ts",
     "start": "tsx tools/cli/index.ts",
-    "copy-assets": "cpx \"src/packages/**/*.{template,json,css}\" dist/packages/",
-    "prepare": "npm run build",
+    "copy-assets": "cpx \"src/packages/**/*.{template,json,css,ts}\" dist/packages/",
     "release": "semantic-release"
   },
   "keywords": [
@@ -40,7 +41,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^12.0.6",
     "@semantic-release/npm": "^13.1.5",
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "cpx": "^1.5.0",
     "semantic-release": "^25.0.3",
     "ts-node": "^10.9.2"

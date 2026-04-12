@@ -1,0 +1,80 @@
+{
+  "name": "dialog",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@lucide/angular",
+    "@angular/cdk/dialog",
+    "@angular/core/rxjs-interop",
+    "rxjs",
+    "@angular/cdk/portal"
+  ],
+  "files": [
+    {
+      "name": "dialog-close.component.ts.template",
+      "path": "dialog-close.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-close.directive.ts.template",
+      "path": "dialog-close.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-content.directive.ts.template",
+      "path": "dialog-content.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-description.directive.ts.template",
+      "path": "dialog-description.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-footer.directive.ts.template",
+      "path": "dialog-footer.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-header.directive.ts.template",
+      "path": "dialog-header.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-title.directive.ts.template",
+      "path": "dialog-title.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog-trigger.directive.ts.template",
+      "path": "dialog-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog.css.template",
+      "path": "dialog.css.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog.json",
+      "path": "dialog.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog.service.ts.template",
+      "path": "dialog.service.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dialog.variants.ts.template",
+      "path": "dialog.variants.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "index.ts.template",
+      "path": "index.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

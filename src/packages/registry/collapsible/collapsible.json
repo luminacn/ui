@@ -1,6 +1,0 @@
-{
-  "name": "collapsible",
-  "destination": "ui/collapsible",
-  "primaryExport": "LuminaCollapsibleDirective",
-  "files": ["collapsible.directive.ts.template"]
-}

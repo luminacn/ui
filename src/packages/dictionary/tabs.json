@@ -1,0 +1,40 @@
+{
+  "name": "tabs",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "tabs-content.directive.ts.template",
+      "path": "tabs-content.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs-list.directive.ts.template",
+      "path": "tabs-list.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs-trigger.directive.ts.template",
+      "path": "tabs-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs.directive.ts.template",
+      "path": "tabs.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs.json",
+      "path": "tabs.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tabs.variants.ts.template",
+      "path": "tabs.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "tooltip",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk/overlay",
+    "@angular/cdk/portal"
+  ],
+  "files": [
+    {
+      "name": "tooltip.component.ts.template",
+      "path": "tooltip.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.css.template",
+      "path": "tooltip.css.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.directive.ts.template",
+      "path": "tooltip.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.json",
+      "path": "tooltip.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.variants.ts.template",
+      "path": "tooltip.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "separator",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "separator.directive.ts.template",
+      "path": "separator.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "separator.json",
+      "path": "separator.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "separator.types.ts.template",
+      "path": "separator.types.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

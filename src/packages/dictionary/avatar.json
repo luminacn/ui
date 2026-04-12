@@ -1,0 +1,35 @@
+{
+  "name": "avatar",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "avatar.component.ts.template",
+      "path": "avatar.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar.directive.ts.template",
+      "path": "avatar.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar.json",
+      "path": "avatar.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar.types.ts.template",
+      "path": "avatar.types.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "avatar.variants.ts.template",
+      "path": "avatar.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

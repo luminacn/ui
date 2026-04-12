@@ -1,0 +1,35 @@
+{
+  "name": "stepper",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "stepper-item.directive.ts.template",
+      "path": "stepper-item.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "stepper-trigger.component.ts.template",
+      "path": "stepper-trigger.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "stepper.directive.ts.template",
+      "path": "stepper.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "stepper.json",
+      "path": "stepper.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "stepper.variants.ts.template",
+      "path": "stepper.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

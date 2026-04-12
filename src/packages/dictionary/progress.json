@@ -1,0 +1,25 @@
+{
+  "name": "progress",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "progess.json",
+      "path": "progess.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "progress.component.ts.template",
+      "path": "progress.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "progress.variants.ts.template",
+      "path": "progress.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

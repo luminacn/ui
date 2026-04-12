@@ -1,0 +1,22 @@
+{
+  "name": "textarea",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/forms",
+    "@angular/core/rxjs-interop"
+  ],
+  "files": [
+    {
+      "name": "textarea.directive.ts.template",
+      "path": "textarea.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "textarea.json",
+      "path": "textarea.json",
+      "type": "registry:ui"
+    }
+  ]
+}

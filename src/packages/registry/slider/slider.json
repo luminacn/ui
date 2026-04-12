@@ -1,6 +1,0 @@
-{
-  "name": "slider",
-  "destination": "ui/slider",
-  "primaryExport": "LuminaSliderDirective",
-  "files": ["slider.directive.ts.template"]
-}

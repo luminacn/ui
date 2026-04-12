@@ -1,6 +1,0 @@
-{
-  "name": "separator",
-  "destination": "ui/separator",
-  "primaryExport": "LuminaSeparatorDirective",
-  "files": ["separator.directive.ts.template", "separator.types.ts.template"]
-}

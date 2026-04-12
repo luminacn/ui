@@ -1,0 +1,30 @@
+{
+  "name": "togglegroup",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "toggle-group.directive.ts.template",
+      "path": "toggle-group.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle-item.directive.ts.template",
+      "path": "toggle-item.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toggle.variants.ts.template",
+      "path": "toggle.variants.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "togglegroup.json",
+      "path": "togglegroup.json",
+      "type": "registry:ui"
+    }
+  ]
+}

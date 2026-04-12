@@ -1,0 +1,44 @@
+{
+  "name": "popover",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk/overlay",
+    "@angular/cdk/portal",
+    "@angular/cdk/a11y",
+    "rxjs/operators"
+  ],
+  "files": [
+    {
+      "name": "popover-close.directive.ts.template",
+      "path": "popover-close.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover-content.component.ts.template",
+      "path": "popover-content.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.css.template",
+      "path": "popover.css.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.directive.ts.template",
+      "path": "popover.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.json",
+      "path": "popover.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.variants.ts.template",
+      "path": "popover.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

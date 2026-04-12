@@ -1,0 +1,30 @@
+{
+  "name": "spinner",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "spinner.component.ts.template",
+      "path": "spinner.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner.json",
+      "path": "spinner.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner.types.ts.template",
+      "path": "spinner.types.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner.variants.ts.template",
+      "path": "spinner.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

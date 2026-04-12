@@ -37,8 +37,8 @@ function isGitClean(): boolean {
   }
 }
 
-function createCore(root: string) {
-  const coreDestPath = path.join(root, "src", "app", "lib");
+function createCore(root: string, config: any) {
+  const coreDestPath = path.join(root, config.aliases.utils);
   const coreSrcPath = getCoreSourcePath();
 
   fs.mkdirSync(coreDestPath, { recursive: true });
@@ -54,7 +54,7 @@ function createCore(root: string) {
   console.log("✔ Core utilities created in src/app/lib");
 }
 
-async function setupTailwind(root: string) {
+async function setupTailwind(root: string, config: any) {
   const args = process.argv.slice(2);
   const themeFlagIndex = args.indexOf("--theme");
   let theme = themeFlagIndex !== -1 ? args[themeFlagIndex + 1] : null;
@@ -85,9 +85,7 @@ async function setupTailwind(root: string) {
     JSON.stringify({ plugins: { "@tailwindcss/postcss": {} } }, null, 2),
   );
 
-  const stylesPath = fs.existsSync(path.join(root, "src/styles.scss"))
-    ? path.join(root, "src/styles.scss")
-    : path.join(root, "src/styles.css");
+  const stylesPath = path.join(root, config.aliases.styles);
 
   if (!fs.existsSync(stylesPath)) fs.writeFileSync(stylesPath, "");
 
@@ -128,9 +126,28 @@ export async function init() {
   }
 
   ensureAngular(root);
+
+  const config = {
+    $schema: "https://raw.githubusercontent.com/luminacn/ui/master/schema.json",
+    aliases: {
+      components: "src/app/components/ui",
+      utils: "src/app/lib",
+      styles: fs.existsSync(path.join(root, "src/styles.scss"))
+        ? "src/styles.scss"
+        : "src/styles.css",
+    },
+  };
+
+  // Write the config file
+  fs.writeFileSync(
+    path.join(root, "lumina.json"),
+    JSON.stringify(config, null, 2),
+  );
+  console.log("✔ Created lumina.json");
+
   try {
-    await setupTailwind(root);
-    createCore(root);
+    await setupTailwind(root, config);
+    createCore(root, config);
 
     // setupTsConfigPaths(root);
 

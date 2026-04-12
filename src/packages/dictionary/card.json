@@ -1,0 +1,45 @@
+{
+  "name": "card",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "card-content.directive.ts.template",
+      "path": "card-content.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card-description.directive.ts.template",
+      "path": "card-description.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card-footer.directive.ts.template",
+      "path": "card-footer.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card-header.directive.ts.template",
+      "path": "card-header.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card-title.directive.ts.template",
+      "path": "card-title.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card.directive.ts.template",
+      "path": "card.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "card.json",
+      "path": "card.json",
+      "type": "registry:ui"
+    }
+  ]
+}

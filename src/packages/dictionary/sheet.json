@@ -1,0 +1,68 @@
+{
+  "name": "sheet",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@lucide/angular",
+    "@angular/cdk/overlay",
+    "@angular/cdk/portal"
+  ],
+  "files": [
+    {
+      "name": "index.ts.template",
+      "path": "index.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-content.component.ts.template",
+      "path": "sheet-content.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-description.directive.ts.template",
+      "path": "sheet-description.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-footer.directive.ts.template",
+      "path": "sheet-footer.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-header.directive.ts.template",
+      "path": "sheet-header.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-title.directive.ts.template",
+      "path": "sheet-title.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet-trigger.directive.ts.template",
+      "path": "sheet-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet.css.template",
+      "path": "sheet.css.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet.json",
+      "path": "sheet.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet.service.ts.template",
+      "path": "sheet.service.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "sheet.variants.ts.template",
+      "path": "sheet.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

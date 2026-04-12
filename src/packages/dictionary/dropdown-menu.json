@@ -1,0 +1,86 @@
+{
+  "name": "dropdown-menu",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk/menu"
+  ],
+  "files": [
+    {
+      "name": "dropdown-menu-checkbox-item.component.ts.template",
+      "path": "dropdown-menu-checkbox-item.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-content.component.ts.template",
+      "path": "dropdown-menu-content.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-group.directive.ts.template",
+      "path": "dropdown-menu-group.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-icon.directive.ts.template",
+      "path": "dropdown-menu-icon.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-item.directive.ts.template",
+      "path": "dropdown-menu-item.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-label.directive.ts.template",
+      "path": "dropdown-menu-label.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-radio-item.component.ts.template",
+      "path": "dropdown-menu-radio-item.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-separator.directive.ts.template",
+      "path": "dropdown-menu-separator.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-shortcut.directive.ts.template",
+      "path": "dropdown-menu-shortcut.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-sub-chevron.directive.ts.template",
+      "path": "dropdown-menu-sub-chevron.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-sub-trigger.directive.ts.template",
+      "path": "dropdown-menu-sub-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu-trigger.directive.ts.template",
+      "path": "dropdown-menu-trigger.directive.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu.css.template",
+      "path": "dropdown-menu.css.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu.json",
+      "path": "dropdown-menu.json",
+      "type": "registry:ui"
+    },
+    {
+      "name": "dropdown-menu.variants.ts.template",
+      "path": "dropdown-menu.variants.ts.template",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,6 +1,0 @@
-{
-  "name": "checkbox",
-  "destination": "ui/checkbox",
-  "primaryExport": "LuminaCheckboxComponent",
-  "files": ["checkbox.component.ts.template"]
-}

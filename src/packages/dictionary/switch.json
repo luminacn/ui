@@ -1,0 +1,21 @@
+{
+  "name": "switch",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/forms"
+  ],
+  "files": [
+    {
+      "name": "switch.component.ts.template",
+      "path": "switch.component.ts.template",
+      "type": "registry:ui"
+    },
+    {
+      "name": "switch.json",
+      "path": "switch.json",
+      "type": "registry:ui"
+    }
+  ]
+}

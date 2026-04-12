@@ -1,6 +1,0 @@
-{
-  "name": "textarea",
-  "destination": "ui/textarea",
-  "primaryExport": "LuminaTextareaDirective",
-  "files": ["textarea.directive.ts.template"]
-}

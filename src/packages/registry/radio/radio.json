@@ -1,6 +1,0 @@
-{
-  "name": "radio",
-  "destination": "ui/radio",
-  "primaryExport": ["LuminaRadioGroupComponent", "LuminaRadioItemDirective"],
-  "files": ["radio.component.ts.template", "radio-item.directive.ts.template"]
-}
