@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "collapsible.directive.ts.template",
-      "path": "collapsible.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "collapsible.json",
-      "path": "collapsible.json",
+      "name": "collapsible.directive.ts",
+      "path": "collapsible/collapsible.directive.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,33 +7,28 @@
   ],
   "files": [
     {
-      "name": "tabs-content.directive.ts.template",
-      "path": "tabs-content.directive.ts.template",
+      "name": "tabs-content.directive.ts",
+      "path": "tabs/tabs-content.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "tabs-list.directive.ts.template",
-      "path": "tabs-list.directive.ts.template",
+      "name": "tabs-list.directive.ts",
+      "path": "tabs/tabs-list.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "tabs-trigger.directive.ts.template",
-      "path": "tabs-trigger.directive.ts.template",
+      "name": "tabs-trigger.directive.ts",
+      "path": "tabs/tabs-trigger.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "tabs.directive.ts.template",
-      "path": "tabs.directive.ts.template",
+      "name": "tabs.directive.ts",
+      "path": "tabs/tabs.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "tabs.json",
-      "path": "tabs.json",
-      "type": "registry:ui"
-    },
-    {
-      "name": "tabs.variants.ts.template",
-      "path": "tabs.variants.ts.template",
+      "name": "tabs.variants.ts",
+      "path": "tabs/tabs.variants.ts",
       "type": "registry:ui"
     }
   ]

@@ -5,75 +5,64 @@
   "npmDependencies": [
     "@angular/core",
     "@lucide/angular",
-    "@angular/cdk/dialog",
-    "@angular/core/rxjs-interop",
-    "rxjs",
-    "@angular/cdk/portal"
+    "@angular/cdk",
+    "rxjs"
   ],
+  "cssFile": "dialog.css",
   "files": [
     {
-      "name": "dialog-close.component.ts.template",
-      "path": "dialog-close.component.ts.template",
+      "name": "dialog-close.component.ts",
+      "path": "dialog/dialog-close.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-close.directive.ts.template",
-      "path": "dialog-close.directive.ts.template",
+      "name": "dialog-close.directive.ts",
+      "path": "dialog/dialog-close.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-content.directive.ts.template",
-      "path": "dialog-content.directive.ts.template",
+      "name": "dialog-content.directive.ts",
+      "path": "dialog/dialog-content.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-description.directive.ts.template",
-      "path": "dialog-description.directive.ts.template",
+      "name": "dialog-description.directive.ts",
+      "path": "dialog/dialog-description.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-footer.directive.ts.template",
-      "path": "dialog-footer.directive.ts.template",
+      "name": "dialog-footer.directive.ts",
+      "path": "dialog/dialog-footer.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-header.directive.ts.template",
-      "path": "dialog-header.directive.ts.template",
+      "name": "dialog-header.directive.ts",
+      "path": "dialog/dialog-header.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-title.directive.ts.template",
-      "path": "dialog-title.directive.ts.template",
+      "name": "dialog-title.directive.ts",
+      "path": "dialog/dialog-title.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog-trigger.directive.ts.template",
-      "path": "dialog-trigger.directive.ts.template",
+      "name": "dialog-trigger.directive.ts",
+      "path": "dialog/dialog-trigger.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog.css.template",
-      "path": "dialog.css.template",
+      "name": "dialog.service.ts",
+      "path": "dialog/dialog.service.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog.json",
-      "path": "dialog.json",
+      "name": "dialog.variants.ts",
+      "path": "dialog/dialog.variants.ts",
       "type": "registry:ui"
     },
     {
-      "name": "dialog.service.ts.template",
-      "path": "dialog.service.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "dialog.variants.ts.template",
-      "path": "dialog.variants.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "index.ts.template",
-      "path": "index.ts.template",
+      "name": "index.ts",
+      "path": "dialog/index.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,28 +7,23 @@
   ],
   "files": [
     {
-      "name": "avatar.component.ts.template",
-      "path": "avatar.component.ts.template",
+      "name": "avatar.component.ts",
+      "path": "avatar/avatar.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "avatar.directive.ts.template",
-      "path": "avatar.directive.ts.template",
+      "name": "avatar.directive.ts",
+      "path": "avatar/avatar.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "avatar.json",
-      "path": "avatar.json",
+      "name": "avatar.types.ts",
+      "path": "avatar/avatar.types.ts",
       "type": "registry:ui"
     },
     {
-      "name": "avatar.types.ts.template",
-      "path": "avatar.types.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "avatar.variants.ts.template",
-      "path": "avatar.variants.ts.template",
+      "name": "avatar.variants.ts",
+      "path": "avatar/avatar.variants.ts",
       "type": "registry:ui"
     }
   ]

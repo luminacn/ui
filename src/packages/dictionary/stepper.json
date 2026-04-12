@@ -7,28 +7,23 @@
   ],
   "files": [
     {
-      "name": "stepper-item.directive.ts.template",
-      "path": "stepper-item.directive.ts.template",
+      "name": "stepper-item.directive.ts",
+      "path": "stepper/stepper-item.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "stepper-trigger.component.ts.template",
-      "path": "stepper-trigger.component.ts.template",
+      "name": "stepper-trigger.component.ts",
+      "path": "stepper/stepper-trigger.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "stepper.directive.ts.template",
-      "path": "stepper.directive.ts.template",
+      "name": "stepper.directive.ts",
+      "path": "stepper/stepper.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "stepper.json",
-      "path": "stepper.json",
-      "type": "registry:ui"
-    },
-    {
-      "name": "stepper.variants.ts.template",
-      "path": "stepper.variants.ts.template",
+      "name": "stepper.variants.ts",
+      "path": "stepper/stepper.variants.ts",
       "type": "registry:ui"
     }
   ]

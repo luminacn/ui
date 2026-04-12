@@ -1,66 +1,15 @@
 import fs from "fs";
 import path from "path";
-import readline from "readline";
-import { addComponent, getPackageRoot } from "./add.ts";
-
-/* =========================
-   STATE
-========================= */
-function loadState(targetPath: string) {
-  const file = path.join(targetPath, "lumina.json");
-
-  if (!fs.existsSync(file)) {
-    return { components: {} };
-  }
-
-  return JSON.parse(fs.readFileSync(file, "utf-8"));
-}
-
-function saveState(targetPath: string, state: any) {
-  const file = path.join(targetPath, "lumina.json");
-  fs.writeFileSync(file, JSON.stringify(state, null, 2));
-}
-
-/* =========================
-   REGISTRY
-========================= */
-function loadRegistry(packageRoot: string) {
-  const registryPath = path.join(packageRoot, "packages", "dictionary");
-  const files = fs.readdirSync(registryPath);
-
-  const registry: Record<string, any> = {};
-
-  for (const file of files) {
-    const meta = JSON.parse(
-      fs.readFileSync(path.join(registryPath, file), "utf-8"),
-    );
-
-    registry[meta.name] = meta;
-  }
-
-  return registry;
-}
-
-/* =========================
-   CONFIRM PROMPT
-========================= */
-function ask(question: string): Promise<boolean> {
-  const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout,
-  });
-
-  return new Promise((resolve) => {
-    rl.question(`${question} (y/n): `, (answer) => {
-      rl.close();
-      resolve(answer.toLowerCase() === "y");
-    });
-  });
-}
-
-/* =========================
-   CREATE BACKUP
-========================= */
+import {
+  loadState,
+  saveState,
+  loadRegistry,
+  ask,
+  getPackageRoot,
+  getProjectConfig,
+} from "../utils/common.ts";
+import { addComponent } from "./add.ts";
+import { rebuildCss } from "../utils/css.ts";
 
 function createBackup(targetPath: string, name: string, comp: any) {
   const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
@@ -75,54 +24,55 @@ function createBackup(targetPath: string, name: string, comp: any) {
 
   fs.mkdirSync(backupDir, { recursive: true });
 
-  const sourcePath = path.join(targetPath, comp.path);
+  const source = path.join(targetPath, comp.path);
 
-  if (fs.existsSync(sourcePath)) {
-    fs.cpSync(sourcePath, backupDir, { recursive: true });
+  if (fs.existsSync(source)) {
+    fs.cpSync(source, backupDir, { recursive: true });
   }
 
   fs.writeFileSync(
     path.join(backupDir, "lumina.snapshot.json"),
-    JSON.stringify(
-      {
-        name,
-        version: comp.version,
-        path: comp.path,
-        timestamp: new Date().toISOString(),
-      },
-      null,
-      2,
-    ),
+    JSON.stringify(comp, null, 2),
   );
-
-  return backupDir;
 }
 
-/* =========================
-   REMOVE COMPONENT
-========================= */
+function removeCssInjection(targetPath: string, name: string) {
+  const styleFile = path.join(targetPath, "src/styles.css");
+
+  if (!fs.existsSync(styleFile)) return;
+
+  let content = fs.readFileSync(styleFile, "utf-8");
+
+  const regex = new RegExp(
+    `/\\* lumina:start:${name} \\*/[\\s\\S]*?/\\* lumina:end:${name} \\*/`,
+    "g",
+  );
+
+  content = content.replace(regex, "");
+
+  fs.writeFileSync(styleFile, content.trim());
+}
+
 function removeComponent(name: string, targetPath: string, state: any) {
   const comp = state.components[name];
   if (!comp) return;
 
-  const fullPath = path.join(targetPath, comp.path);
+  const full = path.join(targetPath, comp.path);
 
-  if (fs.existsSync(fullPath)) {
-    fs.rmSync(fullPath, { recursive: true, force: true });
+  if (fs.existsSync(full)) {
+    fs.rmSync(full, { recursive: true, force: true });
   }
 
-  // remove from state immediately
   delete state.components[name];
 }
 
-/* =========================
-   MAIN UPGRADE
-========================= */
 export async function upgradeComponent(
   componentName: string,
   targetPath: string,
 ) {
   const packageRoot = getPackageRoot();
+  const registryDir = path.join(packageRoot, "packages", "registry");
+  const config = getProjectConfig(targetPath);
 
   const state = loadState(targetPath);
   const registry = loadRegistry(packageRoot);
@@ -130,68 +80,44 @@ export async function upgradeComponent(
   const local = state.components[componentName];
   const remote = registry[componentName];
 
-  /* =========================
-     VALIDATION
-  ========================= */
   if (!remote) {
-    console.error(`❌ Component "${componentName}" not found in registry.`);
-    process.exit(1);
+    console.error(`❌ Component not found: ${componentName}`);
+    return;
   }
 
   if (!local) {
-    console.log(`ℹ ${componentName} is not installed. Use add instead.`);
+    console.log(`ℹ Not installed. Use add.`);
     return;
   }
 
-  const installedVersion = local.version;
-  const latestVersion = remote.version;
-
-  if (!installedVersion || !latestVersion) {
-    console.warn(`⚠ Missing version info for ${componentName}`);
-  }
-
-  if (installedVersion === latestVersion) {
-    console.log(`✔ ${componentName} is already up to date.`);
+  if (local.version === remote.version) {
+    console.log(`✔ ${componentName} already up to date`);
     return;
   }
 
-  /* =========================
-     INFO
-  ========================= */
-  console.log(`\n⬆ Upgrade available for "${componentName}"`);
-  console.log(`   Installed: ${installedVersion}`);
-  console.log(`   Latest:    ${latestVersion}\n`);
+  console.log(`\n⬆ ${componentName} ${local.version} → ${remote.version}\n`);
 
-  /* =========================
-     CONFIRM
-  ========================= */
-  const confirm = await ask(
-    `⚠ This will overwrite "${componentName}". Continue?`,
-  );
+  const confirm = await ask("⚠ Overwrite local changes?");
+  if (!confirm) return;
 
-  if (!confirm) {
-    console.log("❌ Upgrade cancelled.");
-    return;
-  }
-
-  /* =========================
-     REMOVE OLD
-  ========================= */
-  console.log(`💾 Creating backup for rollback...`);
-
+  console.log("💾 Creating backup...");
   createBackup(targetPath, componentName, local);
 
-  console.log(`🧹 Removing old version of ${componentName}...`);
+  console.log("🧹 Removing old files...");
   removeComponent(componentName, targetPath, state);
-
   saveState(targetPath, state);
 
-  /* =========================
-     INSTALL NEW
-  ========================= */
-  console.log(`📦 Installing latest version of ${componentName}...`);
-
+  console.log("📦 Installing new...");
   await addComponent(componentName, targetPath);
 
-  console.log(`\n✅ ${componentName} upgraded successfully!\n`);
+  const newState = loadState(targetPath);
+
+  rebuildCss(
+    newState,
+    registry,
+    registryDir,
+    path.join(targetPath, config.styles),
+  );
+
+  console.log(`\n✅ ${componentName} upgraded\n`);
 }

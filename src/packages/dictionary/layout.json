@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "aspect-ratio.directive.ts.template",
-      "path": "aspect-ratio.directive.ts.template",
+      "name": "aspect-ratio.directive.ts",
+      "path": "layout/aspect-ratio.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "container.directive.ts.template",
-      "path": "container.directive.ts.template",
+      "name": "container.directive.ts",
+      "path": "layout/container.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "layout.json",
-      "path": "layout.json",
-      "type": "registry:ui"
-    },
-    {
-      "name": "section.directive.ts.template",
-      "path": "section.directive.ts.template",
+      "name": "section.directive.ts",
+      "path": "layout/section.directive.ts",
       "type": "registry:ui"
     }
   ]

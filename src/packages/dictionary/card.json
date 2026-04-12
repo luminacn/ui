@@ -7,38 +7,33 @@
   ],
   "files": [
     {
-      "name": "card-content.directive.ts.template",
-      "path": "card-content.directive.ts.template",
+      "name": "card-content.directive.ts",
+      "path": "card/card-content.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "card-description.directive.ts.template",
-      "path": "card-description.directive.ts.template",
+      "name": "card-description.directive.ts",
+      "path": "card/card-description.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "card-footer.directive.ts.template",
-      "path": "card-footer.directive.ts.template",
+      "name": "card-footer.directive.ts",
+      "path": "card/card-footer.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "card-header.directive.ts.template",
-      "path": "card-header.directive.ts.template",
+      "name": "card-header.directive.ts",
+      "path": "card/card-header.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "card-title.directive.ts.template",
-      "path": "card-title.directive.ts.template",
+      "name": "card-title.directive.ts",
+      "path": "card/card-title.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "card.directive.ts.template",
-      "path": "card.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "card.json",
-      "path": "card.json",
+      "name": "card.directive.ts",
+      "path": "card/card.directive.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "kbd.directive.ts.template",
-      "path": "kbd.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "keyboard.json",
-      "path": "keyboard.json",
+      "name": "kbd.directive.ts",
+      "path": "keyboard/kbd.directive.ts",
       "type": "registry:ui"
     }
   ]

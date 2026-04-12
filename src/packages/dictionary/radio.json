@@ -8,18 +8,13 @@
   ],
   "files": [
     {
-      "name": "radio-item.directive.ts.template",
-      "path": "radio-item.directive.ts.template",
+      "name": "radio-item.directive.ts",
+      "path": "radio/radio-item.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "radio.component.ts.template",
-      "path": "radio.component.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "radio.json",
-      "path": "radio.json",
+      "name": "radio.component.ts",
+      "path": "radio/radio.component.ts",
       "type": "registry:ui"
     }
   ]

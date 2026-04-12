@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "toggle-group.directive.ts.template",
-      "path": "toggle-group.directive.ts.template",
+      "name": "toggle-group.directive.ts",
+      "path": "togglegroup/toggle-group.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "toggle-item.directive.ts.template",
-      "path": "toggle-item.directive.ts.template",
+      "name": "toggle-item.directive.ts",
+      "path": "togglegroup/toggle-item.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "toggle.variants.ts.template",
-      "path": "toggle.variants.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "togglegroup.json",
-      "path": "togglegroup.json",
+      "name": "toggle.variants.ts",
+      "path": "togglegroup/toggle.variants.ts",
       "type": "registry:ui"
     }
   ]

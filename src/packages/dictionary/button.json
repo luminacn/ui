@@ -8,17 +8,17 @@
   "files": [
     {
       "name": "button.directive.ts",
-      "path": "button.directive.ts",
+      "path": "button/button.directive.ts",
       "type": "registry:ui"
     },
     {
       "name": "button.types.ts",
-      "path": "button.types.ts",
+      "path": "button/button.types.ts",
       "type": "registry:ui"
     },
     {
       "name": "button.variants.ts",
-      "path": "button.variants.ts",
+      "path": "button/button.variants.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "label.directive.ts.template",
-      "path": "label.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "label.json",
-      "path": "label.json",
+      "name": "label.directive.ts",
+      "path": "label/label.directive.ts",
       "type": "registry:ui"
     }
   ]

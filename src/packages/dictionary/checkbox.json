@@ -8,13 +8,8 @@
   ],
   "files": [
     {
-      "name": "checkbox.component.ts.template",
-      "path": "checkbox.component.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "checkbox.json",
-      "path": "checkbox.json",
+      "name": "checkbox.component.ts",
+      "path": "checkbox/checkbox.component.ts",
       "type": "registry:ui"
     }
   ]

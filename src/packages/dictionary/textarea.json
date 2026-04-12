@@ -4,18 +4,12 @@
   "requires": [],
   "npmDependencies": [
     "@angular/core",
-    "@angular/forms",
-    "@angular/core/rxjs-interop"
+    "@angular/forms"
   ],
   "files": [
     {
-      "name": "textarea.directive.ts.template",
-      "path": "textarea.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "textarea.json",
-      "path": "textarea.json",
+      "name": "textarea.directive.ts",
+      "path": "textarea/textarea.directive.ts",
       "type": "registry:ui"
     }
   ]

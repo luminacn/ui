@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "alert.directive.ts.template",
-      "path": "alert.directive.ts.template",
+      "name": "alert.directive.ts",
+      "path": "alert/alert.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "alert.types.ts.template",
-      "path": "alert.types.ts.template",
+      "name": "alert.types.ts",
+      "path": "alert/alert.types.ts",
       "type": "registry:ui"
     },
     {
-      "name": "alert.variants.ts.template",
-      "path": "alert.variants.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "avatar.json",
-      "path": "avatar.json",
+      "name": "alert.variants.ts",
+      "path": "alert/alert.variants.ts",
       "type": "registry:ui"
     }
   ]

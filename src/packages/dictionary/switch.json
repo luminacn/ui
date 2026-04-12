@@ -8,13 +8,8 @@
   ],
   "files": [
     {
-      "name": "switch.component.ts.template",
-      "path": "switch.component.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "switch.json",
-      "path": "switch.json",
+      "name": "switch.component.ts",
+      "path": "switch/switch.component.ts",
       "type": "registry:ui"
     }
   ]

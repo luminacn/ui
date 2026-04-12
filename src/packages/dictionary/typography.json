@@ -7,33 +7,28 @@
   ],
   "files": [
     {
-      "name": "headings.directive.ts.template",
-      "path": "headings.directive.ts.template",
+      "name": "headings.directive.ts",
+      "path": "typography/headings.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "helpers.directive.ts.template",
-      "path": "helpers.directive.ts.template",
+      "name": "helpers.directive.ts",
+      "path": "typography/helpers.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "hr.directive.ts.template",
-      "path": "hr.directive.ts.template",
+      "name": "hr.directive.ts",
+      "path": "typography/hr.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "list-table.directive.ts.template",
-      "path": "list-table.directive.ts.template",
+      "name": "list-table.directive.ts",
+      "path": "typography/list-table.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "text.directive.ts.template",
-      "path": "text.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "typography.json",
-      "path": "typography.json",
+      "name": "text.directive.ts",
+      "path": "typography/text.directive.ts",
       "type": "registry:ui"
     }
   ]

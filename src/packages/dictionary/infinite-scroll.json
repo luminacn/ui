@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "infinite-scroll.directive.ts.template",
-      "path": "infinite-scroll.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "infinite-scroll.json",
-      "path": "infinite-scroll.json",
+      "name": "infinite-scroll.directive.ts",
+      "path": "infinite-scroll/infinite-scroll.directive.ts",
       "type": "registry:ui"
     }
   ]

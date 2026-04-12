@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "input-group.component.ts.template",
-      "path": "input-group.component.ts.template",
+      "name": "input-group.component.ts",
+      "path": "input/input-group.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "input-icon.directive.ts.template",
-      "path": "input-icon.directive.ts.template",
+      "name": "input-icon.directive.ts",
+      "path": "input/input-icon.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "input.directive.ts.template",
-      "path": "input.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "input.json",
-      "path": "input.json",
+      "name": "input.directive.ts",
+      "path": "input/input.directive.ts",
       "type": "registry:ui"
     }
   ]

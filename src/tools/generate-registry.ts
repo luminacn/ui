@@ -25,6 +25,18 @@ function getAllFiles(dir: string): string[] {
   return files;
 }
 
+function normalizeNpmImport(imp: string): string {
+  // scoped packages like @angular/cdk/overlay → @angular/cdk
+  if (imp.startsWith("@")) {
+    const parts = imp.split("/");
+
+    // @scope/package/subpath → @scope/package
+    return parts.length > 2 ? `${parts[0]}/${parts[1]}` : imp;
+  }
+
+  return imp;
+}
+
 /* =========================
    EXTRACT IMPORTS
 ========================= */
@@ -64,7 +76,8 @@ function classifyImports(
 
     // external npm dependency
     if (!imp.startsWith(".") && !imp.startsWith("/")) {
-      npmDependencies.add(imp);
+      const normalized = normalizeNpmImport(imp);
+      npmDependencies.add(normalized);
       continue;
     }
 
@@ -124,7 +137,7 @@ function buildComponent(componentName: string) {
 
     fileEntries.push({
       name: path.basename(file),
-      path: path.relative(componentPath, file).replace(/\\/g, "/"),
+      path: path.relative(registryRoot, file).replace(/\\/g, "/"),
       type: "registry:ui",
     });
   }

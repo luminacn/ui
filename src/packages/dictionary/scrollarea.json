@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "scroll-area.directive.ts.template",
-      "path": "scroll-area.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "scrollarea.json",
-      "path": "scrollarea.json",
+      "name": "scroll-area.directive.ts",
+      "path": "scrollarea/scroll-area.directive.ts",
       "type": "registry:ui"
     }
   ]

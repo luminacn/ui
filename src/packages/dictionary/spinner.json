@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "spinner.component.ts.template",
-      "path": "spinner.component.ts.template",
+      "name": "spinner.component.ts",
+      "path": "spinner/spinner.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "spinner.json",
-      "path": "spinner.json",
+      "name": "spinner.types.ts",
+      "path": "spinner/spinner.types.ts",
       "type": "registry:ui"
     },
     {
-      "name": "spinner.types.ts.template",
-      "path": "spinner.types.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "spinner.variants.ts.template",
-      "path": "spinner.variants.ts.template",
+      "name": "spinner.variants.ts",
+      "path": "spinner/spinner.variants.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "slider.directive.ts.template",
-      "path": "slider.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "slider.json",
-      "path": "slider.json",
+      "name": "slider.directive.ts",
+      "path": "slider/slider.directive.ts",
       "type": "registry:ui"
     }
   ]

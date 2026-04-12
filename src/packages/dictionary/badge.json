@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "badge.directive.ts.template",
-      "path": "badge.directive.ts.template",
+      "name": "badge.directive.ts",
+      "path": "badge/badge.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "badge.json",
-      "path": "badge.json",
+      "name": "badge.types.ts",
+      "path": "badge/badge.types.ts",
       "type": "registry:ui"
     },
     {
-      "name": "badge.types.ts.template",
-      "path": "badge.types.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "badge.variants.ts.template",
-      "path": "badge.variants.ts.template",
+      "name": "badge.variants.ts",
+      "path": "badge/badge.variants.ts",
       "type": "registry:ui"
     }
   ]

@@ -7,33 +7,23 @@
   ],
   "files": [
     {
-      "name": "navigation-menu-trigger.directive.ts.template",
-      "path": "navigation-menu-trigger.directive.ts.template",
+      "name": "navigation-menu-trigger.directive.ts",
+      "path": "navigation/navigation-menu-trigger.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "navigation-menu-viewport.component.ts.template",
-      "path": "navigation-menu-viewport.component.ts.template",
+      "name": "navigation-menu-viewport.component.ts",
+      "path": "navigation/navigation-menu-viewport.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "navigation-menu.css.template.template",
-      "path": "navigation-menu.css.template.template",
+      "name": "navigation-menu.directive.ts",
+      "path": "navigation/navigation-menu.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "navigation-menu.directive.ts.template",
-      "path": "navigation-menu.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "navigation-menu.variants.ts.template",
-      "path": "navigation-menu.variants.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "navigation.json",
-      "path": "navigation.json",
+      "name": "navigation-menu.variants.ts",
+      "path": "navigation/navigation-menu.variants.ts",
       "type": "registry:ui"
     }
   ]

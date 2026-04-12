@@ -7,18 +7,13 @@
   ],
   "files": [
     {
-      "name": "progess.json",
-      "path": "progess.json",
+      "name": "progress.component.ts",
+      "path": "progress/progress.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "progress.component.ts.template",
-      "path": "progress.component.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "progress.variants.ts.template",
-      "path": "progress.variants.ts.template",
+      "name": "progress.variants.ts",
+      "path": "progress/progress.variants.ts",
       "type": "registry:ui"
     }
   ]

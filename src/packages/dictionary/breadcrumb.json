@@ -7,23 +7,18 @@
   ],
   "files": [
     {
-      "name": "breadcrumb-item.directive.ts.template",
-      "path": "breadcrumb-item.directive.ts.template",
+      "name": "breadcrumb-item.directive.ts",
+      "path": "breadcrumb/breadcrumb-item.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "breadcrumb-shared.directive.ts.template",
-      "path": "breadcrumb-shared.directive.ts.template",
+      "name": "breadcrumb-shared.directive.ts",
+      "path": "breadcrumb/breadcrumb-shared.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "breadcrumb.directive.ts.template",
-      "path": "breadcrumb.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "breadcrumb.json",
-      "path": "breadcrumb.json",
+      "name": "breadcrumb.directive.ts",
+      "path": "breadcrumb/breadcrumb.directive.ts",
       "type": "registry:ui"
     }
   ]

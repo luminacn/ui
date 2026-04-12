@@ -5,63 +5,53 @@
   "npmDependencies": [
     "@angular/core",
     "@lucide/angular",
-    "@angular/cdk/overlay",
-    "@angular/cdk/portal"
+    "@angular/cdk"
   ],
+  "cssFile": "sheet.css",
   "files": [
     {
-      "name": "index.ts.template",
-      "path": "index.ts.template",
+      "name": "index.ts",
+      "path": "sheet/index.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-content.component.ts.template",
-      "path": "sheet-content.component.ts.template",
+      "name": "sheet-content.component.ts",
+      "path": "sheet/sheet-content.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-description.directive.ts.template",
-      "path": "sheet-description.directive.ts.template",
+      "name": "sheet-description.directive.ts",
+      "path": "sheet/sheet-description.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-footer.directive.ts.template",
-      "path": "sheet-footer.directive.ts.template",
+      "name": "sheet-footer.directive.ts",
+      "path": "sheet/sheet-footer.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-header.directive.ts.template",
-      "path": "sheet-header.directive.ts.template",
+      "name": "sheet-header.directive.ts",
+      "path": "sheet/sheet-header.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-title.directive.ts.template",
-      "path": "sheet-title.directive.ts.template",
+      "name": "sheet-title.directive.ts",
+      "path": "sheet/sheet-title.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet-trigger.directive.ts.template",
-      "path": "sheet-trigger.directive.ts.template",
+      "name": "sheet-trigger.directive.ts",
+      "path": "sheet/sheet-trigger.directive.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet.css.template",
-      "path": "sheet.css.template",
+      "name": "sheet.service.ts",
+      "path": "sheet/sheet.service.ts",
       "type": "registry:ui"
     },
     {
-      "name": "sheet.json",
-      "path": "sheet.json",
-      "type": "registry:ui"
-    },
-    {
-      "name": "sheet.service.ts.template",
-      "path": "sheet.service.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "sheet.variants.ts.template",
-      "path": "sheet.variants.ts.template",
+      "name": "sheet.variants.ts",
+      "path": "sheet/sheet.variants.ts",
       "type": "registry:ui"
     }
   ]

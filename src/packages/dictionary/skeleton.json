@@ -7,13 +7,8 @@
   ],
   "files": [
     {
-      "name": "skeleton.directive.ts.template",
-      "path": "skeleton.directive.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "skeleton.json",
-      "path": "skeleton.json",
+      "name": "skeleton.directive.ts",
+      "path": "skeleton/skeleton.directive.ts",
       "type": "registry:ui"
     }
   ]

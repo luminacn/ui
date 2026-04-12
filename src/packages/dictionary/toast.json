@@ -5,35 +5,26 @@
   "npmDependencies": [
     "@angular/core"
   ],
+  "cssFile": "toast.css",
   "files": [
     {
-      "name": "toast-toaster.component.ts.template",
-      "path": "toast-toaster.component.ts.template",
+      "name": "toast-toaster.component.ts",
+      "path": "toast/toast-toaster.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "toast.component.ts.template",
-      "path": "toast.component.ts.template",
+      "name": "toast.component.ts",
+      "path": "toast/toast.component.ts",
       "type": "registry:ui"
     },
     {
-      "name": "toast.css.template",
-      "path": "toast.css.template",
+      "name": "toast.service.ts",
+      "path": "toast/toast.service.ts",
       "type": "registry:ui"
     },
     {
-      "name": "toast.json",
-      "path": "toast.json",
-      "type": "registry:ui"
-    },
-    {
-      "name": "toast.service.ts.template",
-      "path": "toast.service.ts.template",
-      "type": "registry:ui"
-    },
-    {
-      "name": "toast.variants.ts.template",
-      "path": "toast.variants.ts.template",
+      "name": "toast.variants.ts",
+      "path": "toast/toast.variants.ts",
       "type": "registry:ui"
     }
   ]
