@@ -1,0 +1,4 @@
+.lm-navigation-menu-viewport {
+  will-change: width, height, left;
+  overflow: hidden;
+}

@@ -12,11 +12,11 @@
   ],
   "files": [
     "index.ts.template",
-    "sheet-content.directive.ts",
-    "sheet-description.directive.ts",
-    "sheet-footer.directive.ts",
-    "sheet-header.directive.ts",
-    "sheet-title.directive.ts",
+    "sheet-content.directive.ts.template",
+    "sheet-description.directive.ts.template",
+    "sheet-footer.directive.ts.template",
+    "sheet-header.directive.ts.template",
+    "sheet-title.directive.ts.template",
     "sheet-trigger.directive.ts.template",
     "sheet.service.ts.template",
     "sheet.variants.ts.template"

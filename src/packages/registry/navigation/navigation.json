@@ -1,0 +1,16 @@
+{
+  "name": "navigation",
+  "destination": "ui/navigation",
+  "cssFile": "navigation.css.template",
+  "primaryExport": [
+    "LuminaNavigationMenuDirective",
+    "LuminaNavigationMenuViewportComponent",
+    "LuminaNavigationMenuTriggerDirective"
+  ],
+  "files": [
+    "navigation-menu-trigger.directive.ts.template",
+    "navigation-menu-viewport.component.ts.template",
+    "navigation-menu.directive.ts.template",
+    "navigation-menu.variants.ts.template"
+  ]
+}
