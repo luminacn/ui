@@ -16,7 +16,6 @@ import {
 
 export async function addComponent(componentName: string, targetPath: string) {
   const packageRoot = getPackageRoot();
-
   const registryDir = path.join(packageRoot, "packages", "registry");
 
   const state = loadState(targetPath);
@@ -43,6 +42,12 @@ export async function addComponent(componentName: string, targetPath: string) {
     const meta = registry[name];
     const installed = state.components[name];
 
+    // detect install base correctly per component
+    const base =
+      meta.files?.[0]?.type === "registry:ui"
+        ? config.components
+        : config.utils;
+
     if (installed?.version === meta.version) {
       console.log(`✔ ${name} already up to date`);
       continue;
@@ -50,6 +55,7 @@ export async function addComponent(componentName: string, targetPath: string) {
 
     console.log(`📦 Installing ${name}...`);
 
+    // install npm deps
     const missing =
       meta.npmDependencies?.filter((d: string) => !installedDeps[d]) ?? [];
 
@@ -60,15 +66,13 @@ export async function addComponent(componentName: string, targetPath: string) {
       });
     }
 
+    // copy files
     for (const file of meta.files) {
       if (!file.path) {
         throw new Error(`Invalid file.path in ${name}`);
       }
 
       const src = path.join(registryDir, file.path);
-
-      const base =
-        file.type === "registry:ui" ? config.components : config.utils;
 
       if (!base) {
         console.error("❌ Missing base path in config");
@@ -93,23 +97,19 @@ export async function addComponent(componentName: string, targetPath: string) {
       const cssSrc = path.join(registryDir, meta.cssFile);
       const styleFile = path.join(targetPath, config.styles);
 
-      if (!fs.existsSync(cssSrc)) {
-        console.warn(`⚠ CSS file not found: ${meta.cssFile}`);
-      } else {
+      if (fs.existsSync(cssSrc)) {
         const css = fs.readFileSync(cssSrc, "utf-8");
         upsertCss(styleFile, name, css);
+      } else {
+        console.warn(`⚠ CSS file not found: ${meta.cssFile}`);
       }
     }
 
     state.components[name] = {
-      path: `src/components/ui/${name}`,
+      path: path.join(base, name).replace(/\\/g, "/"),
       installedAt: new Date().toISOString(),
       version: meta.version ?? "1.0.0",
-      css: {
-        file: meta.cssFile,
-        start: `/* lumina:start:${name} */`,
-        end: `/* lumina:end:${name} */`,
-      },
+      cssFile: meta.cssFile ?? null,
     };
   }
 

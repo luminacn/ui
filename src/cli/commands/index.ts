@@ -6,6 +6,7 @@ import { upgradeComponent } from "./upgrade.ts";
 import { rollback } from "./rollback.ts";
 import { doctor } from "./doctor.ts";
 import { diff } from "./diff.ts";
+import { uninstall } from "./uninstall.ts";
 
 export const commands: Record<
   string,
@@ -51,6 +52,17 @@ export const commands: Record<
     for (const name of args) {
       console.log(`\n⬆ Upgrading ${name}...\n`);
       await upgradeComponent(name, ctx.targetPath);
+    }
+  },
+
+  remove: async (args, ctx) => {
+    if (args.length === 0) {
+      console.error("❌ Specify component(s)");
+      process.exit(1);
+    }
+
+    for (const name of args) {
+      await uninstall(name, ctx.targetPath);
     }
   },
 
