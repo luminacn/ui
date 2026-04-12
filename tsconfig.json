@@ -12,6 +12,6 @@
     "allowImportingTsExtensions": true,
     "noEmit": false
   },
-  "include": ["./src/cli/**/*", "src/tools/**/*"],
-  "exclude": ["node_modules", "src/packages/registry/**/*", "dist"]
+  "include": ["./src/cli/**/*"],
+  "exclude": ["node_modules", "src/packages/registry/**/*", "dist", "src/tools"]
 }
