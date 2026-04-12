@@ -1,4 +1,3 @@
-import path from "path";
 import { getPackageRoot, loadState, loadRegistry } from "../utils/common.ts";
 
 export function diff(packageRoot?: string, projectPath?: string) {
