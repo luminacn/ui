@@ -1,98 +1,206 @@
-## 🚀 luminacn/ui
+# 🚀 luminacn/ui
 
-### Headless & Signal-based UI for Angular — v2.0
+[![npm version](https://img.shields.io/npm/v/luminacn)](https://www.npmjs.com/package/luminacn) [![npm downloads](https://img.shields.io/npm/dw/luminacn)](https://www.npmjs.com/package/luminacn) [![license](https://img.shields.io/npm/l/luminacn)](https://github.com/luminacn/ui/blob/main/LICENSE)
 
-**Copy-paste UI for Angular.**
-Beautiful, accessible, and high-performance components built for **Angular 19+** and **Tailwind CSS v4**.
+**Signal-first, headless UI primitives for Angular.**  
+Build accessible, composable components — owned directly in your codebase.
 
-[![npm version](https://img.shields.io/npm/v/luminacn)](https://www.npmjs.com/package/luminacn) [![npm downloads](https://img.shields.io/npm/dw/luminacn)](https://www.npmjs.com/package/luminacn) [![bundle size](https://img.shields.io/bundlephobia/minzip/luminacn?label=core%20size)](https://bundlephobia.com/package/luminacn) [![license](https://img.shields.io/npm/l/luminacn)](https://github.com/luminacn/ui/blob/main/LICENSE)
-
----
-
-## ✨ Features (v2)
-
-- **Signals Everywhere** – Deep integration with `input()`, `computed()`, and `model()`.
-- **Interactive Primitives** – Fully accessible overlays: Dialog, Popover, Tooltip, Dropdown.
-- **Service-Driven Toasts** – Global notification system built for Angular 19.
-- **Zoneless Native** – Designed for high-performance, zoneless applications.
-- **Tailwind CSS v4** – Powered by the lightning-fast Oxide engine.
+> CLI-generated UI system for Angular 19+ and Tailwind CSS v4.
 
 ---
 
-## 🛠️ Quick Start
+## ✨ Overview
+
+`luminacn/ui` is a modern UI architecture for Angular that gives you **full ownership of your components**.
+
+Instead of installing opaque dependencies, you generate components directly into your project — fully customizable, fully transparent, and fully yours.
+
+### Core Ideas
+
+- 🧠 **Primitives over components** — build from composable building blocks
+- ⚡ **Signal-native** — designed for Angular Signals (zoneless-ready)
+- 🧩 **Headless-first** — logic separated from styling
+- 📦 **Locally owned** — components live in your source, not `node_modules`
+- 🛠 **CLI-driven** — install, update, diff, and rollback with precision
+
+---
+
+## ⚡ Quick Start
+
+### Initialize your project
 
 ```bash
-# Initialize your project
 npx luminacn@latest init
+```
 
-# Add v2 components
-npx luminacn add stepper dialog toast
+### Add components
+
+```bash
+npx luminacn add sheet navigation-menu input-otp
 ```
 
 ---
 
-## 🎨 Components (v2 Registry)
+## 🧩 How it works
 
-### 🧩 Interactive
+```text
+CLI → Registry → Generator → Your Codebase
+                     ↓
+            Angular Signals UI
+```
 
-Stepper · Dialog · Popover · Accordion · Tabs · Tooltip · Dropdown Menu · Toast
+Every component is:
 
-### 📝 Forms
+- generated into your repo
+- fully editable
+- version-tracked via CLI
 
-Input · Textarea · Checkbox · Switch · Radio · Slider · FormField · ToggleGroup
-
-### 🧱 Layout
-
-Card · AspectRatio · Separator · ScrollArea · Collapsible · Skeleton
-
-### 💬 Feedback & Typography
-
-Badge · Alert · Progress · Spinner · H1–H5 · Kbd · Lead
+No runtime lock-in. No hidden abstraction.
 
 ---
 
-## 🧩 Usage Example — Stepper
+## 🛠 CLI
+
+| Command    | Description                          |
+| ---------- | ------------------------------------ |
+| `init`     | Initialize luminacn in your project  |
+| `add`      | Add components to your codebase      |
+| `list`     | View available components            |
+| `upgrade`  | Update components to latest versions |
+| `rollback` | Revert to a previous state           |
+| `diff`     | Compare local vs registry            |
+| `doctor`   | Validate environment setup           |
+| `remove`   | Remove components safely             |
+
+---
+
+## 🧱 Component Categories
+
+### Navigation & Layout
+
+Navigation Menu · Sheet · Accordion · Tabs · Tooltip · Dropdown · Context Menu · Pagination · Stepper
+
+### Data Display
+
+Data Table · Carousel · Infinite Scroll · Badge · Alert · Progress · Skeleton · Spinner
+
+### Form Controls
+
+Input · Input OTP · Textarea · Checkbox · Radio · Switch · Toggle · Toggle Group · Slider · FormField
+
+### Overlays & Feedback
+
+Dialog · Popover · Toast · Sheet · Tooltip
+
+### Typography
+
+Headings · Text · Lead · Kbd · Utilities
+
+---
+
+## 🧪 Example — Stepper
 
 ```html
 <nav lmStepper [activeStep]="0" #stepper="lmStepper">
-  <button lmStepperTrigger [index]="0">
-    <span>Profile</span>
-  </button>
+  <button lmStepperTrigger [index]="0">Profile</button>
 
   <button lmStepperTrigger [index]="1" [disabled]="profileInvalid()">
-    <span>Security</span>
+    Security
   </button>
 
-  <div class="mt-4">
+  <section class="mt-4">
     @if (stepper.activeStep() === 0) {
     <profile-form />
     } @if (stepper.activeStep() === 1) {
     <security-settings />
     }
-  </div>
+  </section>
 </nav>
 ```
 
 ---
 
-## ⚡ Philosophy
+## 🧠 Philosophy
 
-- **Zero Dependency Core** – Built on Angular primitives, not heavy third-party libraries.
-- **Headless First** – Logic in directives, styling with Tailwind CSS.
-- **Full Ownership** – Code lives in your project. Customize everything.
+### 1. You own the code
+
+Every component is generated into your project. No black boxes.
+
+### 2. Headless by default
+
+Logic is isolated from styling. Use your own design system freely.
+
+### 3. Signal-native architecture
+
+Built for Angular Signals and future zoneless Angular.
+
+### 4. Zero dependency core
+
+No runtime UI framework lock-in.
 
 ---
 
-## 🔮 Roadmap
+## 🆚 Why luminacn/ui?
 
-### Phase 3 — Enterprise Data
+| Feature               | luminacn/ui | Angular Material | CDK        |
+| --------------------- | ----------- | ---------------- | ---------- |
+| Source ownership      | ✅ Yes      | ❌ No            | ⚠️ Partial |
+| Headless architecture | ✅ Yes      | ❌ No            | ⚠️ Partial |
+| Signals-ready         | ✅ Yes      | ❌ No            | ❌ No      |
+| Tailwind-first        | ✅ Yes      | ❌ No            | ❌ No      |
+| CLI-driven updates    | ✅ Yes      | ❌ No            | ❌ No      |
 
-- Data Tables (TanStack integration)
-- Advanced Combobox
-- Command Palette (Cmd + K)
+---
 
-### Phase 4 — Visuals
+## 🗺️ Roadmap
 
-- Motion primitives
-- Charting wrappers
-- Dynamic theme switching
+### Core Interactions
+
+- Sheet (Drawer) ✅
+- Navigation Menu ✅
+- Input OTP ✅
+- Combobox / Autocomplete ⏳
+- Command Palette (Cmd+K) ⏳
+
+### Data & Display
+
+- Infinite Scroll ✅
+- Data Table ⏳
+- Carousel ⏳
+
+### Forms
+
+- Toggle Group ✅
+- Calendar / Date Picker ⏳
+
+### Layout
+
+- Resizable Panels ⏳
+- Pagination ⏳
+- Context Menu ⏳
+
+---
+
+## ⚡ Installation Philosophy
+
+No lock-in. No runtime magic.
+
+Everything is generated:
+
+- You inspect it
+- You modify it
+- You ship it
+
+---
+
+## 📦 License
+
+MIT
+
+---
+
+## 🔥 Final Note
+
+`luminacn/ui` is built for developers who want:
+
+> “Shadcn-style ownership — but for Angular.”
