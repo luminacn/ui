@@ -159,7 +159,7 @@ No runtime UI framework lock-in.
 - Sheet (Drawer) ✅
 - Navigation Menu ✅
 - Input OTP ✅
-- Combobox / Autocomplete ⏳
+- Combobox / Autocomplete ✅
 - Command Palette (Cmd+K) ⏳
 
 ### Data & Display

@@ -1,0 +1,3 @@
+.lm-combobox-pane {
+  z-index: var(--lm-z-popover, 9999);
+}
