@@ -1,0 +1,37 @@
+{
+  "name": "combobox",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk"
+  ],
+  "cssFile": "combobox.css",
+  "files": [
+    {
+      "name": "combobox-content.component.ts",
+      "path": "combobox/combobox-content.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox-input.directive.ts",
+      "path": "combobox/combobox-input.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox-item.directive.ts",
+      "path": "combobox/combobox-item.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox-tag.component.ts",
+      "path": "combobox/combobox-tag.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "combobox.directive.ts",
+      "path": "combobox/combobox.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}
