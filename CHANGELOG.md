@@ -1,3 +1,10 @@
+# [3.3.0](https://github.com/luminacn/ui/compare/v3.2.0...v3.3.0) (2026-04-13)
+
+
+### Features
+
+* **dictionary:** add combobox package definition ([eb51c69](https://github.com/luminacn/ui/commit/eb51c691f9a2c542b5ffcfd0d90082d3b3d813cb))
+
 # [3.2.0](https://github.com/luminacn/ui/compare/v3.1.1...v3.2.0) (2026-04-13)
 
 
