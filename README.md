@@ -171,7 +171,7 @@ No runtime UI framework lock-in.
 ### Forms
 
 - Toggle Group ✅
-- Calendar / Date Picker ⏳
+- Calendar / Date Picker ✅
 
 ### Layout
 

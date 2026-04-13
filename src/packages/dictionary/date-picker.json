@@ -1,0 +1,33 @@
+{
+  "name": "date-picker",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/common",
+    "@lucide/angular",
+    "@angular/cdk"
+  ],
+  "files": [
+    {
+      "name": "calendar.component.ts",
+      "path": "date-picker/calendar.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "date-picker.component.ts",
+      "path": "date-picker/date-picker.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "date-picker.types.ts",
+      "path": "date-picker/date-picker.types.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "date-picker.utils.ts",
+      "path": "date-picker/date-picker.utils.ts",
+      "type": "registry:ui"
+    }
+  ]
+}
