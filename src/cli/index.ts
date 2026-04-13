@@ -1,25 +1,29 @@
 #!/usr/bin/env node
 /// <reference types="node" />
-import { init } from "./commands/init.ts";
-import { addComponent } from "./commands/add.ts";
 
-const args = process.argv.slice(2); // all CLI args
+import { commands } from "./commands/index.ts";
+import { getPackageRoot } from "./utils/common.ts";
+
+const args = process.argv.slice(2);
 const command = args[0];
+const commandArgs = args.slice(1);
 
-if (command === "init") {
-  init();
-} else if (command === "add") {
-  const componentName = args[1]; // e.g., "button" or "toggle"
-  if (!componentName) {
-    console.error(
-      "❌ Please specify a component to add, e.g. `npx luminacn add button`",
-    );
+async function main() {
+  const targetPath = process.cwd();
+  const packageRoot = getPackageRoot();
+
+  const handler = commands[command];
+
+  if (!handler) {
+    console.log(`❌ Unknown command: ${command}\n`);
+    console.log("Available commands:");
+    Object.keys(commands).forEach((cmd) => {
+      console.log(`  - ${cmd}`);
+    });
     process.exit(1);
   }
 
-  const targetPath = process.cwd(); // the user's Angular project
-  addComponent(componentName, targetPath);
-} else {
-  console.log("❌ Unknown command:", command);
-  console.log("Available commands: init, add <component>");
+  await handler(commandArgs, { targetPath, packageRoot });
 }
+
+main();

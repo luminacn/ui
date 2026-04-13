@@ -1,0 +1,27 @@
+{
+  "name": "tooltip",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk"
+  ],
+  "cssFile": "tooltip.css",
+  "files": [
+    {
+      "name": "tooltip.component.ts",
+      "path": "tooltip/tooltip.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.directive.ts",
+      "path": "tooltip/tooltip.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "tooltip.variants.ts",
+      "path": "tooltip/tooltip.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "breadcrumb",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "breadcrumb-item.directive.ts",
+      "path": "breadcrumb/breadcrumb-item.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "breadcrumb-shared.directive.ts",
+      "path": "breadcrumb/breadcrumb-shared.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "breadcrumb.directive.ts",
+      "path": "breadcrumb/breadcrumb.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

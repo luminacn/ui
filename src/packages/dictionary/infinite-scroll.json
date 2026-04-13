@@ -1,0 +1,15 @@
+{
+  "name": "infinite-scroll",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "infinite-scroll.directive.ts",
+      "path": "infinite-scroll/infinite-scroll.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

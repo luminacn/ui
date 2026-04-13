@@ -1,6 +1,0 @@
-{
-  "name": "keyboard",
-  "destination": "ui/keyboard",
-  "primaryExport": "LuminaKbdDirective",
-  "files": ["kbd.directive.ts.template"]
-}

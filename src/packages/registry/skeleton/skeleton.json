@@ -1,6 +1,0 @@
-{
-  "name": "skeleton",
-  "destination": "ui/skeleton",
-  "primaryExport": "LuminaSkeletonDirective",
-  "files": ["skeleton.directive.ts.template"]
-}

@@ -1,0 +1,25 @@
+{
+  "name": "alert",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "alert.directive.ts",
+      "path": "alert/alert.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert.types.ts",
+      "path": "alert/alert.types.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "alert.variants.ts",
+      "path": "alert/alert.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

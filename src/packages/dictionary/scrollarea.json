@@ -1,0 +1,15 @@
+{
+  "name": "scrollarea",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "scroll-area.directive.ts",
+      "path": "scrollarea/scroll-area.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

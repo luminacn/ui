@@ -1,0 +1,15 @@
+{
+  "name": "label",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "label.directive.ts",
+      "path": "label/label.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

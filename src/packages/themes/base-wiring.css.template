@@ -1,65 +1,74 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-
 @import '@angular/cdk/overlay-prebuilt.css';
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
+  --ease-lumina: cubic-bezier(0.4, 0, 0.2, 1);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
-  
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
-  
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
-  
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
-  
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
-  
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
-  
   --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground); /* Added */
+  --color-destructive-foreground: var(--destructive-foreground);
   
+  /* v2.1 Semantic & Charts */
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Borders & Rings */
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
   
+  /* Radius System */
+  --radius-xl: calc(var(--radius) + 4px);
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
-  --radius-xl: calc(var(--radius) + 4px); /* Added for larger containers */
+
+  /* Micro-interactions */
+  --ease-lumina: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-intro: 200ms;
+  --duration-outro: 150ms;
 }
+
+
 
 @layer base {
   * {
+    /* v4 uses /opacity syntax, this ensures all borders respect the theme */
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1; /* Better typography rendering */
   }
 }
 
+/* Enhanced Progress Animation */
 @keyframes progress-indeterminate {
-  0% {
-    transform: translateX(-100%) scaleX(0.2);
-  }
-  50% {
-    transform: translateX(0%) scaleX(0.5);
-  }
-  100% {
-    transform: translateX(100%) scaleX(0.2);
-  }
+  0% { transform: translateX(-100%) scaleX(0.2); }
+  50% { transform: translateX(0%) scaleX(0.5); }
+  100% { transform: translateX(100%) scaleX(0.2); }
 }
+
 .animate-progress-indeterminate {
-  animation: progress-indeterminate 2s infinite linear;
+  animation: progress-indeterminate 2s var(--ease-lumina) infinite;
 }

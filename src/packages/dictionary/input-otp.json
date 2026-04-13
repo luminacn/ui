@@ -1,0 +1,21 @@
+{
+  "name": "input-otp",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "cssFile": "input-otp.css",
+  "files": [
+    {
+      "name": "input-otp.component.ts",
+      "path": "input-otp/input-otp.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "input-otp.variants.ts",
+      "path": "input-otp/input-otp.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

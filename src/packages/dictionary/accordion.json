@@ -1,0 +1,37 @@
+{
+  "name": "accordion",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk"
+  ],
+  "cssFile": "accordion.css",
+  "files": [
+    {
+      "name": "accordion-content.directive.ts",
+      "path": "accordion/accordion-content.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "accordion-item.directive.ts",
+      "path": "accordion/accordion-item.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "accordion-trigger.component.ts",
+      "path": "accordion/accordion-trigger.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "accordion.directive.ts",
+      "path": "accordion/accordion.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "accordion.variants.ts",
+      "path": "accordion/accordion.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

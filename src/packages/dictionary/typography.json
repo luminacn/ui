@@ -1,0 +1,35 @@
+{
+  "name": "typography",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "headings.directive.ts",
+      "path": "typography/headings.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "helpers.directive.ts",
+      "path": "typography/helpers.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "hr.directive.ts",
+      "path": "typography/hr.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "list-table.directive.ts",
+      "path": "typography/list-table.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "text.directive.ts",
+      "path": "typography/text.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

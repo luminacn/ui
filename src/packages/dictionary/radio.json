@@ -1,0 +1,21 @@
+{
+  "name": "radio",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/forms"
+  ],
+  "files": [
+    {
+      "name": "radio-item.directive.ts",
+      "path": "radio/radio-item.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "radio.component.ts",
+      "path": "radio/radio.component.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

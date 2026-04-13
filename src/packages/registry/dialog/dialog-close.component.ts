@@ -1,0 +1,27 @@
+import { Component, input, computed } from '@angular/core';
+import { LuminaDialogCloseDirective } from './dialog-close.directive';
+import { cn } from '../../../lib/cn';
+import { LucideX } from '@lucide/angular';
+
+@Component({
+  selector: 'button[lmDialogCloseButton]',
+  standalone: true,
+  hostDirectives: [LuminaDialogCloseDirective],
+  imports: [LucideX],
+  template: ` <svg lucideX></svg> `,
+  host: {
+    '[class]': 'computedClass()',
+    type: 'button',
+  },
+})
+export class LuminaDialogCloseButtonComponent {
+  userClass = input('', { alias: 'class' });
+
+  computedClass = computed(() =>
+    cn(
+      'rounded-sm opacity-70 transition-opacity hover:opacity-100',
+      'focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+      this.userClass(),
+    ),
+  );
+}

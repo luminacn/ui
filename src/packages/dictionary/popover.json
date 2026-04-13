@@ -1,0 +1,33 @@
+{
+  "name": "popover",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk",
+    "rxjs/operators"
+  ],
+  "cssFile": "popover.css",
+  "files": [
+    {
+      "name": "popover-close.directive.ts",
+      "path": "popover/popover-close.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover-content.component.ts",
+      "path": "popover/popover-content.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.directive.ts",
+      "path": "popover/popover.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "popover.variants.ts",
+      "path": "popover/popover.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "input",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "input-group.component.ts",
+      "path": "input/input-group.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "input-icon.directive.ts",
+      "path": "input/input-icon.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "input.directive.ts",
+      "path": "input/input.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

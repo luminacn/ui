@@ -1,0 +1,15 @@
+{
+  "name": "slider",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "slider.directive.ts",
+      "path": "slider/slider.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

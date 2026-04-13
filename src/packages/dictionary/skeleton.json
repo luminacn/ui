@@ -1,0 +1,15 @@
+{
+  "name": "skeleton",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "skeleton.directive.ts",
+      "path": "skeleton/skeleton.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

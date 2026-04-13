@@ -1,0 +1,15 @@
+{
+  "name": "collapsible",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "collapsible.directive.ts",
+      "path": "collapsible/collapsible.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

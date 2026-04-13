@@ -1,0 +1,16 @@
+{
+  "name": "textarea",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/forms"
+  ],
+  "files": [
+    {
+      "name": "textarea.directive.ts",
+      "path": "textarea/textarea.directive.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

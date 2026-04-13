@@ -1,0 +1,25 @@
+{
+  "name": "badge",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "badge.directive.ts",
+      "path": "badge/badge.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge.types.ts",
+      "path": "badge/badge.types.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "badge.variants.ts",
+      "path": "badge/badge.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

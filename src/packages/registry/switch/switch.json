@@ -1,6 +1,0 @@
-{
-  "name": "switch",
-  "destination": "ui/switch",
-  "primaryExport": "LuminaSwitchComponent",
-  "files": ["switch.component.ts.template"]
-}

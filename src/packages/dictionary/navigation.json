@@ -1,0 +1,30 @@
+{
+  "name": "navigation",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "navigation-menu-trigger.directive.ts",
+      "path": "navigation/navigation-menu-trigger.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu-viewport.component.ts",
+      "path": "navigation/navigation-menu-viewport.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu.directive.ts",
+      "path": "navigation/navigation-menu.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "navigation-menu.variants.ts",
+      "path": "navigation/navigation-menu.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

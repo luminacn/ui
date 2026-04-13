@@ -1,0 +1,25 @@
+{
+  "name": "spinner",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "files": [
+    {
+      "name": "spinner.component.ts",
+      "path": "spinner/spinner.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner.types.ts",
+      "path": "spinner/spinner.types.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "spinner.variants.ts",
+      "path": "spinner/spinner.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

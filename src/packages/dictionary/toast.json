@@ -1,0 +1,31 @@
+{
+  "name": "toast",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core"
+  ],
+  "cssFile": "toast.css",
+  "files": [
+    {
+      "name": "toast-toaster.component.ts",
+      "path": "toast/toast-toaster.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toast.component.ts",
+      "path": "toast/toast.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toast.service.ts",
+      "path": "toast/toast.service.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "toast.variants.ts",
+      "path": "toast/toast.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}

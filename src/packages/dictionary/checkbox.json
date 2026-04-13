@@ -1,0 +1,16 @@
+{
+  "name": "checkbox",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/forms"
+  ],
+  "files": [
+    {
+      "name": "checkbox.component.ts",
+      "path": "checkbox/checkbox.component.ts",
+      "type": "registry:ui"
+    }
+  ]
+}
