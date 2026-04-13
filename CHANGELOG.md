@@ -1,3 +1,10 @@
+# [3.1.0](https://github.com/luminacn/ui/compare/v3.0.0...v3.1.0) (2026-04-13)
+
+
+### Features
+
+* **registry:** add context-menu package ([eff9647](https://github.com/luminacn/ui/commit/eff96475a9fd4e436d6102916cedda4d7f769e62))
+
 # [3.0.0](https://github.com/luminacn/ui/compare/v2.1.0...v3.0.0) (2026-04-13)
 
 
