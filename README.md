@@ -177,7 +177,7 @@ No runtime UI framework lock-in.
 
 - Resizable Panels ⏳
 - Pagination ⏳
-- Context Menu ⏳
+- Context Menu ✅
 
 ---
 
