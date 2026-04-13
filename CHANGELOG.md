@@ -1,3 +1,13 @@
+# [3.0.0](https://github.com/luminacn/ui/compare/v2.1.0...v3.0.0) (2026-04-13)
+
+
+* feat(cli)!: pipeline overhaul ([db29461](https://github.com/luminacn/ui/commit/db2946151361cbc9dc94e1e491d0f9177028b304))
+
+
+### BREAKING CHANGES
+
+* registry format v2 deprecated.
+
 # [2.1.0](https://github.com/luminacn/ui/compare/v2.0.0...v2.1.0) (2026-04-13)
 
 
