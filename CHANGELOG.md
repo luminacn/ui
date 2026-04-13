@@ -1,3 +1,10 @@
+# [3.2.0](https://github.com/luminacn/ui/compare/v3.1.1...v3.2.0) (2026-04-13)
+
+
+### Features
+
+* **combobox:** implement combobox component ([dac7a45](https://github.com/luminacn/ui/commit/dac7a45dfcfc5f99619a744c68b1d48bec5551a7))
+
 ## [3.1.1](https://github.com/luminacn/ui/compare/v3.1.0...v3.1.1) (2026-04-13)
 
 
