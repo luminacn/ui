@@ -1,0 +1,25 @@
+.lm-context-menu {
+  @apply animate-in fade-in zoom-in-95 duration-150;
+}
+
+/* smoother than dropdown (context menus feel faster) */
+.cdk-overlay-pane:has(.lm-context-menu) {
+  z-index: var(--lm-z-context-menu);
+}
+
+/* optional: subtle elevation difference */
+.lm-context-menu {
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.lm-context-menu [data-cdk-menu-item-highlighted] {
+  background: transparent;
+  color: inherit;
+}
+
+.lm-context-menu-item:hover {
+  background: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+}

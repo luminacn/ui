@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json && npm run copy-assets",
-    "build:registry": "ts-node src/tools/generate-registry.ts",
+    "build:registry": "node src/tools/generate-registry.js",
     "clean:templates": "tsx src/tools/remove-template-extension.ts",
     "start": "tsx tools/cli/index.ts",
     "copy-assets": "cpx \"src/packages/**/*.{template,json,css,ts}\" dist/packages/",

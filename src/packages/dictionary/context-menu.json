@@ -1,0 +1,42 @@
+{
+  "name": "context-menu",
+  "version": "2.0.0",
+  "requires": [],
+  "npmDependencies": [
+    "@angular/core",
+    "@angular/cdk"
+  ],
+  "cssFile": "context-menu.css",
+  "files": [
+    {
+      "name": "context-menu-content.component.ts",
+      "path": "context-menu/context-menu-content.component.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu-item.directive.ts",
+      "path": "context-menu/context-menu-item.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu-item.variants.ts",
+      "path": "context-menu/context-menu-item.variants.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu-separator.directive.ts",
+      "path": "context-menu/context-menu-separator.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu-trigger.directive.ts",
+      "path": "context-menu/context-menu-trigger.directive.ts",
+      "type": "registry:ui"
+    },
+    {
+      "name": "context-menu.variants.ts",
+      "path": "context-menu/context-menu.variants.ts",
+      "type": "registry:ui"
+    }
+  ]
+}
