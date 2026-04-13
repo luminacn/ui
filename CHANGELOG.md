@@ -1,3 +1,20 @@
+# [2.1.0](https://github.com/luminacn/ui/compare/v2.0.0...v2.1.0) (2026-04-13)
+
+
+### Bug Fixes
+
+* **registry:** use correct selector for LucideX component in dialog close template ([a059272](https://github.com/luminacn/ui/commit/a059272107fae6d47ea28d067eb7dc5c49d88e3e))
+
+
+### Features
+
+* add infinite-scroll and input-otp components ([6e7f887](https://github.com/luminacn/ui/commit/6e7f887cabb519404d18d53076a7d349d403b501))
+* add success color variables and chart colors for v2.1 across theme templates ([f6ad37c](https://github.com/luminacn/ui/commit/f6ad37c9fefc745244a6e93cd4a389b594565e61))
+* add uninstall command and improve component path resolution ([3eeafb1](https://github.com/luminacn/ui/commit/3eeafb1a578d4daf6a11af995b715108abe23d4e))
+* **registry/navigation:** add navigation menu component with trigger, viewport, directive, variants, CSS and update sheet references to .template files ([7774163](https://github.com/luminacn/ui/commit/7774163752ba0609d2669adfaa1bda6f24275d2d))
+* **registry/sheet:** add sheet component with swipeable content and directives ([37416f9](https://github.com/luminacn/ui/commit/37416f94ccc4c0d15c5f2933270a0aa391143f9a))
+* **togglegroup:** add LuminaToggleItemDirective and toggle variants ([7cac74d](https://github.com/luminacn/ui/commit/7cac74d2ddc56694119018b9ba7856f0881c5ee4))
+
 # [2.0.0](https://github.com/luminacn/ui/compare/v1.3.0...v2.0.0) (2026-04-11)
 
 
