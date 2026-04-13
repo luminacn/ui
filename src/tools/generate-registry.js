@@ -7,10 +7,10 @@ const dictionaryRoot = path.resolve("src/packages/dictionary");
 /* =========================
    UTIL: READ FILES RECURSIVELY
 ========================= */
-function getAllFiles(dir: string): string[] {
+function getAllFiles(dir) {
   const entries = fs.readdirSync(dir, { withFileTypes: true });
 
-  const files: string[] = [];
+  const files = [];
 
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name);
@@ -25,7 +25,7 @@ function getAllFiles(dir: string): string[] {
   return files;
 }
 
-function normalizeNpmImport(imp: string): string {
+function normalizeNpmImport(imp) {
   // scoped packages like @angular/cdk/overlay → @angular/cdk
   if (imp.startsWith("@")) {
     const parts = imp.split("/");
@@ -40,8 +40,8 @@ function normalizeNpmImport(imp: string): string {
 /* =========================
    EXTRACT IMPORTS
 ========================= */
-function extractImports(fileContent: string): string[] {
-  const imports: string[] = [];
+function extractImports(fileContent) {
+  const imports = [];
   const importRegex = /import\s+(?:[^'"]+from\s+)?["']([^"']+)["']/g;
 
   let match;
@@ -56,13 +56,9 @@ function extractImports(fileContent: string): string[] {
 /* =========================
    CLASSIFY IMPORTS
 ========================= */
-function classifyImports(
-  imports: string[],
-  currentComponent: string,
-  knownComponents: Set<string>,
-) {
-  const npmDependencies = new Set<string>();
-  const requires = new Set<string>();
+function classifyImports(imports, currentComponent, knownComponents) {
+  const npmDependencies = new Set();
+  const requires = new Set();
 
   for (const imp of imports) {
     // ignore internal helpers
@@ -103,7 +99,7 @@ function classifyImports(
 /* =========================
    CSS DETECTION
 ========================= */
-function detectCss(componentPath: string, componentName: string) {
+function detectCss(componentPath, componentName) {
   const cssPath = path.join(componentPath, `${componentName}.css`);
 
   if (fs.existsSync(cssPath)) {
@@ -116,13 +112,13 @@ function detectCss(componentPath: string, componentName: string) {
 /* =========================
    BUILD COMPONENT METADATA
 ========================= */
-function buildComponent(componentName: string) {
+function buildComponent(componentName) {
   const componentPath = path.join(registryRoot, componentName);
 
   const files = getAllFiles(componentPath);
 
-  const fileEntries: any[] = [];
-  const allImports: string[] = [];
+  const fileEntries = [];
+  const allImports = [];
 
   for (const file of files) {
     const ext = path.extname(file);
@@ -157,7 +153,7 @@ function buildComponent(componentName: string) {
     version: "2.0.0",
     requires,
     npmDependencies,
-    cssFile, // ✅ NEW FIELD
+    cssFile, // NEW FIELD
     files: fileEntries,
   };
 }
