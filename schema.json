@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "$schema": { "type": "string" },
+    "aliases": {
+      "type": "object",
+      "properties": {
+        "components": { "type": "string", "description": "The path where components will be installed." },
+        "utils": { "type": "string", "description": "The path where core utilities will be installed." },
+        "styles": { "type": "string", "description": "The path to your global stylesheet." }
+      }
+    }
+  }
+}
