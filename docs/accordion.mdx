@@ -1,0 +1,76 @@
+# Accordion
+
+A vertically stacked set of interactive headings that reveal or hide content.
+
+---
+
+## Installation
+
+Run the following command in your terminal:
+
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add accordion` |
+| **pnpm** | `pnpx luminacn@latest add accordion` |
+| **yarn** | `yarn dlx luminacn@latest add accordion` |
+| **bun** | `bunx luminacn@latest add accordion` |
+
+---
+
+## Usage
+
+```tsx
+import { Component } from "@angular/core";
+import { LuminaAccordionContentDirective, LuminaAccordionItemDirective, LuminaAccordionTriggerComponent, LuminaAccordionDirective } from "@/components/ui/accordion"
+
+@Component({
+  standalone: true,
+  imports: [LuminaAccordionContentDirective, LuminaAccordionItemDirective, LuminaAccordionTriggerComponent, LuminaAccordionDirective],
+  template: `
+    <div lmAccordion>
+        <div lmAccordionContent>...</div>
+        <div lmAccordionItem>...</div>
+        <button lmAccordionTrigger>...</button>
+    </div>
+  `
+})
+export class DemoAccordionComponent {}
+```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Accordion
+├── accordion-content.ts
+├── accordion-item.ts
+├── accordion-trigger.ts
+├── accordion.ts
+└── accordion.variants
+```
+
+---
+
+## Required Context
+
+* **LuminaAccordionContentDirective**: Must be used within a `[lmAccordionContent]` that provides `CdkAccordionItem`.
+* **LuminaAccordionItemDirective**: Must be used within a `[lmAccordionItem]` that provides `LuminaAccordionDirective`.
+* **LuminaAccordionTriggerComponent**: Must be used within a `button[lmAccordionTrigger]` that provides `CdkAccordionItem`.
+
+
+---
+
+## Variants
+
+- `variant`
+- `default`
+- `separated`
+- `ghost`
+
+---
+
+## API Reference
+Refer to the individual source files in your registry for full API details.

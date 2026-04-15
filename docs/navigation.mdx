@@ -1,0 +1,72 @@
+# Navigation
+
+Components for building menus, navbars, and structured navigation flows.
+
+---
+
+## Installation
+
+Run the following command in your terminal:
+
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add navigation` |
+| **pnpm** | `pnpx luminacn@latest add navigation` |
+| **yarn** | `yarn dlx luminacn@latest add navigation` |
+| **bun** | `bunx luminacn@latest add navigation` |
+
+---
+
+## Usage
+
+```tsx
+import { Component } from "@angular/core";
+import { LuminaNavigationMenuTriggerDirective, LuminaNavigationMenuViewportComponent, LuminaNavigationMenuDirective } from "@/components/ui/navigation"
+
+@Component({
+  standalone: true,
+  imports: [LuminaNavigationMenuTriggerDirective, LuminaNavigationMenuViewportComponent, LuminaNavigationMenuDirective],
+  template: `
+    <div lmNavigationMenu>
+        <div lmNavigationMenuTrigger>...</div>
+        <lm-navigation-menu-viewport>...</lm-navigation-menu-viewport>
+    </div>
+  `
+})
+export class DemoNavigationComponent {}
+```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Navigation
+├── navigation-menu-trigger.ts
+├── navigation-menu-viewport.ts
+├── navigation-menu.ts
+└── navigation-menu.variants
+```
+
+---
+
+## Required Context
+
+* **LuminaNavigationMenuTriggerDirective**: Must be used within a `[lmNavigationMenuTrigger]` that provides `ElementRef` and `LuminaNavigationMenuDirective`.
+* **LuminaNavigationMenuViewportComponent**: Must be used within a `lm-navigation-menu-viewport` that provides `LuminaNavigationMenuDirective` and `ElementRef`.
+
+
+---
+
+## Variants
+
+- `orientation`
+- `horizontal`
+- `vertical`
+
+---
+
+## API Reference
+Refer to the individual source files in your registry for full API details.

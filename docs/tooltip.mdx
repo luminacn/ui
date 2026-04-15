@@ -1,0 +1,69 @@
+# Tooltip
+
+Displays contextual information on hover or focus.
+
+---
+
+## Installation
+
+Run the following command in your terminal:
+
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add tooltip` |
+| **pnpm** | `pnpx luminacn@latest add tooltip` |
+| **yarn** | `yarn dlx luminacn@latest add tooltip` |
+| **bun** | `bunx luminacn@latest add tooltip` |
+
+---
+
+## Usage
+
+```tsx
+import { Component } from "@angular/core";
+import { LuminaTooltipComponent, LuminaTooltipDirective } from "@/components/ui/tooltip"
+
+@Component({
+  standalone: true,
+  imports: [LuminaTooltipComponent, LuminaTooltipDirective],
+  template: `
+    <lm-tooltip>
+        <div lmTooltip>...</div>
+    </lm-tooltip>
+  `
+})
+export class DemoTooltipComponent {}
+```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Tooltip
+├── tooltip.ts
+├── tooltip.ts
+└── tooltip.variants
+```
+
+---
+
+## Required Context
+
+* **LuminaTooltipDirective**: Must be used within a `[lmTooltip]` that provides `Overlay` and `ElementRef` and `ScrollStrategyOptions`.
+
+
+---
+
+## Variants
+
+- `variant`
+- `default`
+- `outline`
+
+---
+
+## API Reference
+Refer to the individual source files in your registry for full API details.
