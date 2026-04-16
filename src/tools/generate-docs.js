@@ -157,7 +157,7 @@ function generateMDX(name) {
 
   mdx += `## Installation\n\nRun the following command in your terminal:\n\n| Manager | Command |\n| :--- | :--- |\n| **npm** | \`npx luminacn@latest add ${name}\` |\n| **pnpm** | \`pnpx luminacn@latest add ${name}\` |\n| **yarn** | \`yarn dlx luminacn@latest add ${name}\` |\n| **bun** | \`bunx luminacn@latest add ${name}\` |\n\n---\n\n`;
 
-  mdx += `## Usage\n\n\`\`\`tsx\nimport { Component } from "@angular/core";\nimport { ${imports.join(", ")} } from "@/components/ui/${name}"\n\n@Component({\n  standalone: true,\n  imports: [${imports.join(", ")}],\n  template: \`\n${buildTemplate(
+  mdx += `## Usage\n\n\`\`\`tsx\nimport { Component } from "@angular/core";\nimport { ${imports.join(", ")} } from "../components/ui/${name}"\n\n@Component({\n  standalone: true,\n  imports: [${imports.join(", ")}],\n  template: \`\n${buildTemplate(
     fileData,
   )
     .split("\n")

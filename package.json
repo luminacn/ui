@@ -11,6 +11,7 @@
     "build": "tsc -p tsconfig.json && npm run copy-assets",
     "build:registry": "node src/tools/generate-registry.js",
     "build:docs": "node src/tools/generate-docs.js",
+    "extract:docs": "node src/tools/extractor.js",
     "clean:templates": "tsx src/tools/remove-template-extension.ts",
     "start": "tsx tools/cli/index.ts",
     "copy-assets": "cpx \"src/packages/**/*.{template,json,css,ts}\" dist/packages/",
