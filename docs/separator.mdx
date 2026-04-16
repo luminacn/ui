@@ -8,12 +8,12 @@ A visual divider used to separate content sections.
 
 Run the following command in your terminal:
 
-| Manager | Command |
-| :--- | :--- |
-| **npm** | `npx luminacn@latest add separator` |
-| **pnpm** | `pnpx luminacn@latest add separator` |
+| Manager  | Command                                  |
+| :------- | :--------------------------------------- |
+| **npm**  | `npx luminacn@latest add separator`      |
+| **pnpm** | `pnpx luminacn@latest add separator`     |
 | **yarn** | `yarn dlx luminacn@latest add separator` |
-| **bun** | `bunx luminacn@latest add separator` |
+| **bun**  | `bunx luminacn@latest add separator`     |
 
 ---
 
@@ -21,15 +21,12 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaSeparatorDirective } from "@/components/ui/separator"
+import { LuminaSeparatorDirective } from "../components/ui/separator";
 
 @Component({
   standalone: true,
   imports: [LuminaSeparatorDirective],
-  template: `
-    <div lmSeparator>
-    </div>
-  `
+  template: ` <div lmSeparator></div> `,
 })
 export class DemoSeparatorComponent {}
 ```
@@ -50,9 +47,10 @@ Separator
 
 ## Required Context
 
-*This component is standalone and requires no specific parent providers.*
+_This component is standalone and requires no specific parent providers._
 
 ---
 
 ## API Reference
+
 Refer to the individual source files in your registry for full API details.

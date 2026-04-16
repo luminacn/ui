@@ -8,12 +8,12 @@ A menu that appears on right-click or interaction with contextual actions.
 
 Run the following command in your terminal:
 
-| Manager | Command |
-| :--- | :--- |
-| **npm** | `npx luminacn@latest add context-menu` |
-| **pnpm** | `pnpx luminacn@latest add context-menu` |
+| Manager  | Command                                     |
+| :------- | :------------------------------------------ |
+| **npm**  | `npx luminacn@latest add context-menu`      |
+| **pnpm** | `pnpx luminacn@latest add context-menu`     |
 | **yarn** | `yarn dlx luminacn@latest add context-menu` |
-| **bun** | `bunx luminacn@latest add context-menu` |
+| **bun**  | `bunx luminacn@latest add context-menu`     |
 
 ---
 
@@ -21,7 +21,7 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaContextMenuContentComponent, LuminaContextMenuItemDirective, LuminaContextMenuSeparatorDirective, LuminaContextMenuTriggerDirective } from "@/components/ui/context-menu"
+import { LuminaContextMenuContentComponent, LuminaContextMenuItemDirective, LuminaContextMenuSeparatorDirective, LuminaContextMenuTriggerDirective } from "../components/ui/context-menu"
 
 @Component({
   standalone: true,
@@ -57,9 +57,8 @@ Context-menu
 
 ## Required Context
 
-* **LuminaContextMenuContentComponent**: Must be used within a `div[lmContextMenuContent]` that provides `ElementRef<HTMLElement>`.
-* **LuminaContextMenuTriggerDirective**: Must be used within a `[lmContextMenuTrigger]` that provides `CdkContextMenuTrigger`.
-
+- **LuminaContextMenuContentComponent**: Must be used within a `div[lmContextMenuContent]` that provides `ElementRef<HTMLElement>`.
+- **LuminaContextMenuTriggerDirective**: Must be used within a `[lmContextMenuTrigger]` that provides `CdkContextMenuTrigger`.
 
 ---
 
@@ -75,4 +74,5 @@ Context-menu
 ---
 
 ## API Reference
+
 Refer to the individual source files in your registry for full API details.

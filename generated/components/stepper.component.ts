@@ -17,4 +17,4 @@ import {
     <button lmStepperTrigger>...</button>
   </div>`,
 })
-export class Steppe
+export class StepperComponent {}

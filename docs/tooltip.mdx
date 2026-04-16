@@ -8,12 +8,12 @@ Displays contextual information on hover or focus.
 
 Run the following command in your terminal:
 
-| Manager | Command |
-| :--- | :--- |
-| **npm** | `npx luminacn@latest add tooltip` |
-| **pnpm** | `pnpx luminacn@latest add tooltip` |
+| Manager  | Command                                |
+| :------- | :------------------------------------- |
+| **npm**  | `npx luminacn@latest add tooltip`      |
+| **pnpm** | `pnpx luminacn@latest add tooltip`     |
 | **yarn** | `yarn dlx luminacn@latest add tooltip` |
-| **bun** | `bunx luminacn@latest add tooltip` |
+| **bun**  | `bunx luminacn@latest add tooltip`     |
 
 ---
 
@@ -21,16 +21,19 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaTooltipComponent, LuminaTooltipDirective } from "@/components/ui/tooltip"
+import {
+  LuminaTooltipComponent,
+  LuminaTooltipDirective,
+} from "../components/ui/tooltip";
 
 @Component({
   standalone: true,
   imports: [LuminaTooltipComponent, LuminaTooltipDirective],
   template: `
     <lm-tooltip>
-        <div lmTooltip>...</div>
+      <div lmTooltip>...</div>
     </lm-tooltip>
-  `
+  `,
 })
 export class DemoTooltipComponent {}
 ```
@@ -52,8 +55,7 @@ Tooltip
 
 ## Required Context
 
-* **LuminaTooltipDirective**: Must be used within a `[lmTooltip]` that provides `Overlay` and `ElementRef` and `ScrollStrategyOptions`.
-
+- **LuminaTooltipDirective**: Must be used within a `[lmTooltip]` that provides `Overlay` and `ElementRef` and `ScrollStrategyOptions`.
 
 ---
 
@@ -66,4 +68,5 @@ Tooltip
 ---
 
 ## API Reference
+
 Refer to the individual source files in your registry for full API details.

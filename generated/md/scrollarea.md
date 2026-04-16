@@ -25,4 +25,9 @@ import { LuminaScrollAreaDirective } from "../components/ui/scrollarea"
   standalone: true,
   imports: [LuminaScrollAreaDirective],
   template: \`
-    <di
+    <div lmScrollArea>
+    </div>
+  \`
+})
+export class DemoScrollareaComponent {}
+```

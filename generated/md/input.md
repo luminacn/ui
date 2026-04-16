@@ -28,4 +28,8 @@ import { LuminaInputGroupComponent, LuminaInputIconDirective, LuminaInputDirecti
     <lm-input-group>
         <div lmInputIcon>...</div>
         <input lmInput>...</input>
-  
+    </lm-input-group>
+  \`
+})
+export class DemoInputComponent {}
+```

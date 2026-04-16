@@ -8,12 +8,12 @@ Placeholder UI that mimics content while loading.
 
 Run the following command in your terminal:
 
-| Manager | Command |
-| :--- | :--- |
-| **npm** | `npx luminacn@latest add skeleton` |
-| **pnpm** | `pnpx luminacn@latest add skeleton` |
+| Manager  | Command                                 |
+| :------- | :-------------------------------------- |
+| **npm**  | `npx luminacn@latest add skeleton`      |
+| **pnpm** | `pnpx luminacn@latest add skeleton`     |
 | **yarn** | `yarn dlx luminacn@latest add skeleton` |
-| **bun** | `bunx luminacn@latest add skeleton` |
+| **bun**  | `bunx luminacn@latest add skeleton`     |
 
 ---
 
@@ -21,15 +21,12 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaSkeletonDirective } from "@/components/ui/skeleton"
+import { LuminaSkeletonDirective } from "../components/ui/skeleton";
 
 @Component({
   standalone: true,
   imports: [LuminaSkeletonDirective],
-  template: `
-    <div lmSkeleton>
-    </div>
-  `
+  template: ` <div lmSkeleton></div> `,
 })
 export class DemoSkeletonComponent {}
 ```
@@ -49,9 +46,10 @@ Skeleton
 
 ## Required Context
 
-*This component is standalone and requires no specific parent providers.*
+_This component is standalone and requires no specific parent providers._
 
 ---
 
 ## API Reference
+
 Refer to the individual source files in your registry for full API details.

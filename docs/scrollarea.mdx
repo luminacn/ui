@@ -8,12 +8,12 @@ A customizable scrollable container with enhanced styling.
 
 Run the following command in your terminal:
 
-| Manager | Command |
-| :--- | :--- |
-| **npm** | `npx luminacn@latest add scrollarea` |
-| **pnpm** | `pnpx luminacn@latest add scrollarea` |
+| Manager  | Command                                   |
+| :------- | :---------------------------------------- |
+| **npm**  | `npx luminacn@latest add scrollarea`      |
+| **pnpm** | `pnpx luminacn@latest add scrollarea`     |
 | **yarn** | `yarn dlx luminacn@latest add scrollarea` |
-| **bun** | `bunx luminacn@latest add scrollarea` |
+| **bun**  | `bunx luminacn@latest add scrollarea`     |
 
 ---
 
@@ -21,15 +21,12 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaScrollAreaDirective } from "@/components/ui/scrollarea"
+import { LuminaScrollAreaDirective } from "../components/ui/scrollarea";
 
 @Component({
   standalone: true,
   imports: [LuminaScrollAreaDirective],
-  template: `
-    <div lmScrollArea>
-    </div>
-  `
+  template: ` <div lmScrollArea></div> `,
 })
 export class DemoScrollareaComponent {}
 ```
@@ -49,9 +46,10 @@ Scrollarea
 
 ## Required Context
 
-*This component is standalone and requires no specific parent providers.*
+_This component is standalone and requires no specific parent providers._
 
 ---
 
 ## API Reference
+
 Refer to the individual source files in your registry for full API details.
