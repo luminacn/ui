@@ -1,17 +1,19 @@
 # Switch
 
+A toggle control for switching between two states.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                               |
-| :------- | :------------------------------------ |
-| **npm**  | `npx luminacn@latest add switch`      |
-| **pnpm** | `pnpx luminacn@latest add switch`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add switch` |
+| **pnpm** | `pnpx luminacn@latest add switch` |
 | **yarn** | `yarn dlx luminacn@latest add switch` |
-| **bun**  | `bunx luminacn@latest add switch`     |
+| **bun** | `bunx luminacn@latest add switch` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaSwitchComponent } from "../components/ui/switch"
+import { LuminaSwitchComponent } from "../components/ui/switch";
 
 @Component({
   standalone: true,
   imports: [LuminaSwitchComponent],
-  template: \`
-    <lm-switch>
-    </lm-switch>
-  \`
+  template: \` <lm-switch> </lm-switch> \`,
 })
 export class DemoSwitchComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Switch
+└── switch.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

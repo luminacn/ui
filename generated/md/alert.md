@@ -1,17 +1,19 @@
 # Alert
 
+Displays important messages with contextual styling for feedback and status.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                              |
-| :------- | :----------------------------------- |
-| **npm**  | `npx luminacn@latest add alert`      |
-| **pnpm** | `pnpx luminacn@latest add alert`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add alert` |
+| **pnpm** | `pnpx luminacn@latest add alert` |
 | **yarn** | `yarn dlx luminacn@latest add alert` |
-| **bun**  | `bunx luminacn@latest add alert`     |
+| **bun** | `bunx luminacn@latest add alert` |
 
 ---
 
@@ -19,15 +21,54 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaAlertDirective } from "../components/ui/alert"
+import { LuminaAlertDirective } from "../components/ui/alert";
 
 @Component({
   standalone: true,
   imports: [LuminaAlertDirective],
-  template: \`
-    <div lmAlert>
-    </div>
-  \`
+  template: \` <div lmAlert></div> \`,
 })
 export class DemoAlertComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Alert
+├── alert.ts
+├── alert.types
+└── alert.variants
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+- `variant`
+- `default`
+- `destructive`
+- `dark`
+- `success`
+- `warning`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

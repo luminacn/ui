@@ -1,17 +1,19 @@
 # Dialog
 
+A modal overlay that captures user attention for critical tasks.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                               |
-| :------- | :------------------------------------ |
-| **npm**  | `npx luminacn@latest add dialog`      |
-| **pnpm** | `pnpx luminacn@latest add dialog`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add dialog` |
+| **pnpm** | `pnpx luminacn@latest add dialog` |
 | **yarn** | `yarn dlx luminacn@latest add dialog` |
-| **bun**  | `bunx luminacn@latest add dialog`     |
+| **bun** | `bunx luminacn@latest add dialog` |
 
 ---
 
@@ -19,22 +21,95 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaDialogCloseButtonComponent, LuminaDialogCloseDirective, LuminaDialogContentDirective, LuminaDialogDescriptionDirective, LuminaDialogFooterDirective, LuminaDialogHeaderDirective, LuminaDialogTitleDirective, LuminaDialogTriggerDirective, LuminaDialogService } from "../components/ui/dialog"
+import {
+  LuminaDialogCloseButtonComponent,
+  LuminaDialogCloseDirective,
+  LuminaDialogContentDirective,
+  LuminaDialogDescriptionDirective,
+  LuminaDialogFooterDirective,
+  LuminaDialogHeaderDirective,
+  LuminaDialogTitleDirective,
+  LuminaDialogTriggerDirective,
+  LuminaDialogService,
+} from "../components/ui/dialog";
 
 @Component({
   standalone: true,
-  imports: [LuminaDialogCloseButtonComponent, LuminaDialogCloseDirective, LuminaDialogContentDirective, LuminaDialogDescriptionDirective, LuminaDialogFooterDirective, LuminaDialogHeaderDirective, LuminaDialogTitleDirective, LuminaDialogTriggerDirective, LuminaDialogService],
+  imports: [
+    LuminaDialogCloseButtonComponent,
+    LuminaDialogCloseDirective,
+    LuminaDialogContentDirective,
+    LuminaDialogDescriptionDirective,
+    LuminaDialogFooterDirective,
+    LuminaDialogHeaderDirective,
+    LuminaDialogTitleDirective,
+    LuminaDialogTriggerDirective,
+    LuminaDialogService,
+  ],
   template: \`
     <button lmDialogCloseButton>
-        <div lmDialogClose>...</div>
-        <div lmDialogContent>...</div>
-        <div lmDialogDescription>...</div>
-        <div lmDialogFooter>...</div>
-        <div lmDialogHeader>...</div>
-        <div lmDialogTitle>...</div>
-        <div lmDialogTrigger>...</div>
+      <div lmDialogClose>...</div>
+      <div lmDialogContent>...</div>
+      <div lmDialogDescription>...</div>
+      <div lmDialogFooter>...</div>
+      <div lmDialogHeader>...</div>
+      <div lmDialogTitle>...</div>
+      <div lmDialogTrigger>...</div>
     </button>
-  \`
+  \`,
 })
 export class DemoDialogComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Dialog
+├── dialog-close.ts
+├── dialog-close.ts
+├── dialog-content.ts
+├── dialog-description.ts
+├── dialog-footer.ts
+├── dialog-header.ts
+├── dialog-title.ts
+├── dialog-trigger.ts
+├── dialog.service
+├── dialog.variants
+└── index
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaDialogCloseDirective**: Must be used within a `[lmDialogClose]` that provides `DialogRef`.
+- **LuminaDialogContentDirective**: Must be used within a `[lmDialogContent]` that provides `DialogRef` and `ElementRef`.
+- **LuminaDialogTriggerDirective**: Must be used within a `[lmDialogTrigger]` that provides `LuminaDialogService`.
+- **LuminaDialogService**: Must be used within a `parent container` that provides `Dialog`.
+
+---
+
+---
+
+## Variants
+
+- `size`
+- `sm`
+- `md`
+- `lg`
+- `xl`
+- `full`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

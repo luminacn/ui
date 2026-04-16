@@ -1,17 +1,19 @@
 # Layout
 
+Utility components for structuring and organizing page layouts.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                               |
-| :------- | :------------------------------------ |
-| **npm**  | `npx luminacn@latest add layout`      |
-| **pnpm** | `pnpx luminacn@latest add layout`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add layout` |
+| **pnpm** | `pnpx luminacn@latest add layout` |
 | **yarn** | `yarn dlx luminacn@latest add layout` |
-| **bun**  | `bunx luminacn@latest add layout`     |
+| **bun** | `bunx luminacn@latest add layout` |
 
 ---
 
@@ -19,17 +21,60 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaAspectRatioDirective, LuminaContainerDirective, LuminaSectionDirective } from "../components/ui/layout"
+import {
+  LuminaAspectRatioDirective,
+  LuminaContainerDirective,
+  LuminaSectionDirective,
+} from "../components/ui/layout";
 
 @Component({
   standalone: true,
-  imports: [LuminaAspectRatioDirective, LuminaContainerDirective, LuminaSectionDirective],
+  imports: [
+    LuminaAspectRatioDirective,
+    LuminaContainerDirective,
+    LuminaSectionDirective,
+  ],
   template: \`
     <div lmAspectRatio>
-        <div lmContainer>...</div>
-        <section lmSection>...</section>
+      <div lmContainer>...</div>
+      <section lmSection>...</section>
     </div>
-  \`
+  \`,
 })
 export class DemoLayoutComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Layout
+├── aspect-ratio.ts
+├── container.ts
+└── section.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

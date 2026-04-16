@@ -1,20 +1,12 @@
-import { Component } from "@angular/core";
-import {
-  LuminaInputGroupComponent,
-  LuminaInputIconDirective,
-  LuminaInputDirective,
-} from "../components/ui/input";
+import { Component } from '@angular/core';
+import { LuminaInputGroupComponent, LuminaInputIconDirective, LuminaInputDirective } from '../components/ui/input';
 
 @Component({
   standalone: true,
-  imports: [
-    LuminaInputGroupComponent,
-    LuminaInputIconDirective,
-    LuminaInputDirective,
-  ],
+  imports: [LuminaInputGroupComponent, LuminaInputIconDirective, LuminaInputDirective],
   template: `<lm-input-group>
         <div lmInputIcon>...</div>
         <input lmInput>...</input>
-    </lm-input-group>`,
+    </lm-input-group>`
 })
 export class InputComponent {}

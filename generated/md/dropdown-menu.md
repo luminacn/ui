@@ -1,17 +1,19 @@
 # Dropdown-menu
 
+Displays a list of actions or options triggered by a button.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                      |
-| :------- | :------------------------------------------- |
-| **npm**  | `npx luminacn@latest add dropdown-menu`      |
-| **pnpm** | `pnpx luminacn@latest add dropdown-menu`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add dropdown-menu` |
+| **pnpm** | `pnpx luminacn@latest add dropdown-menu` |
 | **yarn** | `yarn dlx luminacn@latest add dropdown-menu` |
-| **bun**  | `bunx luminacn@latest add dropdown-menu`     |
+| **bun** | `bunx luminacn@latest add dropdown-menu` |
 
 ---
 
@@ -42,3 +44,51 @@ import { LuminaDropdownMenuCheckboxItemComponent, LuminaDropdownMenuContentCompo
 })
 export class DemoDropdown-menuComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Dropdown-menu
+├── dropdown-menu-checkbox-item.ts
+├── dropdown-menu-content.ts
+├── dropdown-menu-group.ts
+├── dropdown-menu-icon.ts
+├── dropdown-menu-item.ts
+├── dropdown-menu-label.ts
+├── dropdown-menu-radio-item.ts
+├── dropdown-menu-separator.ts
+├── dropdown-menu-shortcut.ts
+├── dropdown-menu-sub-chevron.ts
+├── dropdown-menu-sub-trigger.ts
+├── dropdown-menu-trigger.ts
+└── dropdown-menu.variants
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+- `variant`
+- `default`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

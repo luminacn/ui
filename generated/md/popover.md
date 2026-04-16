@@ -1,17 +1,19 @@
 # Popover
 
+Displays floating content anchored to a trigger element.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                |
-| :------- | :------------------------------------- |
-| **npm**  | `npx luminacn@latest add popover`      |
-| **pnpm** | `pnpx luminacn@latest add popover`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add popover` |
+| **pnpm** | `pnpx luminacn@latest add popover` |
 | **yarn** | `yarn dlx luminacn@latest add popover` |
-| **bun**  | `bunx luminacn@latest add popover`     |
+| **bun** | `bunx luminacn@latest add popover` |
 
 ---
 
@@ -19,17 +21,67 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaPopoverCloseDirective, LuminaPopoverContentComponent, LuminaPopoverDirective } from "../components/ui/popover"
+import {
+  LuminaPopoverCloseDirective,
+  LuminaPopoverContentComponent,
+  LuminaPopoverDirective,
+} from "../components/ui/popover";
 
 @Component({
   standalone: true,
-  imports: [LuminaPopoverCloseDirective, LuminaPopoverContentComponent, LuminaPopoverDirective],
+  imports: [
+    LuminaPopoverCloseDirective,
+    LuminaPopoverContentComponent,
+    LuminaPopoverDirective,
+  ],
   template: \`
     <div lmPopoverClose>
-        <div lmPopoverContent>...</div>
-        <div lmPopover>...</div>
+      <div lmPopoverContent>...</div>
+      <div lmPopover>...</div>
     </div>
-  \`
+  \`,
 })
 export class DemoPopoverComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Popover
+├── popover-close.ts
+├── popover-content.ts
+├── popover.ts
+└── popover.variants
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaPopoverDirective**: Must be used within a `[lmPopover]` that provides `Overlay` and `ElementRef` and `ViewContainerRef` and `ScrollStrategyOptions` and `ConfigurableFocusTrapFactory`.
+
+---
+
+---
+
+## Variants
+
+- `size`
+- `default`
+- `lg`
+- `full`
+- `sm`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

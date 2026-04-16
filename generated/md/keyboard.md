@@ -1,17 +1,19 @@
 # Keyboard
 
+Displays keyboard shortcuts and key combinations in a readable format.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add keyboard`      |
-| **pnpm** | `pnpx luminacn@latest add keyboard`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add keyboard` |
+| **pnpm** | `pnpx luminacn@latest add keyboard` |
 | **yarn** | `yarn dlx luminacn@latest add keyboard` |
-| **bun**  | `bunx luminacn@latest add keyboard`     |
+| **bun** | `bunx luminacn@latest add keyboard` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaKbdDirective } from "../components/ui/keyboard"
+import { LuminaKbdDirective } from "../components/ui/keyboard";
 
 @Component({
   standalone: true,
   imports: [LuminaKbdDirective],
-  template: \`
-    <kbd lmKbd>
-    </kbd>
-  \`
+  template: \` <kbd lmKbd> </kbd> \`,
 })
 export class DemoKeyboardComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Keyboard
+└── kbd.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

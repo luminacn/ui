@@ -1,17 +1,19 @@
 # Progress
 
+Visual indicator of task completion or loading progress.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add progress`      |
-| **pnpm** | `pnpx luminacn@latest add progress`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add progress` |
+| **pnpm** | `pnpx luminacn@latest add progress` |
 | **yarn** | `yarn dlx luminacn@latest add progress` |
-| **bun**  | `bunx luminacn@latest add progress`     |
+| **bun** | `bunx luminacn@latest add progress` |
 
 ---
 
@@ -19,15 +21,53 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaProgressComponent } from "../components/ui/progress"
+import { LuminaProgressComponent } from "../components/ui/progress";
 
 @Component({
   standalone: true,
   imports: [LuminaProgressComponent],
-  template: \`
-    <lm-progress>
-    </lm-progress>
-  \`
+  template: \` <lm-progress> </lm-progress> \`,
 })
 export class DemoProgressComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Progress
+├── progress.ts
+└── progress.variants
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+- `variant`
+- `default`
+- `success`
+- `destructive`
+- `warning`
+- `indeterminate`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

@@ -1,17 +1,19 @@
 # Tabs
 
+Organizes content into multiple panels with selectable triggers.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                             |
-| :------- | :---------------------------------- |
-| **npm**  | `npx luminacn@latest add tabs`      |
-| **pnpm** | `pnpx luminacn@latest add tabs`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add tabs` |
+| **pnpm** | `pnpx luminacn@latest add tabs` |
 | **yarn** | `yarn dlx luminacn@latest add tabs` |
-| **bun**  | `bunx luminacn@latest add tabs`     |
+| **bun** | `bunx luminacn@latest add tabs` |
 
 ---
 
@@ -19,18 +21,71 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaTabsContentDirective, LuminaTabsListDirective, LuminaTabsTriggerDirective, LuminaTabsDirective } from "../components/ui/tabs"
+import {
+  LuminaTabsContentDirective,
+  LuminaTabsListDirective,
+  LuminaTabsTriggerDirective,
+  LuminaTabsDirective,
+} from "../components/ui/tabs";
 
 @Component({
   standalone: true,
-  imports: [LuminaTabsContentDirective, LuminaTabsListDirective, LuminaTabsTriggerDirective, LuminaTabsDirective],
+  imports: [
+    LuminaTabsContentDirective,
+    LuminaTabsListDirective,
+    LuminaTabsTriggerDirective,
+    LuminaTabsDirective,
+  ],
   template: \`
     <div lmTabs>
-        <div lmTabsContent>...</div>
-        <div lmTabsList>...</div>
-        <div lmTabsTrigger>...</div>
+      <div lmTabsContent>...</div>
+      <div lmTabsList>...</div>
+      <div lmTabsTrigger>...</div>
     </div>
-  \`
+  \`,
 })
 export class DemoTabsComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Tabs
+├── tabs-content.ts
+├── tabs-list.ts
+├── tabs-trigger.ts
+├── tabs.ts
+└── tabs.variants
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaTabsContentDirective**: Must be used within a `[lmTabsContent]` that provides `LuminaTabsDirective`.
+- **LuminaTabsListDirective**: Must be used within a `[lmTabsList]` that provides `LuminaTabsDirective`.
+- **LuminaTabsTriggerDirective**: Must be used within a `[lmTabsTrigger]` that provides `LuminaTabsDirective` and `ElementRef`.
+
+---
+
+---
+
+## Variants
+
+- `variant`
+- `pill`
+- `underline`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

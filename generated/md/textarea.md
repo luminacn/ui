@@ -1,17 +1,19 @@
 # Textarea
 
+A multi-line text input field.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add textarea`      |
-| **pnpm** | `pnpx luminacn@latest add textarea`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add textarea` |
+| **pnpm** | `pnpx luminacn@latest add textarea` |
 | **yarn** | `yarn dlx luminacn@latest add textarea` |
-| **bun**  | `bunx luminacn@latest add textarea`     |
+| **bun** | `bunx luminacn@latest add textarea` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaTextareaDirective } from "../components/ui/textarea"
+import { LuminaTextareaDirective } from "../components/ui/textarea";
 
 @Component({
   standalone: true,
   imports: [LuminaTextareaDirective],
-  template: \`
-    <textarea lmTextarea>
-    </textarea>
-  \`
+  template: \` <textarea lmTextarea> </textarea> \`,
 })
 export class DemoTextareaComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Textarea
+└── textarea.ts
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaTextareaDirective**: Must be used within a `textarea[lmTextarea]` that provides `ElementRef<HTMLTextAreaElement>` and `NgControl, { optional: true }` and `LM_FORM_FIELD, { optional: true }`.
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

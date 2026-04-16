@@ -1,17 +1,19 @@
 # Checkbox
 
+A control that allows users to toggle between checked and unchecked states.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add checkbox`      |
-| **pnpm** | `pnpx luminacn@latest add checkbox`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add checkbox` |
+| **pnpm** | `pnpx luminacn@latest add checkbox` |
 | **yarn** | `yarn dlx luminacn@latest add checkbox` |
-| **bun**  | `bunx luminacn@latest add checkbox`     |
+| **bun** | `bunx luminacn@latest add checkbox` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaCheckboxComponent } from "../components/ui/checkbox"
+import { LuminaCheckboxComponent } from "../components/ui/checkbox";
 
 @Component({
   standalone: true,
   imports: [LuminaCheckboxComponent],
-  template: \`
-    <lm-checkbox>
-    </lm-checkbox>
-  \`
+  template: \` <lm-checkbox> </lm-checkbox> \`,
 })
 export class DemoCheckboxComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Checkbox
+└── checkbox.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

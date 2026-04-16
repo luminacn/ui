@@ -1,17 +1,19 @@
 # Date-picker
 
+A component for selecting single dates or date ranges.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                    |
-| :------- | :----------------------------------------- |
-| **npm**  | `npx luminacn@latest add date-picker`      |
-| **pnpm** | `pnpx luminacn@latest add date-picker`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add date-picker` |
+| **pnpm** | `pnpx luminacn@latest add date-picker` |
 | **yarn** | `yarn dlx luminacn@latest add date-picker` |
-| **bun**  | `bunx luminacn@latest add date-picker`     |
+| **bun** | `bunx luminacn@latest add date-picker` |
 
 ---
 
@@ -32,3 +34,39 @@ import { LuminaCalendarComponent, LuminaDatePickerComponent } from "../component
 })
 export class DemoDate-pickerComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Date-picker
+├── calendar.ts
+├── date-picker.ts
+├── date-picker.types
+└── date-picker.utils
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaDatePickerComponent**: Must be used within a `lm-date-picker` that provides `Overlay` and `ViewContainerRef` and `ElementRef`.
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

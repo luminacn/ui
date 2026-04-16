@@ -1,17 +1,19 @@
 # Combobox
 
+An input with a dropdown list for selecting or filtering options.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add combobox`      |
-| **pnpm** | `pnpx luminacn@latest add combobox`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add combobox` |
+| **pnpm** | `pnpx luminacn@latest add combobox` |
 | **yarn** | `yarn dlx luminacn@latest add combobox` |
-| **bun**  | `bunx luminacn@latest add combobox`     |
+| **bun** | `bunx luminacn@latest add combobox` |
 
 ---
 
@@ -19,11 +21,23 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaComboboxContentComponent, LuminaComboboxInputDirective, LuminaComboboxItemDirective, LuminaComboboxTagComponent, LuminaComboboxDirective } from "../components/ui/combobox"
+import {
+  LuminaComboboxContentComponent,
+  LuminaComboboxInputDirective,
+  LuminaComboboxItemDirective,
+  LuminaComboboxTagComponent,
+  LuminaComboboxDirective,
+} from "../components/ui/combobox";
 
 @Component({
   standalone: true,
-  imports: [LuminaComboboxContentComponent, LuminaComboboxInputDirective, LuminaComboboxItemDirective, LuminaComboboxTagComponent, LuminaComboboxDirective],
+  imports: [
+    LuminaComboboxContentComponent,
+    LuminaComboboxInputDirective,
+    LuminaComboboxItemDirective,
+    LuminaComboboxTagComponent,
+    LuminaComboboxDirective,
+  ],
   template: \`
     <div lmComboboxContent>
         <input lmComboboxInput>...</input>
@@ -31,7 +45,46 @@ import { LuminaComboboxContentComponent, LuminaComboboxInputDirective, LuminaCom
         <span lmComboboxTag>...</span>
         <div lmCombobox>...</div>
     </div>
-  \`
+  \`,
 })
 export class DemoComboboxComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Combobox
+├── combobox-content.ts
+├── combobox-input.ts
+├── combobox-item.ts
+├── combobox-tag.ts
+└── combobox.ts
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaComboboxInputDirective**: Must be used within a `input[lmComboboxInput]` that provides `ElementRef<HTMLInputElement>` and `LuminaComboboxDirective`.
+- **LuminaComboboxItemDirective**: Must be used within a `[lmComboboxItem]` that provides `LuminaComboboxDirective`.
+- **LuminaComboboxDirective**: Must be used within a `[lmCombobox]` that provides `ElementRef<HTMLElement>` and `Overlay` and `ViewContainerRef`.
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

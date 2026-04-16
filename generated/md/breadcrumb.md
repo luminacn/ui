@@ -1,17 +1,19 @@
 # Breadcrumb
 
+Displays the current page’s location within a navigational hierarchy.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                   |
-| :------- | :---------------------------------------- |
-| **npm**  | `npx luminacn@latest add breadcrumb`      |
-| **pnpm** | `pnpx luminacn@latest add breadcrumb`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add breadcrumb` |
+| **pnpm** | `pnpx luminacn@latest add breadcrumb` |
 | **yarn** | `yarn dlx luminacn@latest add breadcrumb` |
-| **bun**  | `bunx luminacn@latest add breadcrumb`     |
+| **bun** | `bunx luminacn@latest add breadcrumb` |
 
 ---
 
@@ -19,17 +21,60 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaBreadcrumbItemDirective, LuminaBreadcrumbSeparatorDirective, LuminaBreadcrumbDirective } from "../components/ui/breadcrumb"
+import {
+  LuminaBreadcrumbItemDirective,
+  LuminaBreadcrumbSeparatorDirective,
+  LuminaBreadcrumbDirective,
+} from "../components/ui/breadcrumb";
 
 @Component({
   standalone: true,
-  imports: [LuminaBreadcrumbItemDirective, LuminaBreadcrumbSeparatorDirective, LuminaBreadcrumbDirective],
+  imports: [
+    LuminaBreadcrumbItemDirective,
+    LuminaBreadcrumbSeparatorDirective,
+    LuminaBreadcrumbDirective,
+  ],
   template: \`
     <li lmBreadcrumbItem>
         <li lmBreadcrumbSeparator>...</li>
         <nav lmBreadcrumb>...</nav>
     </li>
-  \`
+  \`,
 })
 export class DemoBreadcrumbComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Breadcrumb
+├── breadcrumb-item.ts
+├── breadcrumb-shared.ts
+└── breadcrumb.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

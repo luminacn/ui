@@ -1,17 +1,19 @@
 # Typography
 
+Predefined styles for consistent text rendering across the UI.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                   |
-| :------- | :---------------------------------------- |
-| **npm**  | `npx luminacn@latest add typography`      |
-| **pnpm** | `pnpx luminacn@latest add typography`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add typography` |
+| **pnpm** | `pnpx luminacn@latest add typography` |
 | **yarn** | `yarn dlx luminacn@latest add typography` |
-| **bun**  | `bunx luminacn@latest add typography`     |
+| **bun** | `bunx luminacn@latest add typography` |
 
 ---
 
@@ -19,11 +21,23 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaH1Directive, LuminaLeadDirective, LuminaHrDirective, LuminaUlDirective, LuminaPDirective } from "../components/ui/typography"
+import {
+  LuminaH1Directive,
+  LuminaLeadDirective,
+  LuminaHrDirective,
+  LuminaUlDirective,
+  LuminaPDirective,
+} from "../components/ui/typography";
 
 @Component({
   standalone: true,
-  imports: [LuminaH1Directive, LuminaLeadDirective, LuminaHrDirective, LuminaUlDirective, LuminaPDirective],
+  imports: [
+    LuminaH1Directive,
+    LuminaLeadDirective,
+    LuminaHrDirective,
+    LuminaUlDirective,
+    LuminaPDirective,
+  ],
   template: \`
     <h1 lmH1>
         <div lmLead>...</div>
@@ -31,7 +45,44 @@ import { LuminaH1Directive, LuminaLeadDirective, LuminaHrDirective, LuminaUlDire
         <ul lmUl>...</ul>
         <p lmP>...</p>
     </h1>
-  \`
+  \`,
 })
 export class DemoTypographyComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Typography
+├── headings.ts
+├── helpers.ts
+├── hr.ts
+├── list-table.ts
+└── text.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

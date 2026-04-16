@@ -40,20 +40,48 @@ function extractUsage(md) {
   return {
     imports,
     template,
-    rawUsage: rawUsage.trim(), // ✅ FIX: required for MD output
+    rawUsage: rawUsage.trim(),
   };
+}
+
+function stripTitle(md) {
+  return md.replace(/^#\s.+\n/, "").trim();
 }
 
 // ===== EXTRACT META =====
 function extractMeta(md) {
   const titleMatch = md.match(/^#\s(.+)/m);
 
-  // safer description extraction (first paragraph after title)
-  const descMatch = md.match(/^#.*\n\n([\s\S]*?)(\n\n---|\n##)/);
+  const title = titleMatch ? titleMatch[1].trim() : "Component";
+
+  const clean = stripTitle(md);
+
+  const descriptionBlock = clean.split("\n##")[0]?.trim() || "";
+
+  const description = descriptionBlock.replace(/^---\s*/gm, "").trim();
 
   return {
-    title: titleMatch ? titleMatch[1].trim() : "Component",
-    description: descMatch ? descMatch[1].trim() : "",
+    title,
+    description,
+  };
+}
+
+// ===== EXTRACT SECTIONS (NEW) =====
+function extractSection(md, heading) {
+  const regex = new RegExp(`##\\s${heading}\\s*([\\s\\S]*?)(?=\\n##\\s|$)`);
+
+  const match = md.match(regex);
+  return match ? match[1].trim() : "";
+}
+
+function extractSections(md) {
+  const clean = stripTitle(md);
+
+  return {
+    composition: extractSection(clean, "Composition"),
+    requiredContext: extractSection(clean, "Required Context"),
+    variants: extractSection(clean, "Variants"),
+    api: extractSection(clean, "API Reference"),
   };
 }
 
@@ -74,11 +102,9 @@ export class ${className} {}
 `.trim();
 }
 
-// ===== MARKDOWN GENERATOR =====
-function generateMarkdown(name, meta, data) {
-  return `# ${meta.title}
-
-${meta.description}
+// ===== MARKDOWN GENERATOR (UPDATED) =====
+function generateMarkdown(name, meta, data, sections) {
+  return `${meta.description}
 
 ---
 
@@ -100,6 +126,30 @@ Run the following command in your terminal:
 \`\`\`tsx
 ${escapeBackticks(data.rawUsage)}
 \`\`\`
+
+---
+
+## Composition
+
+${sections.composition || "_No composition defined_"}
+
+---
+
+## Required Context
+
+${sections.requiredContext || "_No required context defined_"}
+
+---
+
+## Variants
+
+${sections.variants || "_No variants defined_"}
+
+---
+
+## API Reference
+
+${sections.api || "Refer to the individual source files in your registry for full API details."}
 `;
 }
 
@@ -120,13 +170,13 @@ function run() {
     console.log(`📄 ${file}`);
 
     const usage = extractUsage(content);
-
     if (!usage) {
       console.log("⚠️ No usage found\n");
       continue;
     }
 
     const meta = extractMeta(content);
+    const sections = extractSections(content);
 
     // ===== OUTPUT 1: COMPONENT =====
     const componentCode = generateComponent(name, usage);
@@ -136,7 +186,7 @@ function run() {
     fs.writeFileSync(componentPath, componentCode);
 
     // ===== OUTPUT 2: MARKDOWN =====
-    const md = generateMarkdown(name, meta, usage);
+    const md = generateMarkdown(name, meta, usage, sections);
 
     const mdPath = path.join(OUT_MD, `${name}.md`);
 

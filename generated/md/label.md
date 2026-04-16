@@ -1,17 +1,19 @@
 # Label
 
+Associates descriptive text with form controls for accessibility.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                              |
-| :------- | :----------------------------------- |
-| **npm**  | `npx luminacn@latest add label`      |
-| **pnpm** | `pnpx luminacn@latest add label`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add label` |
+| **pnpm** | `pnpx luminacn@latest add label` |
 | **yarn** | `yarn dlx luminacn@latest add label` |
-| **bun**  | `bunx luminacn@latest add label`     |
+| **bun** | `bunx luminacn@latest add label` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaLabelDirective } from "../components/ui/label"
+import { LuminaLabelDirective } from "../components/ui/label";
 
 @Component({
   standalone: true,
   imports: [LuminaLabelDirective],
-  template: \`
-    <label lmLabel>
-    </label>
-  \`
+  template: \` <label lmLabel> </label> \`,
 })
 export class DemoLabelComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Label
+└── label.ts
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaLabelDirective**: Must be used within a `label[lmLabel]` that provides `LM_FORM_FIELD, { optional: true }`.
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

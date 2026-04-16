@@ -1,17 +1,19 @@
 # Collapsible
 
+Expands and collapses content with smooth transitions.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                    |
-| :------- | :----------------------------------------- |
-| **npm**  | `npx luminacn@latest add collapsible`      |
-| **pnpm** | `pnpx luminacn@latest add collapsible`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add collapsible` |
+| **pnpm** | `pnpx luminacn@latest add collapsible` |
 | **yarn** | `yarn dlx luminacn@latest add collapsible` |
-| **bun**  | `bunx luminacn@latest add collapsible`     |
+| **bun** | `bunx luminacn@latest add collapsible` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaCollapsibleDirective } from "../components/ui/collapsible"
+import { LuminaCollapsibleDirective } from "../components/ui/collapsible";
 
 @Component({
   standalone: true,
   imports: [LuminaCollapsibleDirective],
-  template: \`
-    <div lmCollapsible>
-    </div>
-  \`
+  template: \` <div lmCollapsible></div> \`,
 })
 export class DemoCollapsibleComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Collapsible
+└── collapsible.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

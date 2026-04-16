@@ -1,17 +1,19 @@
 # Input
 
+A basic text field for user input with flexible styling.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                              |
-| :------- | :----------------------------------- |
-| **npm**  | `npx luminacn@latest add input`      |
-| **pnpm** | `pnpx luminacn@latest add input`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add input` |
+| **pnpm** | `pnpx luminacn@latest add input` |
 | **yarn** | `yarn dlx luminacn@latest add input` |
-| **bun**  | `bunx luminacn@latest add input`     |
+| **bun** | `bunx luminacn@latest add input` |
 
 ---
 
@@ -19,17 +21,60 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaInputGroupComponent, LuminaInputIconDirective, LuminaInputDirective } from "../components/ui/input"
+import {
+  LuminaInputGroupComponent,
+  LuminaInputIconDirective,
+  LuminaInputDirective,
+} from "../components/ui/input";
 
 @Component({
   standalone: true,
-  imports: [LuminaInputGroupComponent, LuminaInputIconDirective, LuminaInputDirective],
+  imports: [
+    LuminaInputGroupComponent,
+    LuminaInputIconDirective,
+    LuminaInputDirective,
+  ],
   template: \`
     <lm-input-group>
         <div lmInputIcon>...</div>
         <input lmInput>...</input>
     </lm-input-group>
-  \`
+  \`,
 })
 export class DemoInputComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Input
+├── input-group.ts
+├── input-icon.ts
+└── input.ts
+```
+
+---
+
+---
+
+## Required Context
+
+- **LuminaInputDirective**: Must be used within a `input[lmInput], textarea[lmInput]` that provides `LuminaInputGroupComponent, { optional: true }` and `LM_FORM_FIELD, { optional: true }`.
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

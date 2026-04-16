@@ -1,17 +1,19 @@
 # Avatar
 
+An image element with fallback support for representing users or entities.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                               |
-| :------- | :------------------------------------ |
-| **npm**  | `npx luminacn@latest add avatar`      |
-| **pnpm** | `pnpx luminacn@latest add avatar`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add avatar` |
+| **pnpm** | `pnpx luminacn@latest add avatar` |
 | **yarn** | `yarn dlx luminacn@latest add avatar` |
-| **bun**  | `bunx luminacn@latest add avatar`     |
+| **bun** | `bunx luminacn@latest add avatar` |
 
 ---
 
@@ -19,7 +21,10 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaAvatarComponent, LuminaAvatarImageDirective } from "../components/ui/avatar"
+import {
+  LuminaAvatarComponent,
+  LuminaAvatarImageDirective,
+} from "../components/ui/avatar";
 
 @Component({
   standalone: true,
@@ -28,7 +33,49 @@ import { LuminaAvatarComponent, LuminaAvatarImageDirective } from "../components
     <lm-avatar>
         <img lmAvatarImage>...</img>
     </lm-avatar>
-  \`
+  \`,
 })
 export class DemoAvatarComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Avatar
+├── avatar.ts
+├── avatar.ts
+├── avatar.types
+└── avatar.variants
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+- `size`
+- `sm`
+- `md`
+- `lg`
+- `xl`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

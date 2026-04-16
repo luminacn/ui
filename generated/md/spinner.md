@@ -1,17 +1,19 @@
 # Spinner
 
+A loading indicator used to represent ongoing processes.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                |
-| :------- | :------------------------------------- |
-| **npm**  | `npx luminacn@latest add spinner`      |
-| **pnpm** | `pnpx luminacn@latest add spinner`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add spinner` |
+| **pnpm** | `pnpx luminacn@latest add spinner` |
 | **yarn** | `yarn dlx luminacn@latest add spinner` |
-| **bun**  | `bunx luminacn@latest add spinner`     |
+| **bun** | `bunx luminacn@latest add spinner` |
 
 ---
 
@@ -19,15 +21,54 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaSpinnerComponent } from "../components/ui/spinner"
+import { LuminaSpinnerComponent } from "../components/ui/spinner";
 
 @Component({
   standalone: true,
   imports: [LuminaSpinnerComponent],
-  template: \`
-    <lm-spinner>
-    </lm-spinner>
-  \`
+  template: \` <lm-spinner> </lm-spinner> \`,
 })
 export class DemoSpinnerComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Spinner
+├── spinner.ts
+├── spinner.types
+└── spinner.variants
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+- `variant`
+- `primary`
+- `secondary`
+- `accent`
+- `current`
+- `destructive`
+
+---
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.

@@ -1,17 +1,19 @@
 # Skeleton
 
+Placeholder UI that mimics content while loading.
+
 ---
 
 ## Installation
 
 Run the following command in your terminal:
 
-| Manager  | Command                                 |
-| :------- | :-------------------------------------- |
-| **npm**  | `npx luminacn@latest add skeleton`      |
-| **pnpm** | `pnpx luminacn@latest add skeleton`     |
+| Manager | Command |
+| :--- | :--- |
+| **npm** | `npx luminacn@latest add skeleton` |
+| **pnpm** | `pnpx luminacn@latest add skeleton` |
 | **yarn** | `yarn dlx luminacn@latest add skeleton` |
-| **bun**  | `bunx luminacn@latest add skeleton`     |
+| **bun** | `bunx luminacn@latest add skeleton` |
 
 ---
 
@@ -19,15 +21,45 @@ Run the following command in your terminal:
 
 ```tsx
 import { Component } from "@angular/core";
-import { LuminaSkeletonDirective } from "../components/ui/skeleton"
+import { LuminaSkeletonDirective } from "../components/ui/skeleton";
 
 @Component({
   standalone: true,
   imports: [LuminaSkeletonDirective],
-  template: \`
-    <div lmSkeleton>
-    </div>
-  \`
+  template: \` <div lmSkeleton></div> \`,
 })
 export class DemoSkeletonComponent {}
 ```
+
+---
+
+## Composition
+
+This component follows a **composition pattern**, where you combine smaller primitives:
+
+```text
+Skeleton
+└── skeleton.ts
+```
+
+---
+
+---
+
+## Required Context
+
+_This component is standalone and requires no specific parent providers._
+
+---
+
+---
+
+## Variants
+
+_No variants defined_
+
+---
+
+## API Reference
+
+Refer to the individual source files in your registry for full API details.
